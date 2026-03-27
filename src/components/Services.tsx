@@ -76,7 +76,7 @@ const services = [
     title: "Mystery Shopping",
     desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
     cta: "Start Evaluating",
-    href: "#",
+    href: "/services/mystery-shopping",
   },
   {
     icon: <ClipboardCheckIcon />,
@@ -84,7 +84,7 @@ const services = [
     title: "CX Audits",
     desc: "Comprehensive audits of your customer journey, from first impression to final checkout. Identify gaps and improve satisfaction scores.",
     cta: "Request an Audit",
-    href: "#",
+    href: "/services/cx-audits",
   },
   {
     icon: <MicIcon />,
@@ -92,7 +92,7 @@ const services = [
     title: "Voice of Customer",
     desc: "Capture authentic customer feedback through surveys, interviews, and sentiment analysis. Understand what your customers truly think.",
     cta: "Capture Feedback",
-    href: "#",
+    href: "/services/voice-of-customer",
   },
   {
     icon: <LayoutDashboardIcon />,
@@ -100,7 +100,7 @@ const services = [
     title: "Business Dashboard",
     desc: "Track KPIs, monitor trends, and visualize performance data in real time. One dashboard for all your CX intelligence needs.",
     cta: "View Dashboard",
-    href: "https://app.jabb.pro/",
+    href: "/services/dashboard",
   },
   {
     icon: <BrainIcon />,
@@ -108,7 +108,7 @@ const services = [
     title: "AI Reports",
     desc: "Leverage artificial intelligence to transform raw field data into strategic recommendations. Faster analysis, smarter decisions.",
     cta: "Generate Report",
-    href: "#",
+    href: "/services/ai-reports",
   },
   {
     icon: <TrophyIcon />,
@@ -116,7 +116,7 @@ const services = [
     title: "Reward System",
     desc: "Motivate your JABBers with a gamified reward system. Earn points, unlock badges, and cash out for completing quality evaluations.",
     cta: "Earn Rewards",
-    href: "#",
+    href: "/services/rewards",
   },
 ];
 
