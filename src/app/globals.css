@@ -1554,7 +1554,7 @@ h5 {
 }
 .site-header--scrolled .brand a,
 .site-header--scrolled .site-header__open-menu {
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 .site-header--scrolled .button--transparent {
   color: var(--color-text);
@@ -2064,7 +2064,8 @@ h5 {
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
 }
 
-.dark .site-header--scrolled .brand a {
+.dark .site-header--scrolled .brand a,
+.dark .site-header--scrolled .site-header__open-menu {
   color: var(--color-text);
 }
 .dark .site-header--scrolled .button--transparent {
