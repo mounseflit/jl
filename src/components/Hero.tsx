@@ -42,13 +42,13 @@ export default function Hero() {
                   </a>
                 </div>
 
-                <h1 className="font-display text-white font-extrabold leading-[1.1] tracking-tight text-[clamp(2rem,5vw,3.4rem)]">
+                <h1 className="font-display text-white font-extrabold leading-[1.1] tracking-tight text-[clamp(1.6rem,3.8vw,2.6rem)]">
                   All your CX insights&hellip;
                   <br />
                   in one single app
                 </h1>
 
-                <p className="text-white/70 text-[clamp(0.875rem,1.1vw,1.05rem)] leading-relaxed max-w-[480px]">
+                <p className="text-white/70 text-[clamp(0.78rem,0.95vw,0.9rem)] leading-relaxed max-w-[420px]">
                   JABB, the 1st citizen-powered mystery shopping platform,
                   delivers GPS&#8209;verified field intelligence to your
                   dashboard &mdash; fast, reliable, and professional.
