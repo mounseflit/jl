@@ -261,7 +261,7 @@ export default function DashboardPage() {
         </section>
 
         {/* ── CTA (dark variant) ── */}
-        <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#6C66FF]">
+        <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#3028C0]">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Take control of your customer experience

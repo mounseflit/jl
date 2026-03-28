@@ -72,7 +72,7 @@ function TrophyIcon() {
 const services = [
   {
     icon: <SearchIcon />,
-    gradient: "linear-gradient(135deg, #4942F8 0%, #6C66FF 100%)",
+    gradient: "linear-gradient(135deg, #1d1597 0%, #3028C0 100%)",
     title: "Mystery Shopping",
     desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
     cta: "Start Evaluating",
@@ -80,7 +80,7 @@ const services = [
   },
   {
     icon: <ClipboardCheckIcon />,
-    gradient: "linear-gradient(135deg, #6C66FF 0%, #9F7AEA 100%)",
+    gradient: "linear-gradient(135deg, #3028C0 0%, #9F7AEA 100%)",
     title: "CX Audits",
     desc: "Comprehensive audits of your customer journey, from first impression to final checkout. Identify gaps and improve satisfaction scores.",
     cta: "Request an Audit",
@@ -88,7 +88,7 @@ const services = [
   },
   {
     icon: <MicIcon />,
-    gradient: "linear-gradient(135deg, #4942F8 0%, #38B2AC 100%)",
+    gradient: "linear-gradient(135deg, #1d1597 0%, #38B2AC 100%)",
     title: "Voice of Customer",
     desc: "Capture authentic customer feedback through surveys, interviews, and sentiment analysis. Understand what your customers truly think.",
     cta: "Capture Feedback",
@@ -96,7 +96,7 @@ const services = [
   },
   {
     icon: <LayoutDashboardIcon />,
-    gradient: "linear-gradient(135deg, #38B2AC 0%, #4942F8 100%)",
+    gradient: "linear-gradient(135deg, #38B2AC 0%, #1d1597 100%)",
     title: "Business Dashboard",
     desc: "Track KPIs, monitor trends, and visualize performance data in real time. One dashboard for all your CX intelligence needs.",
     cta: "View Dashboard",
@@ -104,7 +104,7 @@ const services = [
   },
   {
     icon: <BrainIcon />,
-    gradient: "linear-gradient(135deg, #9F7AEA 0%, #4942F8 100%)",
+    gradient: "linear-gradient(135deg, #9F7AEA 0%, #1d1597 100%)",
     title: "AI Reports",
     desc: "Leverage artificial intelligence to transform raw field data into strategic recommendations. Faster analysis, smarter decisions.",
     cta: "Generate Report",
@@ -112,7 +112,7 @@ const services = [
   },
   {
     icon: <TrophyIcon />,
-    gradient: "linear-gradient(135deg, #4942F8 0%, #667eea 100%)",
+    gradient: "linear-gradient(135deg, #1d1597 0%, #667eea 100%)",
     title: "Reward System",
     desc: "Motivate your JABBers with a gamified reward system. Earn points, unlock badges, and cash out for completing quality evaluations.",
     cta: "Earn Rewards",

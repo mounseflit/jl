@@ -14,6 +14,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={isDark ? t("common.light") : t("common.dark")}
       title={isDark ? t("common.light") : t("common.dark")}
+      className="theme-toggle"
       style={{
         display: "flex",
         alignItems: "center",
@@ -21,11 +22,11 @@ export default function ThemeToggle() {
         width: "2.25rem",
         height: "2.25rem",
         borderRadius: "0.5rem",
-        border: "1px solid var(--color-border)",
-        background: "var(--color-bg)",
-        color: "var(--color-text)",
+        border: "1px solid rgba(255,255,255,0.25)",
+        background: "rgba(255,255,255,0.08)",
+        color: "white",
         cursor: "pointer",
-        transition: "all 0.2s",
+        transition: "all 0.3s",
         flexShrink: 0,
       }}
     >

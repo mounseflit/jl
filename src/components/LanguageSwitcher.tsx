@@ -36,19 +36,20 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((o) => !o)}
         aria-label="Change language"
         aria-expanded={open}
+        className="lang-switcher-btn"
         style={{
           display: "flex",
           alignItems: "center",
           gap: "0.4rem",
           padding: "0.4rem 0.75rem",
           borderRadius: "0.5rem",
-          border: "1px solid var(--color-border)",
-          background: "var(--color-bg)",
-          color: "var(--color-text)",
+          border: "1px solid rgba(255,255,255,0.25)",
+          background: "rgba(255,255,255,0.08)",
+          color: "white",
           cursor: "pointer",
           fontSize: "0.85rem",
           fontWeight: 500,
-          transition: "all 0.2s",
+          transition: "all 0.3s",
         }}
       >
         <span>{current.flag}</span>
@@ -69,17 +70,19 @@ export default function LanguageSwitcher() {
 
       {open && (
         <div
+          className="lang-switcher-dropdown"
           style={{
             position: "absolute",
-            top: "calc(100% + 4px)",
+            top: "calc(100% + 6px)",
             right: 0,
-            minWidth: "140px",
+            minWidth: "150px",
             background: "var(--color-bg)",
             border: "1px solid var(--color-border)",
-            borderRadius: "0.5rem",
-            boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+            borderRadius: "0.75rem",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
             zIndex: 100,
             overflow: "hidden",
+            backdropFilter: "blur(12px)",
           }}
         >
           {LOCALE_ORDER.map((loc) => {

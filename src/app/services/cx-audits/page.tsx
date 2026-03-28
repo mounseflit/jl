@@ -117,7 +117,7 @@ export default function CxAuditsPage() {
                         />
                         <circle
                           cx="40" cy="40" r="36"
-                          stroke="#4942F8" strokeWidth="6" fill="none"
+                          stroke="#1d1597" strokeWidth="6" fill="none"
                           strokeLinecap="round"
                           strokeDasharray={circumference}
                           strokeDashoffset={offset}
@@ -281,7 +281,7 @@ export default function CxAuditsPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 lg:py-24 bg-gradient-to-br from-primary to-[#6C66FF]">
+        <section className="py-20 lg:py-24 bg-gradient-to-br from-primary to-[#3028C0]">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Get a complete picture of your customer experience

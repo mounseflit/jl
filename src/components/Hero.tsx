@@ -1,13 +1,26 @@
 "use client";
 
-import Image from "next/image";
 import JabbLogo from "./JabbLogo";
 import StoreButtons from "./StoreButtons";
 import MobileNav from "./MobileNav";
+import IPhoneFrame from "./IPhoneFrame";
 import { useTranslation } from "@/lib/I18nProvider";
 
+const MARQUEE_ITEMS = [
+  "COMMUNITY DRIVEN",
+  "REAL-TIME DASHBOARDS",
+  "GOLDEN PROOF PROTOCOL",
+  "ANTI-FRAUD QA",
+  "DENSITY-FIRST",
+  "MYSTERY SHOPPING REIMAGINED",
+  "VERIFIED FIELD DATA",
+  "ACTIONABLE INSIGHTS",
+  "PRIVACY BY DESIGN",
+];
+
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, dir } = useTranslation();
+  const isRtl = dir === "rtl";
 
   const stats = [
     { value: "500+", label: t("stats.jabbers") },
@@ -15,6 +28,8 @@ export default function Hero() {
     { value: "10+", label: t("stats.cities") },
     { value: "98%", label: t("stats.accuracy") },
   ];
+
+  const marqueeContent = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
     <>
@@ -46,33 +61,42 @@ export default function Hero() {
                   {t("hero.webDashboard")} &rarr;
                 </a>
               </div>
-              <div className="hero-done__phone">
-                <Image
+              <div className={`hero-done__phone ${isRtl ? "hero-done__phone--rtl" : ""}`}>
+                <IPhoneFrame
                   src="/images/screen-home.jpg"
                   alt="JABB mystery shopping app"
-                  width={320}
-                  height={660}
-                  className="hero-done__phone-img floating"
                   priority
                 />
+                <div className="hero-done__phone-glow" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="bg-[var(--color-bg)] border-b border-[var(--color-border)]">
-        <div className="container mx-auto max-w-[1060px] px-8 py-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center justify-center gap-3 px-4">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">
-                  {stat.value}
-                </span>
-                <span className="text-sm text-[var(--color-text-muted)] font-medium">
-                  {stat.label}
-                </span>
-              </div>
+      {/* ── Combined Stats + Marquee Bar ── */}
+      <div className="hero-bar">
+        {/* Stats row */}
+        <div className="hero-bar__stats">
+          <div className="container mx-auto max-w-[1060px] px-6">
+            <div className="hero-bar__stats-grid">
+              {stats.map((stat) => (
+                <div key={stat.label} className="hero-bar__stat">
+                  <span className="hero-bar__stat-value">{stat.value}</span>
+                  <span className="hero-bar__stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Marquee row */}
+        <div className="hero-bar__marquee">
+          <div className="marquee-ticker__track">
+            {marqueeContent.map((item, i) => (
+              <span key={i} className="marquee-ticker__item">
+                <span className="marquee-ticker__dot" />
+                {item}
+              </span>
             ))}
           </div>
         </div>

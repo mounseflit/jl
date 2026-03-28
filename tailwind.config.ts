@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#4942F8",
-          light: "#6C66FF",
-          dark: "#3730DB",
+          DEFAULT: "#1d1597",
+          light: "#3028C0",
+          dark: "#140F6E",
           bg: "#EEEDFF",
           50: "#F5F5FF",
         },
@@ -22,10 +22,10 @@ const config: Config = {
           sand: "#F0EBE3",
         },
         ink: {
-          DEFAULT: "#1A1A2E",
-          light: "#555570",
-          muted: "#8E8EA0",
-          faint: "#C4C4D4",
+          DEFAULT: "#0F0F1A",
+          light: "#44445A",
+          muted: "#7A7A90",
+          faint: "#B8B8CC",
         },
       },
       fontFamily: {

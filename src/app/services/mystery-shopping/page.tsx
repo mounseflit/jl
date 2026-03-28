@@ -48,7 +48,7 @@ const features = [
   {
     title: "Structured Checklists",
     desc: "Custom evaluation forms tailored to your brand standards covering service, cleanliness, speed, and more.",
-    gradient: "from-[#6C66FF] to-[#9F7AEA]",
+    gradient: "from-[#3028C0] to-[#9F7AEA]",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
@@ -60,7 +60,7 @@ const features = [
   {
     title: "Photo Evidence",
     desc: "Shoppers capture timestamped photos as proof, giving you visual documentation of every visit.",
-    gradient: "from-[#38B2AC] to-[#4942F8]",
+    gradient: "from-[#38B2AC] to-[#1d1597]",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />

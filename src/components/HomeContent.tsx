@@ -1,36 +1,75 @@
 "use client";
 
 import Image from "next/image";
+import IPhoneFrame from "./IPhoneFrame";
 import { useTranslation } from "@/lib/I18nProvider";
 
-/* ── SVG Icons ── */
+/* ── SVG Icons — Each icon has a unique fill accent + stroke for depth ── */
 function MoneyIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /><path d="M12 18V6" /></svg>);
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" fill="var(--color-primary)" fillOpacity="0.08" />
+      <path d="M15 9.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5 10.343 12 12 12s3 1.12 3 2.5S13.657 17 12 17s-3-1.12-3-2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M12 5.5V7M12 17v1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
 }
 function CalendarIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></svg>);
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" fill="var(--color-primary)" fillOpacity="0.08" />
+      <path d="M3 10h18" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8 2v4M16 2v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="12" cy="16" r="1.5" fill="currentColor" />
+    </svg>
+  );
 }
 function CheckCircleIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>);
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" fill="var(--color-primary)" fillOpacity="0.08" />
+      <path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 function ChartIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" x2="18" y1="20" y2="10" /><line x1="12" x2="12" y1="20" y2="4" /><line x1="6" x2="6" y1="20" y2="14" /></svg>);
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.5" fill="var(--color-primary)" fillOpacity="0.08" />
+      <rect x="6" y="13" width="3" height="5" rx="0.5" fill="currentColor" opacity="0.6" />
+      <rect x="10.5" y="9" width="3" height="9" rx="0.5" fill="currentColor" opacity="0.8" />
+      <rect x="15" y="6" width="3" height="12" rx="0.5" fill="currentColor" />
+    </svg>
+  );
 }
 function MapPinIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>);
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.5" fill="var(--color-primary)" fillOpacity="0.08" />
+      <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.15" />
+    </svg>
+  );
 }
-function BrainSmallIcon() {
-  return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" /><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" /></svg>);
+function BrainIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2a4 4 0 0 0-4 4c0 .37.05.73.14 1.07A3.5 3.5 0 0 0 5 10.5c0 1.3.71 2.44 1.76 3.05A3.5 3.5 0 0 0 8.5 20H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="var(--color-primary)" fillOpacity="0.06" />
+      <path d="M12 2a4 4 0 0 1 4 4c0 .37-.05.73-.14 1.07A3.5 3.5 0 0 1 19 10.5c0 1.3-.71 2.44-1.76 3.05A3.5 3.5 0 0 1 15.5 20H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="var(--color-primary)" fillOpacity="0.06" />
+      <path d="M12 2v20" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.3" />
+      <circle cx="9.5" cy="10" r="1" fill="currentColor" />
+      <circle cx="14.5" cy="10" r="1" fill="currentColor" />
+    </svg>
+  );
 }
 
 /* Service definitions using ACTUAL i18n keys */
 const serviceKeys = [
-  { titleKey: "services.mysteryShopping.title", subtitleKey: "services.mysteryShopping.subtitle", descKey: "services.mysteryShopping.desc", ctaKey: "services.mysteryShopping.cta", href: "/services/mystery-shopping", image: "/images/screen-missions.jpg", gradient: "from-[#4942F8] to-[#6C66FF]", phone: true },
-  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-4.jpg", gradient: "from-[#6C66FF] to-[#9F7AEA]", phone: false },
-  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-business.jpg", gradient: "from-[#4942F8] to-[#38B2AC]", phone: false },
-  { titleKey: "services.dashboard.title", subtitleKey: "services.dashboard.subtitle", descKey: "services.dashboard.desc", ctaKey: "services.dashboard.cta", href: "/services/dashboard", image: "/images/screen-new-5.jpg", gradient: "from-[#38B2AC] to-[#4942F8]", phone: false },
-  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/ai-reports", image: "/images/screen-ai-report.jpg", gradient: "from-[#9F7AEA] to-[#4942F8]", phone: false },
-  { titleKey: "services.rewardSystem.title", subtitleKey: "services.rewardSystem.subtitle", descKey: "services.rewardSystem.desc", ctaKey: "services.rewardSystem.cta", href: "/services/rewards", image: "/images/screen-home.jpg", gradient: "from-[#4942F8] to-[#667eea]", phone: true },
+  { titleKey: "services.mysteryShopping.title", subtitleKey: "services.mysteryShopping.subtitle", descKey: "services.mysteryShopping.desc", ctaKey: "services.mysteryShopping.cta", href: "/services/mystery-shopping", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false },
+  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-4.jpg", gradient: "from-[#3028C0] to-[#8B6AE0]", phone: false, smallImage: false },
+  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-business.jpg", gradient: "from-[#1d1597] to-[#2DA39C]", phone: false, smallImage: false },
+  { titleKey: "services.dashboard.title", subtitleKey: "services.dashboard.subtitle", descKey: "services.dashboard.desc", ctaKey: "services.dashboard.cta", href: "/services/dashboard", image: "/images/screen-new-5.jpg", gradient: "from-[#2DA39C] to-[#1d1597]", phone: false, smallImage: false },
+  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/ai-reports", image: "/images/screen-ai-report.jpg", gradient: "from-[#8B6AE0] to-[#1d1597]", phone: false, smallImage: true },
+  { titleKey: "services.rewardSystem.title", subtitleKey: "services.rewardSystem.subtitle", descKey: "services.rewardSystem.desc", ctaKey: "services.rewardSystem.cta", href: "/services/rewards", image: "/images/screen-home.jpg", gradient: "from-[#1d1597] to-[#5566DD]", phone: true, smallImage: false },
 ] as const;
 
 export default function HomeContent() {
@@ -101,17 +140,11 @@ export default function HomeContent() {
                   </div>
                   <div className={`${!isEven ? "lg:order-1" : ""} flex justify-center`}>
                     {s.phone ? (
-                      <div className="relative w-[140px] sm:w-[180px] lg:w-[200px]">
-                        <div className="relative rounded-[2rem] border-[5px] border-gray-900 bg-gray-900 p-1 shadow-2xl shadow-black/20">
-                          <div className="absolute left-1/2 top-1.5 h-3.5 w-16 -translate-x-1/2 rounded-full bg-gray-900 z-10" />
-                          <div className="overflow-hidden rounded-[1.6rem]">
-                            <Image src={s.image} alt={t(s.titleKey)} width={200} height={433} className="w-full h-auto" />
-                          </div>
-                        </div>
-                        <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-[var(--color-primary)]/5 blur-2xl" />
+                      <div className={`service-phone-tilt ${!isEven ? "service-phone-tilt--left" : ""}`}>
+                        <IPhoneFrame src={s.image} alt={t(s.titleKey)} />
                       </div>
                     ) : (
-                      <div className="relative w-full max-w-[480px] rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)] hover:shadow-xl transition-shadow duration-300">
+                      <div className={`relative w-full ${s.smallImage ? "max-w-[340px]" : "max-w-[480px]"} rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)] hover:shadow-xl transition-shadow duration-300`}>
                         <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-[var(--color-border)]">
                           <span className="h-2 w-2 rounded-full bg-red-400/60" />
                           <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
@@ -171,7 +204,7 @@ export default function HomeContent() {
                 {([
                   { icon: <ChartIcon />, tKey: "whatYouGet.realTimeCX" },
                   { icon: <MapPinIcon />, tKey: "whatYouGet.gpsReports" },
-                  { icon: <BrainSmallIcon />, tKey: "whatYouGet.aiInsights" },
+                  { icon: <BrainIcon />, tKey: "whatYouGet.aiInsights" },
                 ] as const).map((b) => (
                   <div key={b.tKey} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[var(--color-bg)] flex items-center justify-center text-[var(--color-text)] shadow-sm">
