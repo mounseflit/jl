@@ -6,29 +6,31 @@ import MobileNav from "./MobileNav";
 import IPhoneFrame from "./IPhoneFrame";
 import { useTranslation } from "@/lib/I18nProvider";
 
-const MARQUEE_ITEMS = [
-  "COMMUNITY DRIVEN",
-  "REAL-TIME DASHBOARDS",
-  "GOLDEN PROOF PROTOCOL",
-  "ANTI-FRAUD QA",
-  "DENSITY-FIRST",
-  "MYSTERY SHOPPING REIMAGINED",
-  "VERIFIED FIELD DATA",
-  "ACTIONABLE INSIGHTS",
-  "PRIVACY BY DESIGN",
+type MarqueeEntry =
+  | { type: "text"; label: string }
+  | { type: "stat"; value: string; labelKey: string };
+
+const MARQUEE_ITEMS: MarqueeEntry[] = [
+  { type: "stat", value: "500+", labelKey: "stats.jabbers" },
+  { type: "text", label: "COMMUNITY DRIVEN" },
+  { type: "text", label: "REAL-TIME DASHBOARDS" },
+  { type: "stat", value: "50K+", labelKey: "stats.evaluations" },
+  { type: "text", label: "GOLDEN PROOF PROTOCOL" },
+  { type: "text", label: "ANTI-FRAUD QA" },
+  { type: "stat", value: "10+", labelKey: "stats.cities" },
+  { type: "text", label: "DENSITY-FIRST" },
+  { type: "text", label: "MYSTERY SHOPPING REIMAGINED" },
+  { type: "stat", value: "98%", labelKey: "stats.accuracy" },
+  { type: "text", label: "VERIFIED FIELD DATA" },
+  { type: "text", label: "ACTIONABLE INSIGHTS" },
+  { type: "text", label: "PRIVACY BY DESIGN" },
 ];
 
 export default function Hero() {
   const { t, dir } = useTranslation();
   const isRtl = dir === "rtl";
 
-  const stats = [
-    { value: "500+", label: t("stats.jabbers") },
-    { value: "50K+", label: t("stats.evaluations") },
-    { value: "10+", label: t("stats.cities") },
-    { value: "98%", label: t("stats.accuracy") },
-  ];
-
+  // Double the items for seamless looping
   const marqueeContent = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
@@ -74,30 +76,26 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* ── Combined Stats + Marquee Bar ── */}
+      {/* ── Unified Marquee Bar — stats + keywords in one ticker ── */}
       <div className="hero-bar">
-        {/* Stats row */}
-        <div className="hero-bar__stats">
-          <div className="container mx-auto max-w-[1060px] px-6">
-            <div className="hero-bar__stats-grid">
-              {stats.map((stat) => (
-                <div key={stat.label} className="hero-bar__stat">
-                  <span className="hero-bar__stat-value">{stat.value}</span>
-                  <span className="hero-bar__stat-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* Marquee row */}
         <div className="hero-bar__marquee">
           <div className="marquee-ticker__track">
-            {marqueeContent.map((item, i) => (
-              <span key={i} className="marquee-ticker__item">
-                <span className="marquee-ticker__dot" />
-                {item}
-              </span>
-            ))}
+            {marqueeContent.map((item, i) =>
+              item.type === "stat" ? (
+                <span key={i} className="marquee-ticker__item marquee-ticker__item--stat">
+                  <span className="marquee-ticker__dot" />
+                  <span className="marquee-ticker__stat-value">{item.value}</span>
+                  <span className="marquee-ticker__stat-label">
+                    {t(item.labelKey as Parameters<typeof t>[0])}
+                  </span>
+                </span>
+              ) : (
+                <span key={i} className="marquee-ticker__item">
+                  <span className="marquee-ticker__dot" />
+                  {item.label}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>

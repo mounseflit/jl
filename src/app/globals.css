@@ -495,7 +495,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
-   HERO BAR — Combined Stats + Marquee
+   HERO BAR — Unified Marquee with Stats + Keywords
    ═══════════════════════════════════════════════════════ */
 .hero-bar {
   position: relative;
@@ -505,64 +505,34 @@ body {
   transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
-/* Stats row */
-.hero-bar__stats {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--color-border);
+/* Marquee row */
+.hero-bar__marquee {
+  overflow: hidden;
+  padding: 0.7rem 0;
 }
 
-.hero-bar__stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-}
-
-.hero-bar__stat {
-  display: flex;
+/* Stat items inside marquee — bold number + label */
+.marquee-ticker__item--stat {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  gap: 0.35rem;
 }
 
-.hero-bar__stat-value {
-  font-size: 1.6rem;
+.marquee-ticker__stat-value {
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--color-primary);
   letter-spacing: -0.02em;
   line-height: 1;
 }
 
-.hero-bar__stat-label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  line-height: 1.2;
-}
-
-/* Marquee row */
-.hero-bar__marquee {
-  overflow: hidden;
-  padding: 0.55rem 0;
-}
-
-@media (max-width: 768px) {
-  .hero-bar__stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-  .hero-bar__stat-value {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-bar__stat-value {
-    font-size: 1.1rem;
-  }
-  .hero-bar__stat-label {
-    font-size: 0.65rem;
-  }
+.marquee-ticker__stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1;
 }
 
 /* Dark mode */
@@ -573,10 +543,6 @@ body {
   background-size: 20px 20px;
 }
 
-.dark .hero-bar__stats {
-  border-bottom-color: var(--color-border);
-}
-
 .dark .marquee-ticker__item {
   color: var(--color-text-muted);
 }
@@ -584,6 +550,14 @@ body {
 .dark .marquee-ticker__dot {
   background: var(--color-primary);
   opacity: 0.6;
+}
+
+.dark .marquee-ticker__stat-value {
+  color: var(--color-primary-light);
+}
+
+.dark .marquee-ticker__stat-label {
+  color: var(--color-text-light);
 }
 
 /* ═══════════════════════════════════════════════════════
