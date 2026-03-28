@@ -30,7 +30,7 @@ export default function Hero() {
 
         {/* Content — sits above the ::before bg */}
         <div className="hero-done__content">
-          <div className="container mx-auto max-w-[1260px] px-6 lg:px-8">
+          <div className="container mx-auto max-w-[1060px] px-6 lg:px-8">
             <div className="hero-done__grid">
               {/* TEXT SIDE */}
               <div className="hero-done__text">
@@ -84,10 +84,10 @@ export default function Hero() {
 
       {/* ── Stats bar ── */}
       <div className="bg-white border-b border-gray-100">
-        <div className="container mx-auto max-w-[1260px] px-8 py-6">
-          <div className="flex flex-wrap justify-center lg:justify-between gap-6 lg:gap-4">
+        <div className="container mx-auto max-w-[1060px] px-8 py-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3 px-4">
+              <div key={stat.label} className="flex items-center justify-center gap-3 px-4">
                 <span className="text-2xl sm:text-3xl font-extrabold text-[#4942F8]">
                   {stat.value}
                 </span>

@@ -70,7 +70,7 @@ export default function MobileNav() {
                 viewBox="0 0 24 19"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"

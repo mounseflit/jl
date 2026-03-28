@@ -194,7 +194,7 @@ export default function Home() {
             const bgClass = isEven ? "bg-white" : "bg-gray-50";
 
             return (
-              <div key={s.tag} className={`py-12 md:py-16 ${bgClass}`}>
+              <div key={s.tag} className={`py-8 md:py-12 ${bgClass}`}>
                 <div className="container mx-auto max-w-[1060px] px-6">
                   <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center ${!isEven ? "direction-rtl" : ""}`}>
                     {/* Text side */}
@@ -227,7 +227,7 @@ export default function Home() {
                     <div className={`${!isEven ? "lg:order-1" : ""} flex justify-center`}>
                       {s.phone ? (
                         /* iPhone frame for mobile screenshots */
-                        <div className="relative w-[180px] sm:w-[200px]">
+                        <div className="relative w-[140px] sm:w-[180px] lg:w-[200px]">
                           <div className="relative rounded-[2rem] border-[5px] border-gray-900 bg-gray-900 p-1 shadow-2xl shadow-black/20">
                             {/* Notch */}
                             <div className="absolute left-1/2 top-1.5 h-3.5 w-16 -translate-x-1/2 rounded-full bg-gray-900 z-10" />
@@ -329,6 +329,34 @@ export default function Home() {
 
         <Partners />
         <FAQ />
+
+        {/* ── Final CTA ── */}
+        <section className="cta-banner">
+          <div className="cta-banner__bg" />
+          <div className="container mx-auto max-w-[900px] px-6 relative z-10">
+            <div className="cta-banner__card">
+              <div className="cta-banner__dots cta-banner__dots--tl" />
+              <div className="cta-banner__dots cta-banner__dots--br" />
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-3 leading-tight">
+                Ready to transform your customer experience?
+              </h2>
+              <p className="text-white/60 mb-8 max-w-[440px] mx-auto text-xs sm:text-sm leading-relaxed">
+                Join 500+ JABBers and businesses already using JABB to deliver
+                GPS-verified CX intelligence across Morocco.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="/go" className="cta-store-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                  <span className="text-sm font-bold">Download App</span>
+                </a>
+                <a href="/partner" className="cta-store-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" x2="19" y1="8" y2="14" /><line x1="22" x2="16" y1="11" y2="11" /></svg>
+                  <span className="text-sm font-bold">Partner With Us</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
