@@ -2172,12 +2172,9 @@ h5 {
   --dot-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1' fill='%235B54FF' opacity='0.08'/%3E%3C/svg%3E");
 }
 
-/* Hero dark mode — deep diagonal, keeps the signature shape */
+/* Hero dark mode — single smooth gradient across the diagonal shape */
 .dark .hero-done::before {
-  background-color: #0C0A28;
-  background-image:
-    radial-gradient(ellipse at 30% 20%, rgba(91, 84, 255, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(91, 84, 255, 0.08) 0%, transparent 50%);
+  background: linear-gradient(135deg, #0E0B30 0%, #12103A 25%, #0C0A28 50%, #0A0820 75%, #080618 100%);
 }
 
 /* Hero phone glow — purple aura in dark mode */
