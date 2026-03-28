@@ -2268,10 +2268,22 @@ h5 {
   background-size: 20px 20px;
 }
 
-/* Hero done section — enhance the diagonal bg with dots */
+/* Hero done section — deep moody dark mode diagonal */
 .dark .hero-done::before {
-  background-image: var(--dot-pattern), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cdefs%3E%3Cpattern id='s' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0 L32 28 L60 30 L32 32 L30 60 L28 32 L0 30 L28 28Z' fill='white' opacity='0.04'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E");
-  background-size: 20px 20px, 400px 400px;
+  background-color: #0C0A28;
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(91, 84, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(91, 84, 255, 0.08) 0%, transparent 50%),
+    var(--dot-pattern),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cdefs%3E%3Cpattern id='s' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0 L32 28 L60 30 L32 32 L30 60 L28 32 L0 30 L28 28Z' fill='white' opacity='0.03'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%, 20px 20px, 400px 400px;
+  border-color: rgba(91, 84, 255, 0.08);
+}
+
+/* Hero phone glow — purple aura in dark mode */
+.dark .hero-done__phone-glow {
+  background: radial-gradient(ellipse at center, rgba(91, 84, 255, 0.18) 0%, transparent 70%);
+  filter: blur(30px);
 }
 
 /* Footer dot pattern — use dark variant since footer bg is always dark */
