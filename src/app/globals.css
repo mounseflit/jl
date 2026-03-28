@@ -1545,6 +1545,16 @@ h5 {
   gap: 0.75rem;
 }
 
+/* Hamburger + brand start white over hero */
+.site-header__open-menu {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.3s ease;
+}
+
 /* Scrolled header */
 .site-header--scrolled {
   background: rgba(255,255,255,0.92);
