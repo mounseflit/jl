@@ -842,15 +842,18 @@ body {
   }
 }
 
-/* ── Mobile: stack vertically ── */
+/* ── Mobile: stack vertically, bar crosses behind phone ── */
 @media (max-width: 992px) {
   .hero-done {
     min-height: auto;
     padding-bottom: 0;
+    /* Allow phone to extend past hero edge on mobile */
+    overflow: visible;
   }
+  /* Clip the diagonal bg itself so it doesn't leak */
   .hero-done::before {
     transform: rotate(0deg);
-    border-radius: 0 0 2rem 0;
+    border-radius: 0;
     max-height: none;
     height: 100%;
     top: 0;
@@ -869,16 +872,27 @@ body {
     padding: 1rem 0 2rem;
     gap: 1.25rem;
   }
+  /* Phone extends past hero bottom, sits above the bar */
   .hero-done__phone {
     flex: none;
     width: 100%;
-    /* Less aggressive tilt on mobile */
+    position: relative;
+    z-index: 10;
+    margin-bottom: -12rem;
     transform: perspective(900px) rotateY(-5deg) rotateX(1deg) rotateZ(1.5deg);
   }
   .hero-done__phone--rtl {
     transform: perspective(900px) rotateY(5deg) rotateX(1deg) rotateZ(-1.5deg);
   }
   .iphone-frame { --iphone-width: 190px; }
+  /* Bar crosses behind the phone */
+  .hero-bar {
+    position: relative;
+    z-index: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 5rem;
+  }
 }
 
 @media (max-width: 480px) {
