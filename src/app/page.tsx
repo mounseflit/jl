@@ -83,6 +83,7 @@ const services = [
     href: "/services/mystery-shopping",
     image: "/images/screen-missions.jpg",
     gradient: "from-[#4942F8] to-[#6C66FF]",
+    phone: true,
   },
   {
     tag: "CX Audits",
@@ -92,6 +93,7 @@ const services = [
     href: "/services/cx-audits",
     image: "/images/screen-new-4.jpg",
     gradient: "from-[#6C66FF] to-[#9F7AEA]",
+    phone: false,
   },
   {
     tag: "Voice of Customer",
@@ -101,6 +103,7 @@ const services = [
     href: "/services/voice-of-customer",
     image: "/images/screen-business.jpg",
     gradient: "from-[#4942F8] to-[#38B2AC]",
+    phone: false,
   },
   {
     tag: "Business Dashboard",
@@ -110,6 +113,7 @@ const services = [
     href: "/services/dashboard",
     image: "/images/screen-new-5.jpg",
     gradient: "from-[#38B2AC] to-[#4942F8]",
+    phone: false,
   },
   {
     tag: "AI Reports",
@@ -119,6 +123,7 @@ const services = [
     href: "/services/ai-reports",
     image: "/images/screen-ai-report.jpg",
     gradient: "from-[#9F7AEA] to-[#4942F8]",
+    phone: false,
   },
   {
     tag: "Reward System",
@@ -128,6 +133,7 @@ const services = [
     href: "/services/rewards",
     image: "/images/screen-home.jpg",
     gradient: "from-[#4942F8] to-[#667eea]",
+    phone: true,
   },
 ];
 
@@ -218,16 +224,45 @@ export default function Home() {
                     </div>
 
                     {/* Image side */}
-                    <div className={`${!isEven ? "lg:order-1" : ""}`}>
-                      <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                        <Image
-                          src={s.image}
-                          alt={`${s.tag} — JABB platform`}
-                          width={560}
-                          height={380}
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
+                    <div className={`${!isEven ? "lg:order-1" : ""} flex justify-center`}>
+                      {s.phone ? (
+                        /* iPhone frame for mobile screenshots */
+                        <div className="relative w-[180px] sm:w-[200px]">
+                          <div className="relative rounded-[2rem] border-[5px] border-gray-900 bg-gray-900 p-1 shadow-2xl shadow-black/20">
+                            {/* Notch */}
+                            <div className="absolute left-1/2 top-1.5 h-3.5 w-16 -translate-x-1/2 rounded-full bg-gray-900 z-10" />
+                            <div className="overflow-hidden rounded-[1.6rem]">
+                              <Image
+                                src={s.image}
+                                alt={`${s.tag} — JABB app`}
+                                width={200}
+                                height={433}
+                                className="w-full h-auto"
+                              />
+                            </div>
+                          </div>
+                          {/* Subtle glow behind phone */}
+                          <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-[#4942F8]/5 blur-2xl" />
+                        </div>
+                      ) : (
+                        /* Browser frame for dashboard screenshots */
+                        <div className="relative w-full max-w-[480px] rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                          {/* Browser dots */}
+                          <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-gray-100">
+                            <span className="h-2 w-2 rounded-full bg-red-400/60" />
+                            <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
+                            <span className="h-2 w-2 rounded-full bg-green-400/60" />
+                            <span className="ml-2 text-[9px] text-gray-400 truncate">app.jabb.pro</span>
+                          </div>
+                          <Image
+                            src={s.image}
+                            alt={`${s.tag} — JABB platform`}
+                            width={560}
+                            height={380}
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
