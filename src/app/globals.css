@@ -2172,19 +2172,45 @@ h5 {
   --dot-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1' fill='%235B54FF' opacity='0.08'/%3E%3C/svg%3E");
 }
 
-/* Hero done section — deep moody dark mode diagonal */
+/* Hero dark mode — full immersive gradient, no diagonal crop */
 .dark .hero-done::before {
-  background-color: #0C0A28;
+  /* Remove the diagonal — fill the entire section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  border-radius: 0;
+  transform: none;
+  /* Rich multi-stop gradient */
+  background-color: #06051A;
   background-image:
-    radial-gradient(ellipse at 30% 20%, rgba(91, 84, 255, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(91, 84, 255, 0.08) 0%, transparent 50%);
-  border-color: rgba(91, 84, 255, 0.08);
+    radial-gradient(ellipse 80% 60% at 25% 15%, rgba(91, 84, 255, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 75% 60%, rgba(91, 84, 255, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 50% 90%, rgba(29, 21, 151, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, #0A0926 0%, #06051A 50%, #090820 100%);
 }
 
 /* Hero phone glow — purple aura in dark mode */
 .dark .hero-done__phone-glow {
-  background: radial-gradient(ellipse at center, rgba(91, 84, 255, 0.18) 0%, transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(ellipse at center, rgba(91, 84, 255, 0.22) 0%, transparent 70%);
+  filter: blur(35px);
+}
+
+/* ── Selective dot texture — only on orbit + footer ── */
+.dark .orbit-section {
+  background-image: var(--dot-pattern);
+  background-size: 24px 24px;
+}
+
+.dark .site-footer {
+  background-image: var(--dot-pattern);
+  background-size: 24px 24px;
+}
+
+.dark .faqs {
+  background-image: var(--dot-pattern);
+  background-size: 24px 24px;
 }
 
 /* Footer — clean, no dot texture */
