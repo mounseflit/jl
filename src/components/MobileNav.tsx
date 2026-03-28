@@ -42,8 +42,13 @@ export default function MobileNav() {
               </a>
             </div>
 
-            {/* RIGHT: CTA buttons + language + theme (desktop) */}
+            {/* RIGHT: Section links + CTA buttons + language + theme (desktop) */}
             <div className="site-header__nav__list">
+              {navItems.map((item) => (
+                <a key={item.href} href={item.href} className="site-header__nav-link">
+                  {item.label}
+                </a>
+              ))}
               <a href="/go" className="button button--transparent">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="8" r="4" />

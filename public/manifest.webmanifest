@@ -1,0 +1,15 @@
+{
+  "name": "JABB — Voice of Customer Platform",
+  "short_name": "JABB",
+  "description": "Morocco's first citizen-powered Voice of Customer platform. Share reviews, earn rewards.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0A28",
+  "theme_color": "#5B54FF",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "lang": "en",
+  "categories": ["business", "lifestyle"]
+}

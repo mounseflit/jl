@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata, organizationJsonLd, softwareAppJsonLd } from "@/lib/seo";
+import { buildMetadata, organizationJsonLd, softwareAppJsonLd, localBusinessJsonLd } from "@/lib/seo";
 import { themeInitScript } from "@/lib/ThemeProvider";
 import { Providers } from "./providers";
 import "./globals.css";
@@ -27,6 +27,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(softwareAppJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd()),
           }}
         />
       </head>

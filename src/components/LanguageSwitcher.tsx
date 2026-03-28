@@ -4,10 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/I18nProvider";
 import type { Locale } from "@/lib/i18n";
 
-const LOCALE_META: Record<Locale, { flag: string; labelKey: "common.english" | "common.french" | "common.arabic" }> = {
-  en: { flag: "EN", labelKey: "common.english" },
-  fr: { flag: "FR", labelKey: "common.french" },
-  ar: { flag: "AR", labelKey: "common.arabic" },
+const LOCALE_META: Record<Locale, { labelKey: "common.english" | "common.french" | "common.arabic" }> = {
+  en: { labelKey: "common.english" },
+  fr: { labelKey: "common.french" },
+  ar: { labelKey: "common.arabic" },
 };
 
 const LOCALE_ORDER: Locale[] = ["en", "fr", "ar"];
@@ -43,16 +43,12 @@ export default function LanguageSwitcher() {
           gap: "0.4rem",
           padding: "0.4rem 0.75rem",
           borderRadius: "0.5rem",
-          border: "1px solid rgba(255,255,255,0.25)",
-          background: "rgba(255,255,255,0.08)",
-          color: "white",
           cursor: "pointer",
           fontSize: "0.85rem",
           fontWeight: 500,
           transition: "all 0.3s",
         }}
       >
-        <span>{current.flag}</span>
         <span>{t(current.labelKey)}</span>
         <svg
           width="12"
@@ -117,7 +113,6 @@ export default function LanguageSwitcher() {
                   if (!isActive) (e.target as HTMLElement).style.background = "transparent";
                 }}
               >
-                <span>{meta.flag}</span>
                 <span>{t(meta.labelKey)}</span>
               </button>
             );

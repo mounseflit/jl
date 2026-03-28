@@ -82,7 +82,7 @@ export default function FAQ() {
 
           <h3 className="text-center">{t("faq.anotherQuestion")}</h3>
           <div className="m-x-auto">
-            <a href="#contact" className="button">{t("faq.title")}</a>
+            <a href="/contact" className="button">{t("nav.contact")}</a>
           </div>
         </div>
       </div>
