@@ -846,7 +846,7 @@ body {
 @media (max-width: 992px) {
   .hero-done {
     min-height: auto;
-    padding-bottom: 0;
+    padding-bottom: 10rem;
     /* Allow phone to extend past hero edge on mobile */
     overflow: visible;
   }
