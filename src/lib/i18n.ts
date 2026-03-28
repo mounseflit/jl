@@ -195,6 +195,11 @@ export const translations = {
     "footer.cookiePolicy": "Cookie Policy",
     "footer.allRightsReserved": "All rights reserved JABB",
 
+    // ── Orbit ──
+    "orbit.badge": "Omnichannel",
+    "orbit.title": "Every touchpoint, one platform",
+    "orbit.subtitle": "JABB captures customer experience data across all channels — web, mobile, in-store, and beyond.",
+
     // ── Common ──
     "common.english": "English",
     "common.french": "Fran\u00E7ais",
@@ -392,6 +397,11 @@ export const translations = {
     "footer.cookiePolicy": "Politique de cookies",
     "footer.allRightsReserved": "Tous droits r\u00E9serv\u00E9s JABB",
 
+    // ── Orbit ──
+    "orbit.badge": "Omnicanal",
+    "orbit.title": "Chaque point de contact, une plateforme",
+    "orbit.subtitle": "JABB capture les donn\u00E9es d\u2019exp\u00E9rience client sur tous les canaux \u2014 web, mobile, en magasin et au-del\u00E0.",
+
     // ── Common ──
     "common.english": "English",
     "common.french": "Fran\u00E7ais",
@@ -584,6 +594,11 @@ export const translations = {
     "footer.privacyPolicy": "\u0633\u064A\u0627\u0633\u0629 \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629",
     "footer.cookiePolicy": "\u0633\u064A\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062A \u062A\u0639\u0631\u064A\u0641 \u0627\u0644\u0627\u0631\u062A\u0628\u0627\u0637",
     "footer.allRightsReserved": "\u062C\u0645\u064A\u0639 \u0627\u0644\u062D\u0642\u0648\u0642 \u0645\u062D\u0641\u0648\u0638\u0629 JABB",
+
+    // ── Orbit ──
+    "orbit.badge": "\u0645\u062A\u0639\u062F\u062F \u0627\u0644\u0642\u0646\u0648\u0627\u062A",
+    "orbit.title": "\u0643\u0644 \u0646\u0642\u0637\u0629 \u0627\u062A\u0635\u0627\u0644\u060C \u0645\u0646\u0635\u0629 \u0648\u0627\u062D\u062F\u0629",
+    "orbit.subtitle": "JABB \u064A\u0644\u062A\u0642\u0637 \u0628\u064A\u0627\u0646\u0627\u062A \u062A\u062C\u0631\u0628\u0629 \u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0639\u0628\u0631 \u062C\u0645\u064A\u0639 \u0627\u0644\u0642\u0646\u0648\u0627\u062A \u2014 \u0627\u0644\u0648\u064A\u0628\u060C \u0627\u0644\u0647\u0627\u062A\u0641\u060C \u0627\u0644\u0645\u062A\u062C\u0631\u060C \u0648\u0623\u0643\u062B\u0631.",
 
     // ── Common ──
     "common.english": "English",
