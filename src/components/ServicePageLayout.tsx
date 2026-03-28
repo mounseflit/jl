@@ -1,6 +1,5 @@
 import MobileNav from "./MobileNav";
 import Footer from "./Footer";
-import StoreButtons from "./StoreButtons";
 import { LINKS } from "@/lib/constants";
 import Image from "next/image";
 
