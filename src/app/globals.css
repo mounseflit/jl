@@ -368,8 +368,6 @@ body {
   background: var(--color-bg);
   border-top-color: var(--color-border);
   border-bottom-color: var(--color-border);
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
 }
 
 .dark .orbit-section__badge {
@@ -539,8 +537,6 @@ body {
 .dark .hero-bar {
   background: var(--color-bg);
   border-bottom-color: var(--color-border);
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
 }
 
 .dark .marquee-ticker__item {
@@ -2170,76 +2166,10 @@ h5 {
 }
 
 /* ═══════════════════════════════════════════════════════
-   DOT PATTERN TEXTURE — used across all dark surfaces
+   DOT PATTERN TEXTURE — used sparingly for atmosphere
    ═══════════════════════════════════════════════════════ */
 :root {
-  --dot-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1.2' fill='%235B54FF' opacity='0.14'/%3E%3C/svg%3E");
-  --dot-pattern-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1.2' fill='%231d1597' opacity='0.05'/%3E%3C/svg%3E");
-}
-
-/* Light mode — subtle dot texture on cards and sections */
-.dot-texture {
-  background-image: var(--dot-pattern-light);
-  background-size: 20px 20px;
-}
-
-/* Light mode bg-gray-50 sections get subtle texture */
-.bg-gray-50 {
-  background-image: var(--dot-pattern-light);
-  background-size: 20px 20px;
-}
-
-/* Dark mode — dot texture is more visible */
-.dark .dot-texture,
-.dark .service-card,
-.dark .partner-box,
-.dark .accordion__item,
-.dark .cta-banner__card {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* Apply to dark mode sections */
-.dark .bg-gray-50,
-.dark .bg-\[var\(--color-bg\)\] {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* Stats bar in dark mode */
-.dark .bg-\[var\(--color-bg\)\].border-b {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* How It Works section */
-.dark section.py-14 {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* What You Get cards */
-.dark .bg-\[var\(--color-primary-bg\)\] {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* Partners section boxes */
-.dark .partners .skewed {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* FAQ section */
-.dark .faqs {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
-
-/* Footer */
-.dark .site-footer {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
+  --dot-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1' fill='%235B54FF' opacity='0.08'/%3E%3C/svg%3E");
 }
 
 /* Hero done section — deep moody dark mode diagonal */
@@ -2247,10 +2177,7 @@ h5 {
   background-color: #0C0A28;
   background-image:
     radial-gradient(ellipse at 30% 20%, rgba(91, 84, 255, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(91, 84, 255, 0.08) 0%, transparent 50%),
-    var(--dot-pattern),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cdefs%3E%3Cpattern id='s' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0 L32 28 L60 30 L32 32 L30 60 L28 32 L0 30 L28 28Z' fill='white' opacity='0.03'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E");
-  background-size: 100% 100%, 100% 100%, 20px 20px, 400px 400px;
+    radial-gradient(ellipse at 70% 80%, rgba(91, 84, 255, 0.08) 0%, transparent 50%);
   border-color: rgba(91, 84, 255, 0.08);
 }
 
@@ -2260,11 +2187,7 @@ h5 {
   filter: blur(30px);
 }
 
-/* Footer dot pattern — use dark variant since footer bg is always dark */
-.site-footer {
-  background-image: var(--dot-pattern);
-  background-size: 20px 20px;
-}
+/* Footer — clean, no dot texture */
 
 /* Footer top glow transition */
 .site-footer::before {
