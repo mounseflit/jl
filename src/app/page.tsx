@@ -1,11 +1,10 @@
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Cities from "@/components/Cities";
 import Partners from "@/components/Partners";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
-/* ── SVG Icons for "What You Get" section ── */
+/* ── SVG Icons ── */
 
 function MoneyIcon() {
   return (
@@ -66,31 +65,73 @@ function BrainSmallIcon() {
   );
 }
 
-/* ── How It Works data ── */
+/* ── How It Works ── */
 const steps = [
+  { num: "01", title: "Download the App", desc: "Get JABB from the App Store or Google Play and create your free account in under two minutes." },
+  { num: "02", title: "Accept a Mission", desc: "Browse available mystery shopping missions near you and choose the ones that fit your schedule." },
+  { num: "03", title: "Evaluate & Submit", desc: "Visit the location, complete the GPS-verified checklist, and submit your evaluation with photos." },
+  { num: "04", title: "Get Paid", desc: "Once your report is validated, earnings go to your JABB wallet. Cash out anytime." },
+];
+
+/* ── Services data for individual sections ── */
+const services = [
   {
-    num: "01",
-    title: "Download the App",
-    desc: "Get JABB from the App Store or Google Play and create your free account in under two minutes.",
+    tag: "Mystery Shopping",
+    title: "See your business through your customer\u2019s eyes",
+    desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
+    cta: "Start Evaluating",
+    href: "/services/mystery-shopping",
+    image: "/images/screen-missions.jpg",
+    gradient: "from-[#4942F8] to-[#6C66FF]",
   },
   {
-    num: "02",
-    title: "Accept a Mission",
-    desc: "Browse available mystery shopping missions near you and choose the ones that fit your schedule.",
+    tag: "CX Audits",
+    title: "360\u00b0 view of your entire customer journey",
+    desc: "Comprehensive audits from first impression to final checkout. Identify gaps, benchmark against competitors, and improve satisfaction scores.",
+    cta: "Request an Audit",
+    href: "/services/cx-audits",
+    image: "/images/screen-new-4.jpg",
+    gradient: "from-[#6C66FF] to-[#9F7AEA]",
   },
   {
-    num: "03",
-    title: "Evaluate & Submit",
-    desc: "Visit the location, complete the GPS-verified checklist, and submit your evaluation with photos.",
+    tag: "Voice of Customer",
+    title: "Hear what the silent majority really thinks",
+    desc: "Capture authentic customer feedback through in-person interviews, post-visit surveys, and AI sentiment analysis. Go beyond online reviews.",
+    cta: "Capture Feedback",
+    href: "/services/voice-of-customer",
+    image: "/images/screen-business.jpg",
+    gradient: "from-[#4942F8] to-[#38B2AC]",
   },
   {
-    num: "04",
-    title: "Get Paid",
-    desc: "Once your report is validated, earnings go to your JABB wallet. Cash out anytime.",
+    tag: "Business Dashboard",
+    title: "Your CX command center, always on",
+    desc: "Track KPIs, monitor trends, and visualize performance data in real time. One dashboard for all your CX intelligence needs.",
+    cta: "View Dashboard",
+    href: "/services/dashboard",
+    image: "/images/screen-new-5.jpg",
+    gradient: "from-[#38B2AC] to-[#4942F8]",
+  },
+  {
+    tag: "AI Reports",
+    title: "From scattered data to strategic clarity",
+    desc: "Leverage artificial intelligence to transform raw field data into strategic recommendations. Faster analysis, smarter decisions.",
+    cta: "Generate Report",
+    href: "/services/ai-reports",
+    image: "/images/screen-ai-report.jpg",
+    gradient: "from-[#9F7AEA] to-[#4942F8]",
+  },
+  {
+    tag: "Reward System",
+    title: "Get paid for sharing honest experiences",
+    desc: "Complete missions, earn JABB coins, level up through tiers, and cash out instantly. The more you evaluate, the more you earn.",
+    cta: "Earn Rewards",
+    href: "/services/rewards",
+    image: "/images/screen-home.jpg",
+    gradient: "from-[#4942F8] to-[#667eea]",
   },
 ];
 
-/* ── What You Get data ── */
+/* ── What You Get ── */
 const jabberBenefits = [
   { icon: <MoneyIcon />, title: "Earn Money", desc: "Get paid for every validated mission you complete." },
   { icon: <CalendarIcon />, title: "Flexible Schedule", desc: "Work when you want, where you want. No fixed hours." },
@@ -110,32 +151,27 @@ export default function Home() {
         <Hero />
 
         {/* ── How It Works ── */}
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="container mx-auto max-w-[1260px] px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="!text-[#4942F8] text-sm font-bold uppercase tracking-widest mb-3">
+        <section className="py-14 md:py-20 bg-gray-50">
+          <div className="container mx-auto max-w-[1060px] px-6">
+            <div className="text-center mb-10 md:mb-14">
+              <span className="text-[#4942F8] text-xs font-bold uppercase tracking-widest mb-2 block">
                 How It Works
-              </h3>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+              </span>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight">
                 Start earning in 4 simple steps
               </h2>
             </div>
 
             <div className="relative">
-              {/* Connecting line (desktop only) */}
-              <div className="hidden lg:block absolute top-10 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-0.5 bg-[#EEEDFF]" />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+              <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-[#EEEDFF]" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
                 {steps.map((step) => (
                   <div key={step.num} className="relative flex flex-col items-center text-center">
-                    {/* Number circle */}
-                    <div className="relative z-10 w-12 h-12 rounded-full bg-[#4942F8] text-white flex items-center justify-center font-bold text-sm mb-5 shadow-lg shadow-[#4942F8]/20">
+                    <div className="relative z-10 w-10 h-10 rounded-full bg-[#4942F8] text-white flex items-center justify-center font-bold text-xs mb-4 shadow-lg shadow-[#4942F8]/20">
                       {step.num}
                     </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed max-w-[260px]">
-                      {step.desc}
-                    </p>
+                    <h4 className="text-sm font-bold text-gray-900 mb-1.5">{step.title}</h4>
+                    <p className="text-xs text-gray-500 leading-relaxed max-w-[220px]">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -143,35 +179,90 @@ export default function Home() {
           </div>
         </section>
 
-        <Services />
+        {/* ══════════════════════════════════════════════════════
+           SERVICES — 6 alternating left/right mini-sections
+           ══════════════════════════════════════════════════════ */}
+        <section id="section-services">
+          {services.map((s, i) => {
+            const isEven = i % 2 === 0;
+            const bgClass = isEven ? "bg-white" : "bg-gray-50";
+
+            return (
+              <div key={s.tag} className={`py-12 md:py-16 ${bgClass}`}>
+                <div className="container mx-auto max-w-[1060px] px-6">
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center ${!isEven ? "direction-rtl" : ""}`}>
+                    {/* Text side */}
+                    <div className={`${!isEven ? "lg:order-2" : ""}`}>
+                      <span className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white bg-gradient-to-r ${s.gradient} mb-3`}>
+                        {s.tag}
+                      </span>
+                      <h3 className="!text-xl sm:!text-2xl font-extrabold text-gray-900 leading-snug !mb-3">
+                        {s.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 leading-relaxed mb-5 max-w-[440px]">
+                        {s.desc}
+                      </p>
+                      <a
+                        href={s.href}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4942F8] hover:text-[#3730DB] transition-colors group"
+                      >
+                        {s.cta}
+                        <svg
+                          width="16" height="16" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                          className="transition-transform group-hover:translate-x-1"
+                        >
+                          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+
+                    {/* Image side */}
+                    <div className={`${!isEven ? "lg:order-1" : ""}`}>
+                      <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <Image
+                          src={s.image}
+                          alt={`${s.tag} — JABB platform`}
+                          width={560}
+                          height={380}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </section>
 
         {/* ── What You Get ── */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto max-w-[1260px] px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="!text-[#4942F8] text-sm font-bold uppercase tracking-widest mb-3">
+        <section className="py-14 md:py-20">
+          <div className="container mx-auto max-w-[1060px] px-6">
+            <div className="text-center mb-10 md:mb-14">
+              <span className="text-[#4942F8] text-xs font-bold uppercase tracking-widest mb-2 block">
                 What You Get
-              </h3>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+              </span>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight">
                 Benefits for everyone
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
               {/* For JABBers */}
-              <div className="bg-[#F5F5FF] rounded-2xl p-8 md:p-10">
-                <div className="inline-flex items-center gap-2 bg-[#4942F8] text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+              <div className="bg-[#F5F5FF] rounded-xl p-6 md:p-8">
+                <div className="inline-flex items-center gap-2 bg-[#4942F8] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-5">
                   For JABBers
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   {jabberBenefits.map((b) => (
-                    <div key={b.title} className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#4942F8] shadow-sm">
+                    <div key={b.title} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#4942F8] shadow-sm">
                         {b.icon}
                       </div>
                       <div>
-                        <h4 className="text-base font-bold text-gray-900 mb-1">{b.title}</h4>
-                        <p className="text-sm text-gray-500 leading-relaxed">{b.desc}</p>
+                        <h4 className="!text-sm font-bold text-gray-900 !mb-0.5">{b.title}</h4>
+                        <p className="text-xs text-gray-500 leading-relaxed">{b.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -179,19 +270,19 @@ export default function Home() {
               </div>
 
               {/* For Businesses */}
-              <div className="bg-gray-50 rounded-2xl p-8 md:p-10">
-                <div className="inline-flex items-center gap-2 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+              <div className="bg-gray-50 rounded-xl p-6 md:p-8">
+                <div className="inline-flex items-center gap-2 bg-gray-900 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-5">
                   For Businesses
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   {businessBenefits.map((b) => (
-                    <div key={b.title} className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white flex items-center justify-center text-gray-900 shadow-sm">
+                    <div key={b.title} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-white flex items-center justify-center text-gray-900 shadow-sm">
                         {b.icon}
                       </div>
                       <div>
-                        <h4 className="text-base font-bold text-gray-900 mb-1">{b.title}</h4>
-                        <p className="text-sm text-gray-500 leading-relaxed">{b.desc}</p>
+                        <h4 className="!text-sm font-bold text-gray-900 !mb-0.5">{b.title}</h4>
+                        <p className="text-xs text-gray-500 leading-relaxed">{b.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -201,7 +292,6 @@ export default function Home() {
           </div>
         </section>
 
-        <Cities />
         <Partners />
         <FAQ />
       </main>
