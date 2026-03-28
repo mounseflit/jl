@@ -57,7 +57,6 @@ const ORBIT_ITEMS = [
 
 export default function OrbitVisual() {
   const { t } = useTranslation();
-  const count = ORBIT_ITEMS.length;
 
   return (
     <section className="orbit-section">
@@ -69,49 +68,32 @@ export default function OrbitVisual() {
       </div>
 
       <div className="orbit-section__inner">
-        {/* Orbit ring decorations */}
-        <div className="orbit-ring orbit-ring--1" />
-        <div className="orbit-ring orbit-ring--2" />
-        <div className="orbit-ring orbit-ring--3" />
+        {/* Elliptical ring guides (decorative) */}
+        <div className="orbit-ellipse orbit-ellipse--1" />
+        <div className="orbit-ellipse orbit-ellipse--2" />
 
-        {/* 3D rotating scene */}
+        {/* Orbit scene — each pill traces an ellipse via animation-delay */}
         <div className="orbit-scene">
-          <div className="orbit-track">
-            {ORBIT_ITEMS.map((item, i) => {
-              const angle = (360 / count) * i;
-              return (
-                <div
-                  key={item.label}
-                  className="orbit-item"
-                  style={{
-                    transform: `rotateY(${angle}deg) translateZ(var(--orbit-radius)) rotateY(-${angle}deg)`,
-                  }}
-                >
-                  <div className="orbit-pill">
-                    <span className="orbit-pill__icon">{item.icon}</span>
-                    <span className="orbit-pill__label">{item.label}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {ORBIT_ITEMS.map((item) => (
+            <div key={item.label} className="orbit-item">
+              <div className="orbit-pill">
+                <span className="orbit-pill__icon">{item.icon}</span>
+                <span className="orbit-pill__label">{item.label}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Center globe/orb */}
+        {/* Center globe/orb — sits above the ring */}
         <div className="orbit-globe">
           <div className="orbit-globe__glow" />
           <div className="orbit-globe__sphere">
-            {/* Rotating wireframe grid */}
             <svg className="orbit-globe__grid" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              {/* Outer circle */}
               <circle cx="100" cy="100" r="92" stroke="currentColor" strokeWidth="0.6" opacity="0.2" />
-              {/* Horizontal ellipses */}
               <ellipse cx="100" cy="100" rx="92" ry="28" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
               <ellipse cx="100" cy="100" rx="92" ry="55" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
-              {/* Vertical ellipses */}
               <ellipse cx="100" cy="100" rx="65" ry="92" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
               <ellipse cx="100" cy="100" rx="32" ry="92" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
-              {/* Cross lines */}
               <line x1="8" y1="100" x2="192" y2="100" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
               <line x1="100" y1="8" x2="100" y2="192" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
             </svg>
@@ -120,12 +102,6 @@ export default function OrbitVisual() {
             </div>
           </div>
         </div>
-
-        {/* Connecting lines from globe to ring */}
-        <div className="orbit-connector orbit-connector--1" />
-        <div className="orbit-connector orbit-connector--2" />
-        <div className="orbit-connector orbit-connector--3" />
-        <div className="orbit-connector orbit-connector--4" />
       </div>
     </section>
   );
