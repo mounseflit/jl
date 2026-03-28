@@ -2186,18 +2186,8 @@ h5 {
   filter: blur(35px);
 }
 
-/* ── Selective dot texture — only on orbit + footer ── */
-.dark .orbit-section {
-  background-image: var(--dot-pattern);
-  background-size: 24px 24px;
-}
-
+/* ── Selective dot texture — footer only, keep it subtle ── */
 .dark .site-footer {
-  background-image: var(--dot-pattern);
-  background-size: 24px 24px;
-}
-
-.dark .faqs {
   background-image: var(--dot-pattern);
   background-size: 24px 24px;
 }

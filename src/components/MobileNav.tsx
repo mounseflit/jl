@@ -46,13 +46,21 @@ export default function MobileNav() {
             <div className="site-header__nav__list">
               <a href="/go" className="button button--transparent">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M5.5 21a6.5 6.5 0 0113 0" />
+                  <path d="M16 3l2 2-2 2" opacity="0.6" />
                 </svg>
                 <span style={{ marginInlineStart: "0.4rem" }}>{t("nav.becomeJabber")}</span>
               </a>
               <a href="/partner" className="button button--transparent">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35" />
+                  <rect x="3" y="10" width="7" height="11" rx="1" />
+                  <rect x="14" y="4" width="7" height="17" rx="1" />
+                  <line x1="5" y1="14" x2="8" y2="14" opacity="0.5" />
+                  <line x1="5" y1="17" x2="8" y2="17" opacity="0.5" />
+                  <line x1="16" y1="8" x2="19" y2="8" opacity="0.5" />
+                  <line x1="16" y1="11" x2="19" y2="11" opacity="0.5" />
+                  <line x1="16" y1="14" x2="19" y2="14" opacity="0.5" />
                 </svg>
                 <span style={{ marginInlineStart: "0.4rem" }}>{t("nav.becomePartner")}</span>
               </a>
