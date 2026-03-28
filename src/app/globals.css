@@ -35,6 +35,16 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Scale down ~10% — user prefers 75% zoom feel at 100% */
+  font-size: 14.5px;
+}
+
+@media (min-width: 1600px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
 }
 
 body {
@@ -183,14 +193,14 @@ body {
    LAYOUT UTILITIES
    ═══════════════════════════════════════════════════════ */
 .container {
-  max-width: 1260px;
+  max-width: 1180px;
   padding: 0 2rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 /* Grid system */
@@ -1140,6 +1150,83 @@ h5 {
 
   h3 { font-size: 1.3rem; }
   h5 { font-size: 0.9rem; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA BANNER
+   ═══════════════════════════════════════════════════════ */
+.cta-banner {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%);
+  z-index: 0;
+}
+
+.cta-banner__card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(73,66,248,0.15) 0%, rgba(73,66,248,0.04) 100%);
+  border: 1px solid rgba(73,66,248,0.2);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* Decorative dot grids */
+.cta-banner__dots {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle, rgba(73,66,248,0.3) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.5;
+}
+.cta-banner__dots--tl {
+  top: -20px;
+  left: -20px;
+}
+.cta-banner__dots--br {
+  bottom: -20px;
+  right: -20px;
+}
+
+/* CTA store buttons — white pill on dark bg */
+.cta-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  background: white;
+  color: #1a1a2e;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px -6px rgba(73,66,248,0.3);
+  min-width: 170px;
+}
+
+.cta-store-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -6px rgba(73,66,248,0.4);
+}
+
+@media (max-width: 640px) {
+  .cta-banner__card {
+    padding: 2.5rem 1.5rem;
+  }
+  .cta-store-btn {
+    width: 100%;
+    justify-content: center;
+    min-width: 0;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════
