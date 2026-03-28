@@ -878,7 +878,7 @@ body {
     width: 100%;
     position: relative;
     z-index: 10;
-    margin-bottom: -16rem;
+    margin-bottom: -20rem;
     transform: perspective(900px) rotateY(-5deg) rotateX(1deg) rotateZ(1.5deg);
   }
   .hero-done__phone--rtl {
@@ -891,7 +891,7 @@ body {
     z-index: 1;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
-    margin-bottom: 12rem;
+    margin-bottom: 16rem;
   }
   .hero-bar .marquee-ticker__item {
     font-size: 0.5rem;
