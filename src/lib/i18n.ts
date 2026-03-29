@@ -58,7 +58,7 @@ export const translations = {
       "We send your structured feedback directly to the business. They act on it \u2014 and you get notified when they do.",
 
     // ── Services ──
-    "services.mysteryShopping.title": "Mystery Shopping",
+    "services.mysteryShopping.title": "JABB App",
     "services.mysteryShopping.subtitle":
       "See your business through your customer\u2019s eyes",
     "services.mysteryShopping.desc":
@@ -99,7 +99,7 @@ export const translations = {
       "Each claimed business receives a unique JABB QR code. Display it at your point of sale so customers can scan and leave a review in seconds \u2014 no app download required. Boost your review volume effortlessly.",
     "services.qrCodes.cta": "Learn more",
 
-    "services.rewardSystem.title": "Coins & Rewards",
+    "services.rewardSystem.title": "JABB App",
     "services.rewardSystem.subtitle":
       "Get rewarded for making your voice heard",
     "services.rewardSystem.desc":
@@ -296,7 +296,7 @@ export const translations = {
       "On livre votre feedback structur\u00E9 direct au commerce. Il agit, vous \u00EAtes notifi\u00E9. La boucle est boucl\u00E9e.",
 
     // ── Services ──
-    "services.mysteryShopping.title": "Client Myst\u00E8re",
+    "services.mysteryShopping.title": "JABB App",
     "services.mysteryShopping.subtitle":
       "Vivez l\u2019exp\u00E9rience client comme si vous \u00E9tiez le client",
     "services.mysteryShopping.desc":
@@ -338,7 +338,7 @@ export const translations = {
       "Chaque \u00E9tablissement revendiqu\u00E9 re\u00E7oit un QR code JABB unique. Affichez-le en point de vente pour que vos clients laissent un avis en quelques secondes \u2014 sans t\u00E9l\u00E9charger d\u2019app. Boostez votre volume d\u2019avis sans effort.",
     "services.qrCodes.cta": "En savoir plus",
 
-    "services.rewardSystem.title": "Coins & R\u00E9compenses",
+    "services.rewardSystem.title": "JABB App",
     "services.rewardSystem.subtitle":
       "Votre avis vous rapporte. Litt\u00E9ralement.",
     "services.rewardSystem.desc":
@@ -538,7 +538,7 @@ export const translations = {
       "\u0631\u0623\u064A\u0643 \u0627\u0644\u0645\u0647\u064A\u0643\u0644 \u0643\u064A\u0645\u0634\u064A \u062F\u064A\u0631\u0643\u062A \u0644\u0644\u0645\u062D\u0644. \u0647\u0648 \u0643\u064A\u062A\u0635\u0631\u0641\u060C \u0648\u0623\u0646\u062A \u0643\u062A\u0648\u0635\u0644\u0643 \u0625\u0634\u0639\u0627\u0631. \u0627\u0644\u062D\u0644\u0642\u0629 \u0643\u062A\u0633\u062F.",
 
     // ── Services ──
-    "services.mysteryShopping.title": "\u0639\u0645\u064A\u0644 \u0633\u0631\u064A",
+    "services.mysteryShopping.title": "JABB App",
     "services.mysteryShopping.subtitle":
       "\u0634\u0648\u0641 \u0628\u064A\u0632\u0646\u0633\u0643 \u0628\u0639\u064A\u0648\u0646 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u062F\u064A\u0627\u0644\u0643",
     "services.mysteryShopping.desc":
@@ -580,7 +580,7 @@ export const translations = {
       "\u0643\u0644 \u0645\u062D\u0644 \u0645\u0637\u0627\u0644\u0628 \u0628\u064A\u0647 \u0643\u064A\u062A\u0648\u0635\u0644 QR code JABB \u062E\u0627\u0635 \u0628\u064A\u0647. \u062D\u0637\u0648 \u0641\u0627\u0644\u0645\u062D\u0644 \u0628\u0627\u0634 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u064A\u0633\u0643\u0627\u0646\u064A\u0648 \u0648\u064A\u062E\u0644\u064A\u0648 \u0631\u0623\u064A\u0647\u0645 \u0641\u062B\u0648\u0627\u0646\u064A \u2014 \u0628\u0644\u0627 \u0645\u0627 \u064A\u062A\u064A\u0644\u064A\u0634\u0627\u0631\u062C\u064A\u0648 \u0627\u0644\u0623\u0628\u0644\u064A\u0643\u0627\u0633\u064A\u0648\u0646.",
     "services.qrCodes.cta": "\u0627\u0639\u0631\u0641 \u0623\u0643\u062B\u0631",
 
-    "services.rewardSystem.title": "Coins & \u0645\u0643\u0627\u0641\u0622\u062A",
+    "services.rewardSystem.title": "JABB App",
     "services.rewardSystem.subtitle":
       "\u0631\u0623\u064A\u0643 \u0643\u064A\u0631\u0628\u062D\u0643. \u0628\u0627\u0644\u062D\u0642.",
     "services.rewardSystem.desc":

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export const metadata = buildMetadata({
-  title: "Mystery Shopping — JABB",
+  title: "JABB App — JABB",
   description:
     "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
 });
@@ -104,7 +104,7 @@ export default function MysteryShoppingPage() {
               {/* Left text */}
               <div className="max-w-xl">
                 <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
-                  Mystery Shopping
+                  JABB App
                 </span>
                 <h1 className="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
                   See your business through{" "}

@@ -73,7 +73,7 @@ const services = [
   {
     icon: <SearchIcon />,
     gradient: "linear-gradient(135deg, #1d1597 0%, #3028C0 100%)",
-    title: "Mystery Shopping",
+    title: "JABB App",
     desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
     cta: "Start Evaluating",
     href: "/services/mystery-shopping",
