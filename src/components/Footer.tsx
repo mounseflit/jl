@@ -12,11 +12,11 @@ export default function Footer() {
     {
       title: t("footer.platform"),
       links: [
-        { label: t("services.mysteryShopping.title"), href: "/services/mystery-shopping" },
+        { label: t("services.mysteryShopping.title"), href: "/services/jabb-app" },
+        { label: t("services.voiceOfCustomer.title"), href: "/services/voice-of-customer" },
+        { label: t("services.aiReports.title"), href: "/services/voice-of-customer" },
+        { label: t("services.qrCodes.title"), href: "/services/qr-codes" },
         { label: t("services.cxAudits.title"), href: "/services/cx-audits" },
-        { label: t("services.aiReports.title"), href: "/services/ai-reports" },
-        { label: t("services.dashboard.title"), href: "/services/dashboard" },
-        { label: t("services.rewardSystem.title"), href: "/services/rewards" },
       ],
     },
     {

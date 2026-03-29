@@ -65,18 +65,18 @@ export const translations = {
       "Top-level JABBers with high XP get invited to mystery client missions. Execute structured audits at real locations with full reports, scoring, and GPS verification.",
     "services.mysteryShopping.cta": "Learn More",
 
-    "services.cxAudits.title": "CX Audits",
+    "services.cxAudits.title": "JABB CX",
     "services.cxAudits.subtitle":
-      "360\u00B0 view of your entire customer journey",
+      "Launch mystery client missions at scale",
     "services.cxAudits.desc":
-      "Launch omnichannel CX missions including mystery client missions. Your best JABBers execute in-store and digital audits with structured reports, scoring, GPS verification, and multi-site benchmarking.",
+      "Deploy mystery shoppers to evaluate your locations with structured scoring, GPS verification, and photo evidence. Get detailed CX audit reports with actionable recommendations across all your sites.",
     "services.cxAudits.cta": "Learn more",
 
     "services.voiceOfCustomer.title": "Voice of Customer",
     "services.voiceOfCustomer.subtitle":
-      "Capture what the silent majority really thinks",
+      "Your real-time CX command center",
     "services.voiceOfCustomer.desc":
-      "96% of unhappy customers never complain \u2014 they just leave. JABB captures real feedback via audio, text, photos, and AI-driven Q&A. You can also launch mystery client missions directly to our JABBers in-app for undercover evaluations of your locations.",
+      "96% of unhappy customers never complain \u2014 they just leave. JABB Business captures real feedback via audio, text, photos, and AI-driven Q&A. Monitor your brand health score, track performance by location, and benchmark across all your sites in one dashboard.",
     "services.voiceOfCustomer.cta": "Discover how it works",
 
     "services.dashboard.title": "Business Dashboard",
@@ -85,11 +85,11 @@ export const translations = {
       "Real-time dashboard with AI analysis by location, team, hour, and channel. Instant alerts, automated reports, and inter-site benchmarking \u2014 your single source of CX truth.",
     "services.dashboard.cta": "See the dashboard",
 
-    "services.aiReports.title": "JABB Business",
+    "services.aiReports.title": "JABB Report",
     "services.aiReports.subtitle":
-      "Your CX command center, always on",
+      "AI-powered insights from every review",
     "services.aiReports.desc":
-      "Monitor your reputation in real time. AI-powered dashboard with ratings, reviews, sentiment analysis, and actionable reports by location, team, and channel. Claim your business, track performance, and make smarter decisions \u2014 all in one place.",
+      "Every piece of feedback is analyzed by AI to generate structured reports with sentiment scoring, trend detection, and prioritized action items. Data quality is ensured through our Golden Proof Protocol \u2014 GPS verification, timestamps, and photo evidence make every data point trustworthy.",
     "services.aiReports.cta": "See how it works",
 
     "services.qrCodes.title": "QR Codes",
@@ -303,18 +303,18 @@ export const translations = {
       "Les JABBeurs d\u2019\u00E9lite re\u00E7oivent des missions incognito. Audits terrain, rapports d\u00E9taill\u00E9s, scoring pr\u00E9cis et preuve GPS \u2014 la v\u00E9rit\u00E9 sur votre service, sans filtre.",
     "services.mysteryShopping.cta": "D\u00E9couvrir",
 
-    "services.cxAudits.title": "Audits CX 360\u00B0",
+    "services.cxAudits.title": "JABB CX",
     "services.cxAudits.subtitle":
-      "Chaque \u00E9tape du parcours client, pass\u00E9e au crible",
+      "Lancez des missions client myst\u00E8re \u00E0 grande \u00E9chelle",
     "services.cxAudits.desc":
-      "Lancez des missions omnicanales incluant des missions client myst\u00E8re. Vos meilleurs JABBeurs ex\u00E9cutent audits terrain et digitaux avec rapports structur\u00E9s, scoring, v\u00E9rification GPS et benchmarking multi-sites.",
+      "D\u00E9ployez des clients myst\u00E8re pour \u00E9valuer vos points de vente avec un scoring structur\u00E9, v\u00E9rification GPS et preuves photo. Recevez des rapports d\u2019audit CX d\u00E9taill\u00E9s avec des recommandations actionnables sur tous vos sites.",
     "services.cxAudits.cta": "En savoir plus",
 
     "services.voiceOfCustomer.title": "Voix du Client",
     "services.voiceOfCustomer.subtitle":
-      "\u00C9coutez ceux qui ne parlent jamais \u2014 avant qu\u2019ils partent",
+      "Votre QG exp\u00E9rience client en temps r\u00E9el",
     "services.voiceOfCustomer.desc":
-      "96% des clients m\u00E9contents ne disent rien \u2014 ils disparaissent. JABB capte leur v\u00E9rit\u00E9 via audio, texte, photos et Q&A intelligent. Lancez aussi des missions client myst\u00E8re directement \u00E0 nos JABBeurs depuis l\u2019app pour des \u00E9valuations incognito de vos points de vente.",
+      "96% des clients m\u00E9contents ne disent rien \u2014 ils disparaissent. JABB Business capte leur v\u00E9rit\u00E9 via audio, texte, photos et Q&A intelligent. Suivez votre score de sant\u00E9 de marque, analysez par site et comparez toutes vos enseignes depuis un seul tableau de bord.",
     "services.voiceOfCustomer.cta": "D\u00E9couvrir comment \u00E7a marche",
 
     "services.dashboard.title": "Tableau de Bord",
@@ -324,11 +324,11 @@ export const translations = {
       "Tout sous vos yeux : analyse IA par site, \u00E9quipe, heure et canal. Alertes instantan\u00E9es, rapports auto, benchmarking inter-sites. Z\u00E9ro angle mort.",
     "services.dashboard.cta": "Voir le dashboard",
 
-    "services.aiReports.title": "JABB Business",
+    "services.aiReports.title": "JABB Report",
     "services.aiReports.subtitle":
-      "Votre QG exp\u00E9rience client, toujours actif",
+      "Insights IA \u00E0 partir de chaque avis",
     "services.aiReports.desc":
-      "Suivez votre r\u00E9putation en temps r\u00E9el. Dashboard IA avec notes, avis, analyse de sentiment et rapports actionnables par site, \u00E9quipe et canal. Revendiquez votre \u00E9tablissement, suivez vos performances et prenez des d\u00E9cisions plus intelligentes \u2014 tout au m\u00EAme endroit.",
+      "Chaque feedback est analys\u00E9 par l\u2019IA pour g\u00E9n\u00E9rer des rapports structur\u00E9s avec scoring de sentiment, d\u00E9tection de tendances et actions prioritaires. La qualit\u00E9 des donn\u00E9es est garantie par notre Golden Proof Protocol \u2014 v\u00E9rification GPS, horodatage et preuves photo.",
     "services.aiReports.cta": "Voir comment \u00E7a marche",
 
     "services.qrCodes.title": "QR Codes",
@@ -545,11 +545,11 @@ export const translations = {
       "\u0627\u0644\u0640 JABBers \u0627\u0644\u062A\u0648\u0628 \u0643\u064A\u062A\u0648\u0635\u0644\u0648 \u062F\u0639\u0648\u0629 \u0644\u0645\u0647\u0627\u0645 \u0643\u0644\u064A\u0627\u0646 \u0633\u0631\u064A. \u062A\u062F\u0642\u064A\u0642\u0627\u062A \u0645\u064A\u062F\u0627\u0646\u064A\u0629\u060C \u062A\u0642\u0627\u0631\u064A\u0631 \u062F\u0642\u064A\u0642\u0629\u060C scoring \u0648\u0625\u062B\u0628\u0627\u062A GPS \u2014 \u0627\u0644\u062D\u0642\u064A\u0642\u0629 \u0628\u0644\u0627 \u0641\u0644\u062A\u0631.",
     "services.mysteryShopping.cta": "\u0627\u0643\u062A\u0634\u0641",
 
-    "services.cxAudits.title": "\u062A\u062F\u0642\u064A\u0642 CX 360\u00B0",
+    "services.cxAudits.title": "JABB CX",
     "services.cxAudits.subtitle":
-      "\u0643\u0644 \u062E\u0637\u0648\u0629 \u0641\u064A \u0645\u0633\u0627\u0631 \u0627\u0644\u0643\u0644\u064A\u0627\u0646\u060C \u062A\u062D\u062A \u0627\u0644\u0645\u062C\u0647\u0631",
+      "\u0637\u0644\u0642 \u0645\u0647\u0627\u0645 \u0639\u0645\u064A\u0644 \u0633\u0631\u064A \u0628\u0643\u062B\u0631\u0629",
     "services.cxAudits.desc":
-      "\u0637\u0644\u0642 \u0645\u0647\u0627\u0645 \u0634\u0627\u0645\u0644\u0629 \u0628\u0645\u0627 \u0641\u064A\u0647\u0627 \u0645\u0647\u0627\u0645 \u0639\u0645\u064A\u0644 \u0633\u0631\u064A. \u0623\u062D\u0633\u0646 \u0627\u0644\u0640 JABBers \u0643\u064A\u0646\u0641\u0630\u0648 \u0627\u0644\u0623\u0648\u062F\u064A\u062A \u0641\u064A \u0627\u0644\u0645\u064A\u062F\u0627\u0646 \u0648\u0627\u0644\u062F\u064A\u062C\u064A\u062A\u0627\u0644 \u0628\u062A\u0642\u0627\u0631\u064A\u0631 \u0645\u0647\u064A\u0643\u0644\u0629\u060C scoring\u060C \u0625\u062B\u0628\u0627\u062A GPS \u0648\u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639.",
+      "\u0648\u0632\u0639 \u0639\u0645\u0644\u0627\u0621 \u0633\u0631\u064A\u064A\u0646 \u0644\u062A\u0642\u064A\u064A\u0645 \u0645\u0648\u0627\u0642\u0639\u0643 \u0628 scoring \u0645\u0647\u064A\u0643\u0644\u060C \u0625\u062B\u0628\u0627\u062A GPS \u0648\u0635\u0648\u0631. \u062A\u0648\u0635\u0644 \u062A\u0642\u0627\u0631\u064A\u0631 \u0623\u0648\u062F\u064A\u062A CX \u0645\u0641\u0635\u0644\u0629 \u0628\u062A\u0648\u0635\u064A\u0627\u062A \u0639\u0645\u0644\u064A\u0629 \u0639\u0644\u0649 \u062C\u0645\u064A\u0639 \u0645\u0648\u0627\u0642\u0639\u0643.",
     "services.cxAudits.cta": "\u0627\u0639\u0631\u0641 \u0623\u0643\u062B\u0631",
 
     "services.voiceOfCustomer.title": "\u0635\u0648\u062A \u0627\u0644\u0639\u0645\u064A\u0644",
@@ -566,11 +566,11 @@ export const translations = {
       "\u0643\u0644\u0634\u064A \u0642\u062F\u0627\u0645 \u0639\u064A\u0646\u064A\u0643: \u062A\u062D\u0644\u064A\u0644 IA \u0628\u0627\u0644\u0645\u0648\u0642\u0639\u060C \u0627\u0644\u0641\u0631\u064A\u0642\u060C \u0627\u0644\u0648\u0642\u062A \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u062A\u0646\u0628\u064A\u0647\u0627\u062A \u0641\u0648\u0631\u064A\u0629\u060C \u062A\u0642\u0627\u0631\u064A\u0631 \u0623\u0648\u062A\u0648\u0645\u0627\u062A\u064A\u0643\u064A\u0629\u060C \u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639. \u0632\u064A\u0631\u0648 \u0632\u0627\u0648\u064A\u0629 \u0645\u064A\u062A\u0629.",
     "services.dashboard.cta": "\u0634\u0648\u0641 \u0627\u0644\u062F\u0627\u0634\u0628\u0648\u0631\u062F",
 
-    "services.aiReports.title": "JABB Business",
+    "services.aiReports.title": "JABB Report",
     "services.aiReports.subtitle":
-      "QG \u062F\u064A\u0627\u0644 \u062A\u062C\u0631\u0628\u0629 \u0627\u0644\u0643\u0644\u064A\u0627\u0646\u060C \u062F\u0627\u064A\u0645\u0627 \u0641\u0627\u064A\u0642",
+      "\u062A\u062D\u0644\u064A\u0644\u0627\u062A IA \u0645\u0646 \u0643\u0644 \u0631\u0623\u064A",
     "services.aiReports.desc":
-      "\u062A\u0627\u0628\u0639 \u0633\u0645\u0639\u062A\u0643 \u0641\u064A \u0627\u0644\u0648\u0642\u062A \u0627\u0644\u062D\u0642\u064A\u0642\u064A. \u062F\u0627\u0634\u0628\u0648\u0631\u062F IA \u0628\u0627\u0644\u0646\u0642\u0627\u0637\u060C \u0627\u0644\u0622\u0631\u0627\u0621\u060C \u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u0634\u0627\u0639\u0631 \u0648\u062A\u0642\u0627\u0631\u064A\u0631 \u0628\u0627\u0644\u0645\u0648\u0642\u0639 \u0648\u0627\u0644\u0641\u0631\u064A\u0642 \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u0637\u0627\u0644\u0628 \u0628\u0645\u062D\u0644\u0643\u060C \u062A\u0627\u0628\u0639 \u0623\u062F\u0627\u0621\u0643 \u0648\u062E\u0630 \u0642\u0631\u0627\u0631\u0627\u062A \u0630\u0643\u064A\u0629 \u2014 \u0643\u0644\u0634\u064A \u0641\u0628\u0644\u0627\u0635\u0629 \u0648\u062D\u062F\u0629.",
+      "\u0643\u0644 \u0631\u0623\u064A \u0643\u064A\u062A\u062D\u0644\u0644 \u0628\u0627\u0644 IA \u0628\u0627\u0634 \u064A\u0648\u0644\u062F \u062A\u0642\u0627\u0631\u064A\u0631 \u0645\u0647\u064A\u0643\u0644\u0629 \u0628 scoring \u062F\u064A\u0627\u0644 \u0627\u0644\u0645\u0634\u0627\u0639\u0631\u060C \u0643\u0634\u0641 \u0627\u0644\u062A\u0631\u0646\u062F\u0627\u062A \u0648\u0623\u0648\u0644\u0648\u064A\u0627\u062A \u0627\u0644\u0639\u0645\u0644. \u062C\u0648\u062F\u0629 \u0627\u0644\u062F\u0627\u062A\u0627 \u0645\u0636\u0645\u0648\u0646\u0629 \u0628 Golden Proof Protocol \u2014 GPS\u060C \u0648\u0642\u062A \u0648\u0635\u0648\u0631.",
     "services.aiReports.cta": "\u0634\u0648\u0641 \u0643\u064A\u0641\u0627\u0634 \u0643\u064A\u062E\u062F\u0645",
 
     "services.qrCodes.title": "QR Codes",

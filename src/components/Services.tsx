@@ -56,18 +56,7 @@ function BrainIcon() {
   );
 }
 
-function TrophyIcon() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-      <path d="M4 22h16" />
-      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-    </svg>
-  );
-}
+/* TrophyIcon removed — no longer used after rewards section was replaced */
 
 const services = [
   {
@@ -76,47 +65,39 @@ const services = [
     title: "JABB App",
     desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
     cta: "Start Evaluating",
-    href: "/services/mystery-shopping",
-  },
-  {
-    icon: <ClipboardCheckIcon />,
-    gradient: "linear-gradient(135deg, #3028C0 0%, #9F7AEA 100%)",
-    title: "CX Audits",
-    desc: "Comprehensive audits of your customer journey, from first impression to final checkout. Identify gaps and improve satisfaction scores.",
-    cta: "Request an Audit",
-    href: "/services/cx-audits",
+    href: "/services/jabb-app",
   },
   {
     icon: <MicIcon />,
     gradient: "linear-gradient(135deg, #1d1597 0%, #38B2AC 100%)",
     title: "Voice of Customer",
-    desc: "Capture authentic customer feedback through surveys, interviews, and sentiment analysis. Understand what your customers truly think.",
+    desc: "Capture authentic customer feedback through surveys, interviews, and sentiment analysis. Monitor your brand health in real time.",
     cta: "Capture Feedback",
+    href: "/services/voice-of-customer",
+  },
+  {
+    icon: <BrainIcon />,
+    gradient: "linear-gradient(135deg, #9F7AEA 0%, #1d1597 100%)",
+    title: "JABB Report",
+    desc: "AI-powered reports with sentiment scoring, trend detection, and prioritized action items from every piece of customer feedback.",
+    cta: "See Reports",
     href: "/services/voice-of-customer",
   },
   {
     icon: <LayoutDashboardIcon />,
     gradient: "linear-gradient(135deg, #38B2AC 0%, #1d1597 100%)",
-    title: "Business Dashboard",
-    desc: "Track KPIs, monitor trends, and visualize performance data in real time. One dashboard for all your CX intelligence needs.",
-    cta: "View Dashboard",
-    href: "/services/dashboard",
+    title: "QR Codes",
+    desc: "NFC-enabled stands, stickers, and cards for effortless review collection at your point of sale. No app download required.",
+    cta: "View Products",
+    href: "/services/qr-codes",
   },
   {
-    icon: <BrainIcon />,
-    gradient: "linear-gradient(135deg, #9F7AEA 0%, #1d1597 100%)",
-    title: "AI Reports",
-    desc: "Leverage artificial intelligence to transform raw field data into strategic recommendations. Faster analysis, smarter decisions.",
-    cta: "Generate Report",
-    href: "/services/ai-reports",
-  },
-  {
-    icon: <TrophyIcon />,
-    gradient: "linear-gradient(135deg, #1d1597 0%, #667eea 100%)",
-    title: "Reward System",
-    desc: "Motivate your JABBers with a gamified reward system. Earn points, unlock badges, and cash out for completing quality evaluations.",
-    cta: "Earn Rewards",
-    href: "/services/rewards",
+    icon: <ClipboardCheckIcon />,
+    gradient: "linear-gradient(135deg, #3028C0 0%, #9F7AEA 100%)",
+    title: "JABB CX",
+    desc: "Deploy mystery shoppers to evaluate your locations with structured scoring, GPS verification, and detailed audit reports.",
+    cta: "Launch a Mission",
+    href: "/services/cx-audits",
   },
 ];
 

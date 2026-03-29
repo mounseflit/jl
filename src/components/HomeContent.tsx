@@ -6,13 +6,14 @@ import JabbLogo from "./JabbLogo";
 
 import { useTranslation } from "@/lib/I18nProvider";
 
-/* Service definitions using ACTUAL i18n keys */
+/* Service definitions using ACTUAL i18n keys
+   Order: JABB App → Voice of Customer → JABB Report → QR Codes → JABB CX */
 const serviceKeys = [
-  { titleKey: "services.rewardSystem.title", subtitleKey: "services.rewardSystem.subtitle", descKey: "services.rewardSystem.desc", ctaKey: "services.rewardSystem.cta", href: "/services/rewards", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false, fx: "fx-float", qrStand: false },
-  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-new-5.jpg", gradient: "from-[#140F6E] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-shimmer", qrStand: false },
-  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/ai-reports", image: "/images/screen-business.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false, fx: "fx-glow", qrStand: false },
+  { titleKey: "services.mysteryShopping.title", subtitleKey: "services.mysteryShopping.subtitle", descKey: "services.mysteryShopping.desc", ctaKey: "services.mysteryShopping.cta", href: "/services/jabb-app", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false, fx: "fx-float", qrStand: false },
+  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-analytics.jpg", gradient: "from-[#140F6E] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-shimmer", qrStand: false },
+  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/voice-of-customer", image: "/images/screen-ai-report.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false, fx: "fx-glow", qrStand: false },
   { titleKey: "services.qrCodes.title", subtitleKey: "services.qrCodes.subtitle", descKey: "services.qrCodes.desc", ctaKey: "services.qrCodes.cta", href: "/services/qr-codes", image: "/images/screen-qr.jpg", gradient: "from-[#140F6E] to-[#1d1597]", phone: false, smallImage: true, fx: "fx-tilt", qrStand: true },
-  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-4.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-reveal", qrStand: false },
+  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-5.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-reveal", qrStand: false },
 ] as const;
 
 export default function HomeContent() {
