@@ -17,7 +17,7 @@ const channels = [
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
     ),
-    color: "from-[#F5F5FF] to-[#EEEDFF]",
+    color: "from-[#F5F5FF] to-[#EEEDFF] dark:from-[#151335] dark:to-[#111130]",
     border: "border-primary/20",
     iconBg: "bg-primary/10 text-primary",
   },
@@ -30,9 +30,9 @@ const channels = [
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
       </svg>
     ),
-    color: "from-[#FFF5F5] to-[#FFF0F0]",
-    border: "border-rose-200",
-    iconBg: "bg-rose-50 text-rose-500",
+    color: "from-[#FFF5F5] to-[#FFF0F0] dark:from-[#1f1520] dark:to-[#1a1018]",
+    border: "border-rose-200 dark:border-rose-500/20",
+    iconBg: "bg-rose-50 dark:bg-rose-500/10 text-rose-500",
   },
   {
     title: "Sentiment Analysis",
@@ -45,9 +45,9 @@ const channels = [
         <line x1="15" x2="15.01" y1="9" y2="9" />
       </svg>
     ),
-    color: "from-[#F0FFF4] to-[#E6FFED]",
-    border: "border-emerald-200",
-    iconBg: "bg-emerald-50 text-emerald-500",
+    color: "from-[#F0FFF4] to-[#E6FFED] dark:from-[#0f1f18] dark:to-[#0c1a14]",
+    border: "border-emerald-200 dark:border-emerald-500/20",
+    iconBg: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500",
   },
 ];
 
@@ -103,7 +103,7 @@ export default function VoiceOfCustomerPage() {
 
       <main className="font-body">
         {/* ── Hero: Soft warm gradient ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-[var(--color-bg)] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 dark:from-[var(--color-primary-bg)] to-[var(--color-bg)] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-primary/5 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -162,7 +162,7 @@ export default function VoiceOfCustomerPage() {
         </section>
 
         {/* ── What Customers Say — masonry-like ── */}
-        <section className="py-20 lg:py-28 bg-gradient-to-b from-[var(--color-bg)] to-primary-50/30">
+        <section className="py-20 lg:py-28 bg-gradient-to-b from-[var(--color-bg)] to-primary-50/30 dark:to-[var(--color-bg-alt)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
@@ -188,7 +188,7 @@ export default function VoiceOfCustomerPage() {
                         width="18"
                         height="18"
                         viewBox="0 0 20 20"
-                        fill={s < t.stars ? "#FBBF24" : "#E2E8F0"}
+                        fill={s < t.stars ? "#FBBF24" : "var(--color-border)"}
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
@@ -203,7 +203,7 @@ export default function VoiceOfCustomerPage() {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-[var(--color-text)]">{t.name}</p>
-                      <p className="text-xs text-ink-muted">{t.role}</p>
+                      <p className="text-xs text-[var(--color-text-muted)]">{t.role}</p>
                     </div>
                   </div>
                 </div>
@@ -213,13 +213,13 @@ export default function VoiceOfCustomerPage() {
         </section>
 
         {/* ── Key Metrics ── */}
-        <section className="py-20 lg:py-24 bg-white">
+        <section className="py-20 lg:py-24 bg-white dark:bg-[var(--color-bg)]">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 sm:grid-cols-3">
               {metrics.map((m) => (
                 <div
                   key={m.label}
-                  className="text-center rounded-2xl bg-primary-50 p-10"
+                  className="text-center rounded-2xl bg-primary-50 dark:bg-[var(--color-primary-bg)] p-10"
                 >
                   <span className="font-display text-5xl font-extrabold text-primary">
                     {m.value}

@@ -191,12 +191,12 @@ export default function JabbAppPage() {
 
       <main className="font-body">
         {/* ── Hero: Split layout ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-bg)] via-[var(--color-primary-bg)] to-[var(--color-surface)] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="jabb-app-hero relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
               {/* Left text */}
               <div className="max-w-xl">
-                <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
+                <span className="inline-block rounded-full bg-primary/10 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
                   JABB App
                 </span>
                 <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl md:text-5xl lg:text-6xl">
@@ -219,7 +219,7 @@ export default function JabbAppPage() {
                     </a>
                     <a
                       href="/services/cx-audits"
-                      className="inline-flex items-center rounded-xl border border-ink-faint bg-white px-7 py-3.5 text-sm font-semibold text-[var(--color-text)] transition hover:border-primary hover:text-primary"
+                      className="inline-flex items-center rounded-xl border border-ink-faint bg-white/80 backdrop-blur-sm px-7 py-3.5 text-sm font-semibold text-[var(--color-text)] transition hover:border-primary hover:text-primary dark:bg-white/10 dark:border-white/20 dark:text-white"
                     >
                       For Businesses
                     </a>

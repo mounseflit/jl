@@ -11,7 +11,7 @@ import { useTranslation } from "@/lib/I18nProvider";
 const serviceKeys = [
   { titleKey: "services.mysteryShopping.title", subtitleKey: "services.mysteryShopping.subtitle", descKey: "services.mysteryShopping.desc", ctaKey: "services.mysteryShopping.cta", href: "/services/jabb-app", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false, fx: "fx-float", qrStand: false },
   { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-analytics.jpg", gradient: "from-[#140F6E] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-shimmer", qrStand: false },
-  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/voice-of-customer", image: "/images/screen-ai-report.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false, fx: "fx-glow", qrStand: false },
+  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/voice-of-customer", image: "/images/screen-ai-report.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false, fx: "fx-glow", qrStand: false, docFrame: true },
   { titleKey: "services.qrCodes.title", subtitleKey: "services.qrCodes.subtitle", descKey: "services.qrCodes.desc", ctaKey: "services.qrCodes.cta", href: "/services/qr-codes", image: "/images/screen-qr.jpg", gradient: "from-[#140F6E] to-[#1d1597]", phone: false, smallImage: true, fx: "fx-tilt", qrStand: true },
   { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-5.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-reveal", qrStand: false },
 ] as const;
@@ -127,7 +127,7 @@ export default function HomeContent() {
       <section id="section-services">
         {serviceKeys.map((s, i) => {
           const isEven = i % 2 === 0;
-          const bgClass = isEven ? "bg-[var(--color-bg)]" : "bg-gray-50";
+          const bgClass = isEven ? "bg-[var(--color-bg)]" : "bg-gray-50 dark:bg-[var(--color-bg-alt)]";
 
           return (
             <div key={s.titleKey} className={`py-8 md:py-12 ${bgClass}`}>
@@ -208,9 +208,62 @@ export default function HomeContent() {
                         <div className="qr-stand__shadow" />
                       </div>
                     )}
-                    {!s.phone && !s.qrStand && (
+                    {"docFrame" in s && s.docFrame && (
+                      /* ── 3D Document Frame — JABB Report ── */
+                      <div className={`doc-frame ${s.fx}`}>
+                        <div className="doc-frame__body">
+                          {/* Stacked pages behind for depth */}
+                          <div className="doc-frame__stack doc-frame__stack--2" />
+                          <div className="doc-frame__stack doc-frame__stack--1" />
+                          {/* Main paper */}
+                          <div className="doc-frame__paper">
+                            {/* 3D right edge */}
+                            <div className="doc-frame__edge" />
+                            {/* Folded corner */}
+                            <div className="doc-frame__fold" />
+                            {/* Header bar */}
+                            <div className="doc-frame__header">
+                              <div className="doc-frame__logo">
+                                <JabbLogo size={18} />
+                                <span className="doc-frame__title">JABB Report</span>
+                              </div>
+                              <div className="doc-frame__status">
+                                <span className="doc-frame__status-dot" />
+                                <span className="doc-frame__status-text">Generated</span>
+                              </div>
+                            </div>
+                            {/* Metrics bar */}
+                            <div className="doc-frame__metrics">
+                              <div className="doc-frame__metric">
+                                <span className="doc-frame__metric-val">+32</span>
+                                <span className="doc-frame__metric-label">Pulse Score</span>
+                              </div>
+                              <div className="doc-frame__metric">
+                                <span className="doc-frame__metric-val">86%</span>
+                                <span className="doc-frame__metric-label">Positive</span>
+                              </div>
+                              <div className="doc-frame__metric">
+                                <span className="doc-frame__metric-val">17</span>
+                                <span className="doc-frame__metric-label">Reviews</span>
+                              </div>
+                            </div>
+                            {/* Report image */}
+                            <div className="doc-frame__content">
+                              <Image src={s.image} alt={t(s.titleKey)} width={360} height={240} className="doc-frame__img" />
+                            </div>
+                            {/* Footer */}
+                            <div className="doc-frame__footer">
+                              <span className="doc-frame__powered">Powered by <strong>JABB AI</strong></span>
+                              <div className="doc-frame__accent" />
+                            </div>
+                          </div>
+                          <div className="doc-frame__shadow" />
+                        </div>
+                      </div>
+                    )}
+                    {!s.phone && !s.qrStand && !("docFrame" in s && s.docFrame) && (
                       <div className={`svc-img ${s.fx} relative w-full ${s.smallImage ? "max-w-[260px]" : "max-w-[480px]"} rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)]`}>
-                        <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-[var(--color-border)]">
+                        <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-50 dark:bg-[var(--color-surface)] border-b border-[var(--color-border)]">
                           <span className="h-2 w-2 rounded-full bg-red-400/60" />
                           <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
                           <span className="h-2 w-2 rounded-full bg-green-400/60" />

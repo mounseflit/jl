@@ -1449,6 +1449,385 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* ── QR Stand: Dark/Light mode (INVERTED) ── */
+/* Light mode: dark card (default) */
+.qr-stand__card {
+  background: linear-gradient(170deg, #18182a 0%, #111122 40%, #0c0c1a 100%) !important;
+  box-shadow:
+    6px 8px 30px rgba(0, 0, 0, 0.5),
+    0 -1px 12px rgba(108, 99, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.qr-stand__card::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%) !important;
+}
+.qr-stand__review-text { color: rgba(255, 255, 255, 0.7) !important; }
+.qr-stand__brand-name {
+  background: linear-gradient(135deg, #8B7FFF 0%, #6C63FF 50%, #4F46E5 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.qr-stand__jabb-logo { color: white !important; }
+.qr-stand__nfc {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+.qr-stand__nfc svg { stroke: white !important; }
+.qr-stand__tap-text { color: rgba(255, 255, 255, 0.5) !important; }
+.qr-stand__powered { color: rgba(255, 255, 255, 0.25) !important; }
+.qr-stand__powered strong { color: rgba(255, 255, 255, 0.45) !important; }
+.qr-stand__tri { background: linear-gradient(210deg, #0e0e20 0%, #0a0a1a 40%, #060614 100%) !important; }
+.qr-stand__tri::before { background: linear-gradient(210deg, #080818 0%, #060614 40%, #040410 100%) !important; }
+.qr-stand__tri::after { background: linear-gradient(90deg, #030310 0%, #050512 50%, #070716 100%) !important; }
+.qr-stand__shadow { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.08) 50%, transparent 75%) !important; }
+
+/* Dark mode: white/light card */
+.dark .qr-stand__card {
+  background: linear-gradient(170deg, #ffffff 0%, #f8f8fc 40%, #f0f0f8 100%) !important;
+  box-shadow:
+    6px 8px 30px rgba(0, 0, 0, 0.12),
+    0 -1px 12px rgba(108, 99, 255, 0.06) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+.dark .qr-stand__card::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%) !important;
+}
+.dark .qr-stand__review-text { color: rgba(0, 0, 0, 0.55) !important; }
+.dark .qr-stand__brand-name {
+  background: linear-gradient(135deg, #6C63FF 0%, #4F46E5 50%, #3028C0 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.dark .qr-stand__jabb-logo { color: #1d1597 !important; }
+.dark .qr-stand__nfc {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+.dark .qr-stand__nfc svg { stroke: #1d1597 !important; }
+.dark .qr-stand__tap-text { color: rgba(0, 0, 0, 0.4) !important; }
+.dark .qr-stand__powered { color: rgba(0, 0, 0, 0.25) !important; }
+.dark .qr-stand__powered strong { color: rgba(0, 0, 0, 0.45) !important; }
+.dark .qr-stand__tri { background: linear-gradient(210deg, #e8e8f0 0%, #dddde8 40%, #d0d0dc 100%) !important; }
+.dark .qr-stand__tri::before { background: linear-gradient(210deg, #d8d8e4 0%, #d0d0dc 40%, #c8c8d4 100%) !important; }
+.dark .qr-stand__tri::after { background: linear-gradient(90deg, #c0c0cc 0%, #c8c8d4 50%, #d0d0dc 100%) !important; }
+.dark .qr-stand__shadow { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.03) 50%, transparent 75%) !important; }
+
+/* ── JABB App Hero — blue motif background ── */
+.jabb-app-hero {
+  background:
+    /* Dotted grid pattern */
+    radial-gradient(circle, rgba(29, 21, 151, 0.08) 1px, transparent 1px),
+    /* Soft diagonal stripes */
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 40px,
+      rgba(29, 21, 151, 0.03) 40px,
+      rgba(29, 21, 151, 0.03) 42px
+    ),
+    /* Base gradient */
+    linear-gradient(135deg, #eef0ff 0%, #e0e4ff 25%, #d4daff 50%, #eceeff 75%, #f4f5ff 100%);
+  background-size: 24px 24px, auto, auto;
+}
+/* Floating glow orbs */
+.jabb-app-hero::before {
+  content: "";
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.15) 0%, rgba(29, 21, 151, 0.05) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: jabb-hero-orb 8s ease-in-out infinite alternate;
+}
+.jabb-app-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px; left: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, rgba(48, 40, 192, 0.04) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: jabb-hero-orb 10s ease-in-out infinite alternate-reverse;
+}
+@keyframes jabb-hero-orb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 20px) scale(1.1); }
+}
+
+/* Dark mode hero */
+.dark .jabb-app-hero {
+  background:
+    radial-gradient(circle, rgba(108, 99, 255, 0.06) 1px, transparent 1px),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 40px,
+      rgba(108, 99, 255, 0.04) 40px,
+      rgba(108, 99, 255, 0.04) 42px
+    ),
+    linear-gradient(135deg, #0a0a1b 0%, #0e0e28 25%, #121240 50%, #0c0c22 75%, #08081a 100%);
+  background-size: 24px 24px, auto, auto;
+}
+.dark .jabb-app-hero::before {
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.2) 0%, rgba(29, 21, 151, 0.08) 40%, transparent 70%);
+}
+.dark .jabb-app-hero::after {
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(48, 40, 192, 0.06) 50%, transparent 70%);
+}
+
+/* ── 3D Document Frame — JABB Report (Enhanced) ── */
+.doc-frame {
+  display: flex;
+  justify-content: center;
+  max-width: 280px;
+  margin: 0 auto;
+  perspective: 900px;
+}
+.doc-frame__body {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-12deg) rotateX(5deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: doc-float 6s ease-in-out infinite;
+}
+.doc-frame__body:hover {
+  transform: rotateY(-3deg) rotateX(2deg) scale(1.02);
+}
+@keyframes doc-float {
+  0%, 100% { transform: rotateY(-12deg) rotateX(5deg) translateY(0); }
+  50% { transform: rotateY(-12deg) rotateX(5deg) translateY(-8px); }
+}
+
+/* Stacked pages behind — depth illusion */
+.doc-frame__stack {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 10px;
+  background: #e8e8f0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.doc-frame__stack--2 {
+  transform: translateZ(-8px) translateX(6px) translateY(6px);
+  opacity: 0.4;
+}
+.doc-frame__stack--1 {
+  transform: translateZ(-4px) translateX(3px) translateY(3px);
+  opacity: 0.7;
+}
+
+/* Main paper */
+.doc-frame__paper {
+  background: linear-gradient(180deg, #ffffff 0%, #fafaff 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    6px 10px 32px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+}
+
+/* 3D right edge — gives thickness */
+.doc-frame__edge {
+  position: absolute;
+  top: 4px; right: -4px; bottom: 4px;
+  width: 4px;
+  background: linear-gradient(180deg, #d8d8e4 0%, #c0c0d0 50%, #b0b0c0 100%);
+  border-radius: 0 3px 3px 0;
+  transform: rotateY(90deg) translateZ(0px);
+  transform-origin: left center;
+}
+
+/* Folded top-right corner */
+.doc-frame__fold {
+  position: absolute;
+  top: 0; right: 0;
+  width: 24px; height: 24px;
+  z-index: 5;
+  overflow: hidden;
+}
+.doc-frame__fold::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 34px; height: 34px;
+  background: linear-gradient(225deg, #e8e8f0 50%, rgba(0,0,0,0.04) 50%, rgba(0,0,0,0.02) 52%, transparent 52%);
+  transform: rotate(0deg);
+}
+
+/* Header bar */
+.doc-frame__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, #f7f7fc 0%, #f2f2fa 100%);
+}
+.doc-frame__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1d1597;
+}
+.doc-frame__title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0C0C18;
+  letter-spacing: 0.2px;
+}
+/* Status indicator */
+.doc-frame__status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.doc-frame__status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+  animation: doc-pulse 2s ease-in-out infinite;
+}
+@keyframes doc-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.doc-frame__status-text {
+  font-size: 9px;
+  font-weight: 600;
+  color: #22C55E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Metrics bar */
+.doc-frame__metrics {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 10px;
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.04) 0%, rgba(29, 21, 151, 0.06) 50%, rgba(108, 99, 255, 0.04) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.doc-frame__metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.doc-frame__metric-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1d1597;
+  font-family: var(--font-display, "Plus Jakarta Sans", system-ui);
+}
+.doc-frame__metric-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Image content */
+.doc-frame__content {
+  padding: 6px 8px;
+}
+.doc-frame__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Footer */
+.doc-frame__footer {
+  padding: 6px 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.doc-frame__powered {
+  font-size: 8px;
+  color: rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+.doc-frame__powered strong {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom accent */
+.doc-frame__accent {
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, #6C63FF 0%, #3028C0 40%, #1d1597 70%, #6C63FF 100%);
+  background-size: 200% 100%;
+  animation: doc-accent-shift 3s ease infinite;
+}
+@keyframes doc-accent-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Shadow beneath */
+.doc-frame__shadow {
+  width: 80%;
+  height: 18px;
+  margin: 8px auto 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(29, 21, 151, 0.15) 0%, rgba(0,0,0,0.06) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: doc-shadow 6s ease-in-out infinite;
+}
+@keyframes doc-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(0.9); opacity: 0.7; }
+}
+
+/* ── Dark mode doc-frame ── */
+.dark .doc-frame__stack {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.04);
+}
+.dark .doc-frame__paper {
+  background: linear-gradient(180deg, #1a1a2e 0%, #141425 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    6px 10px 32px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.dark .doc-frame__edge {
+  background: linear-gradient(180deg, #12122a 0%, #0e0e22 50%, #0a0a1a 100%);
+}
+.dark .doc-frame__fold::before {
+  background: linear-gradient(225deg, #1e1e35 50%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.01) 52%, transparent 52%);
+}
+.dark .doc-frame__header {
+  background: linear-gradient(180deg, #1e1e34 0%, #1a1a2e 100%);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+.dark .doc-frame__logo { color: #8B7FFF; }
+.dark .doc-frame__title { color: rgba(255, 255, 255, 0.9); }
+.dark .doc-frame__metrics {
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.08) 0%, rgba(29, 21, 151, 0.12) 50%, rgba(108, 99, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.04);
+}
+.dark .doc-frame__metric-val { color: #8B7FFF; }
+.dark .doc-frame__metric-label { color: rgba(255, 255, 255, 0.35); }
+.dark .doc-frame__img { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
+.dark .doc-frame__powered { color: rgba(255, 255, 255, 0.2); }
+.dark .doc-frame__powered strong { color: rgba(255, 255, 255, 0.4); }
+.dark .doc-frame__shadow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(108, 99, 255, 0.12) 0%, rgba(0,0,0,0.1) 40%, transparent 70%);
+}
+
 /* ═══════════════════════════════════════════════════ */
 
 /* ── FX 5: Reveal — auto breathing scale + shadow pulse ── */
@@ -3825,6 +4204,15 @@ h5 {
   background: var(--color-bg);
   color: var(--color-text);
   border-color: var(--color-border);
+}
+
+/* Typeform secondary button hover in dark mode */
+.dark .typeform__btn--secondary {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+.dark .typeform__btn--secondary:hover {
+  background: #1e1b4b;
 }
 
 /* Page header in dark mode */
