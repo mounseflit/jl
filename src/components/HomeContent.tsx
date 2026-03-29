@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import IPhoneFrame from "./IPhoneFrame";
+import JabbLogo from "./JabbLogo";
 
 import { useTranslation } from "@/lib/I18nProvider";
 
 /* Service definitions using ACTUAL i18n keys */
 const serviceKeys = [
-  { titleKey: "services.rewardSystem.title", subtitleKey: "services.rewardSystem.subtitle", descKey: "services.rewardSystem.desc", ctaKey: "services.rewardSystem.cta", href: "/services/rewards", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false },
-  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-new-5.jpg", gradient: "from-[#140F6E] to-[#3028C0]", phone: false, smallImage: false },
-  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/ai-reports", image: "/images/screen-business.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false },
-  { titleKey: "services.qrCodes.title", subtitleKey: "services.qrCodes.subtitle", descKey: "services.qrCodes.desc", ctaKey: "services.qrCodes.cta", href: "/services/qr-codes", image: "/images/screen-qr.jpg", gradient: "from-[#140F6E] to-[#1d1597]", phone: false, smallImage: true },
-  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-4.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: false, smallImage: false },
+  { titleKey: "services.rewardSystem.title", subtitleKey: "services.rewardSystem.subtitle", descKey: "services.rewardSystem.desc", ctaKey: "services.rewardSystem.cta", href: "/services/rewards", image: "/images/screen-missions.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: true, smallImage: false, fx: "fx-float", qrStand: false },
+  { titleKey: "services.voiceOfCustomer.title", subtitleKey: "services.voiceOfCustomer.subtitle", descKey: "services.voiceOfCustomer.desc", ctaKey: "services.voiceOfCustomer.cta", href: "/services/voice-of-customer", image: "/images/screen-new-5.jpg", gradient: "from-[#140F6E] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-shimmer", qrStand: false },
+  { titleKey: "services.aiReports.title", subtitleKey: "services.aiReports.subtitle", descKey: "services.aiReports.desc", ctaKey: "services.aiReports.cta", href: "/services/ai-reports", image: "/images/screen-business.jpg", gradient: "from-[#3028C0] to-[#140F6E]", phone: false, smallImage: false, fx: "fx-glow", qrStand: false },
+  { titleKey: "services.qrCodes.title", subtitleKey: "services.qrCodes.subtitle", descKey: "services.qrCodes.desc", ctaKey: "services.qrCodes.cta", href: "/services/qr-codes", image: "/images/screen-qr.jpg", gradient: "from-[#140F6E] to-[#1d1597]", phone: false, smallImage: true, fx: "fx-tilt", qrStand: true },
+  { titleKey: "services.cxAudits.title", subtitleKey: "services.cxAudits.subtitle", descKey: "services.cxAudits.desc", ctaKey: "services.cxAudits.cta", href: "/services/cx-audits", image: "/images/screen-new-4.jpg", gradient: "from-[#1d1597] to-[#3028C0]", phone: false, smallImage: false, fx: "fx-reveal", qrStand: false },
 ] as const;
 
 export default function HomeContent() {
@@ -149,12 +150,65 @@ export default function HomeContent() {
                     </a>
                   </div>
                   <div className={`${!isEven ? "lg:order-1" : ""} flex justify-center`}>
-                    {s.phone ? (
-                      <div className={`service-phone-tilt ${!isEven ? "service-phone-tilt--left" : ""}`}>
+                    {s.phone && (
+                      <div className={`service-phone-tilt ${s.fx} ${!isEven ? "service-phone-tilt--left" : ""}`}>
                         <IPhoneFrame src={s.image} alt={t(s.titleKey)} />
                       </div>
-                    ) : (
-                      <div className={`relative w-full ${s.smallImage ? "max-w-[260px]" : "max-w-[480px]"} rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)] hover:shadow-xl transition-shadow duration-300`}>
+                    )}
+                    {s.qrStand && (
+                      /* ── 3D QR Stand — inverted-7 shape ── */
+                      <div className="qr-stand">
+                        <div className="qr-stand__body">
+                          {/* Left triangle — side profile showing the L-bend */}
+                          <div className="qr-stand__tri" />
+                          {/* The card face */}
+                          <div className="qr-stand__card">
+                            {/* Top section */}
+                            <div className="qr-stand__header">
+                              <span className="qr-stand__review-text">Review us on</span>
+                              <div className="qr-stand__brand">
+                                <span className="qr-stand__jabb-logo"><JabbLogo size={32} /></span>
+                                <span className="qr-stand__brand-name">JABB</span>
+                              </div>
+                              <div className="qr-stand__stars">
+                                {[...Array(5)].map((_, si) => (
+                                  <svg key={si} width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                  </svg>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* QR Code area */}
+                            <div className="qr-stand__qr-wrap">
+                              <div className="qr-stand__qr-border">
+                                <Image src={s.image} alt="JABB QR Code" width={200} height={200} className="qr-stand__qr-img" />
+                              </div>
+                            </div>
+
+                            {/* Bottom — NFC tap icon */}
+                            <div className="qr-stand__footer">
+                              <div className="qr-stand__nfc">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round">
+                                  <circle cx="12" cy="12" r="2"/>
+                                  <path d="M7 17c-1.5-1.5-2.5-3.5-2.5-5.5C4.5 7.3 7.9 4 12 4s7.5 3.3 7.5 7.5c0 2-1 4-2.5 5.5"/>
+                                  <path d="M9 15c-.8-.8-1.5-2-1.5-3.5C7.5 9 9.5 7 12 7s4.5 2 4.5 4.5c0 1.5-.7 2.7-1.5 3.5"/>
+                                </svg>
+                              </div>
+                              <span className="qr-stand__tap-text">Tap or Scan</span>
+                              <div className="qr-stand__powered">
+                                Powered by <strong>JABB</strong>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Flat base strip on the table */}
+                          <div className="qr-stand__base" />
+                        </div>
+                        <div className="qr-stand__shadow" />
+                      </div>
+                    )}
+                    {!s.phone && !s.qrStand && (
+                      <div className={`svc-img ${s.fx} relative w-full ${s.smallImage ? "max-w-[260px]" : "max-w-[480px]"} rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)]`}>
                         <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-[var(--color-border)]">
                           <span className="h-2 w-2 rounded-full bg-red-400/60" />
                           <span className="h-2 w-2 rounded-full bg-yellow-400/60" />

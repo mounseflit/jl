@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import JabbLogo from "./JabbLogo";
 import { useTranslation } from "@/lib/I18nProvider";
 import type { TranslationKey } from "@/lib/i18n";
@@ -84,10 +84,59 @@ const ORBIT_ITEMS = [
 export default function OrbitVisual() {
   const { t } = useTranslation();
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const rafRef = useRef<number>(0);
+  const startRef = useRef<number>(0);
 
   const handleClick = (key: string) => {
     setActiveKey((prev) => (prev === key ? null : key));
   };
+
+  /* JS-driven orbit: position each item on an elliptical path,
+     dynamically setting transform, opacity, scale AND z-index.
+     Items in the bottom half (front) get z-index: 10 (above globe).
+     Items in the top half (back) get z-index: 1 (behind globe). */
+  const animate = useCallback((time: number) => {
+    if (!startRef.current) startRef.current = time;
+    const elapsed = (time - startRef.current) / 1000; // seconds
+
+    const inner = itemRefs.current[0]?.parentElement;
+    if (!inner) { rafRef.current = requestAnimationFrame(animate); return; }
+    const style = getComputedStyle(inner);
+    const rx = parseFloat(style.getPropertyValue("--orbit-rx")) || 180;
+    const ry = parseFloat(style.getPropertyValue("--orbit-ry")) || 70;
+    const speed = parseFloat(style.getPropertyValue("--orbit-speed")) || 28;
+
+    const count = ORBIT_ITEMS.length;
+    for (let i = 0; i < count; i++) {
+      const el = itemRefs.current[i];
+      if (!el) continue;
+
+      // Angle: each item offset by (i/count) of the full circle
+      const angle = ((elapsed / speed) + (i / count)) * Math.PI * 2;
+      const x = Math.cos(angle) * rx;
+      const y = Math.sin(angle) * ry;
+
+      // sin(angle) > 0 means bottom half → in front of globe
+      const inFront = Math.sin(angle) > 0;
+
+      // Depth simulation: items at top (back) are smaller + faded
+      const depthT = (Math.sin(angle) + 1) / 2; // 0 = back, 1 = front
+      const s = 0.65 + depthT * 0.4;  // scale: 0.65 → 1.05
+      const o = 0.12 + depthT * 0.88; // opacity: 0.12 → 1.0
+
+      el.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
+      el.style.opacity = `${o}`;
+      el.style.zIndex = inFront ? "10" : "1";
+    }
+
+    rafRef.current = requestAnimationFrame(animate);
+  }, []);
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [animate]);
 
   return (
     <section className="orbit-section">
@@ -105,20 +154,20 @@ export default function OrbitVisual() {
             <div className="orbit-ellipse orbit-ellipse--1" />
             <div className="orbit-ellipse orbit-ellipse--2" />
 
-            <div className="orbit-scene">
-              {ORBIT_ITEMS.map((item) => (
-                <div
-                  key={item.key}
-                  className={`orbit-item`}
-                  onClick={() => handleClick(item.key)}
-                >
-                  <div className={`orbit-pill ${activeKey === item.key ? "orbit-pill--active" : ""}`}>
-                    <span className="orbit-pill__icon">{item.icon}</span>
-                    <span className="orbit-pill__label">{item.label}</span>
-                  </div>
+            {/* Orbit items — JS-driven position + z-index */}
+            {ORBIT_ITEMS.map((item, i) => (
+              <div
+                key={item.key}
+                ref={(el) => { itemRefs.current[i] = el; }}
+                className="orbit-item"
+                onClick={() => handleClick(item.key)}
+              >
+                <div className={`orbit-pill ${activeKey === item.key ? "orbit-pill--active" : ""}`}>
+                  <span className="orbit-pill__icon">{item.icon}</span>
+                  <span className="orbit-pill__label">{item.label}</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
 
             <div className="orbit-globe">
               <div className="orbit-globe__glow" />
