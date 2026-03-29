@@ -13,10 +13,10 @@ export default function CTABanner() {
         <div className="cta-banner__card">
           <div className="cta-banner__dots cta-banner__dots--tl" />
           <div className="cta-banner__dots cta-banner__dots--br" />
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-3 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--color-text)] dark:text-white mb-3 leading-tight">
             {t("cta.title")}
           </h2>
-          <p className="text-white/60 mb-8 max-w-[440px] mx-auto text-xs sm:text-sm leading-relaxed">
+          <p className="text-[var(--color-text-light)] dark:text-white/60 mb-8 max-w-[440px] mx-auto text-xs sm:text-sm leading-relaxed">
             {t("cta.subtitle")}
           </p>
           <div className="cta-store-buttons" style={{ display: "flex", justifyContent: "center" }}>

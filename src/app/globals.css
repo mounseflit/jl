@@ -3082,19 +3082,28 @@ h5 {
 .cta-banner__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-footer-bg) 0%, #12101e 100%);
+  background: linear-gradient(135deg, #f0eeff 0%, #e8e5ff 50%, #ddd8ff 100%);
   z-index: 0;
 }
 
 .cta-banner__card {
   position: relative;
-  background: linear-gradient(145deg, rgba(29,21,151,0.18) 0%, rgba(29,21,151,0.04) 100%);
-  border: 1px solid rgba(29,21,151,0.22);
+  background: linear-gradient(145deg, rgba(29,21,151,0.08) 0%, rgba(29,21,151,0.02) 100%);
+  border: 1px solid rgba(29,21,151,0.12);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
   text-align: center;
   overflow: hidden;
   backdrop-filter: blur(10px);
+}
+
+/* Dark mode: restore deep dark bg */
+.dark .cta-banner__bg {
+  background: linear-gradient(135deg, var(--color-footer-bg) 0%, #12101e 100%);
+}
+.dark .cta-banner__card {
+  background: linear-gradient(145deg, rgba(29,21,151,0.18) 0%, rgba(29,21,151,0.04) 100%);
+  border-color: rgba(29,21,151,0.22);
 }
 
 /* Decorative dot grids */
@@ -3121,24 +3130,31 @@ h5 {
   flex-wrap: wrap;
 }
 
-/* CTA store buttons — white pill on dark bg */
+/* CTA store buttons — dark pill on light bg, white pill on dark bg */
 .cta-store-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   padding: 0.7rem 1.4rem;
-  background: white;
-  color: var(--color-footer-bg);
+  background: #0C0A28;
+  color: #fff;
   border-radius: 0.75rem;
   text-decoration: none;
   font-weight: 500;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px -6px rgba(29,21,151,0.3);
+  box-shadow: 0 4px 20px -6px rgba(12,10,40,0.25);
   min-width: 170px;
 }
-
 .cta-store-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 30px -6px rgba(12,10,40,0.4);
+}
+.dark .cta-store-btn {
+  background: white;
+  color: var(--color-footer-bg);
+  box-shadow: 0 4px 20px -6px rgba(29,21,151,0.3);
+}
+.dark .cta-store-btn:hover {
   box-shadow: 0 8px 30px -6px rgba(29,21,151,0.45);
 }
 
