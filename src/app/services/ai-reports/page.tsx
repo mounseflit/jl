@@ -65,17 +65,17 @@ export default function AiReportsPage() {
 
       <main className="font-body">
         {/* ── Hero: Dark gradient with glow ── */}
-        <section className="relative overflow-hidden bg-[#0A0A1B] pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-[#0A0A1B] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           {/* Purple glow orbs */}
           <div className="absolute top-1/4 left-1/3 h-80 w-80 rounded-full bg-primary/25 blur-[150px]" />
           <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#9F7AEA]/20 blur-[120px]" />
           <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-[#38B2AC]/15 blur-[80px]" />
 
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-block rounded-full bg-primary/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light backdrop-blur-sm mb-6">
               AI-Powered Reports
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               From raw data to{" "}
               <span className="bg-gradient-to-r from-primary-light via-[#9F7AEA] to-[#38B2AC] bg-clip-text text-transparent">
                 strategic insight
@@ -97,7 +97,7 @@ export default function AiReportsPage() {
 
         {/* ── Before/After: Raw Data → AI Insight ── */}
         <section className="py-20 lg:py-28 bg-[#0F0F20]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
                 From Raw Data to Strategy
@@ -107,7 +107,7 @@ export default function AiReportsPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
               {/* Before: Raw Data */}
               <div className="rounded-2xl border border-slate-700 bg-slate-900/70 p-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -188,7 +188,7 @@ export default function AiReportsPage() {
 
         {/* ── 3 Capabilities with gradient borders ── */}
         <section className="py-20 lg:py-28 bg-[#0A0A1B]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
                 AI Capabilities
@@ -198,7 +198,7 @@ export default function AiReportsPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((cap) => (
                 <div
                   key={cap.title}
@@ -223,7 +223,7 @@ export default function AiReportsPage() {
 
         {/* ── Real AI Report Screenshot ── */}
         <section className="py-20 lg:py-28 bg-[#0F0F20]">
-          <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
                 See a Real AI Report
@@ -255,7 +255,7 @@ export default function AiReportsPage() {
 
         {/* ── CTA ── */}
         <section className="py-20 lg:py-24 bg-gradient-to-r from-[#9F7AEA] to-primary">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Let AI do the heavy lifting
             </h2>

@@ -74,7 +74,7 @@ export const translations = {
 
     "services.voiceOfCustomer.title": "Voice of Customer",
     "services.voiceOfCustomer.subtitle":
-      "Your real-time CX command center",
+      "Your real-time Business Dashboard",
     "services.voiceOfCustomer.desc":
       "96% of unhappy customers never complain \u2014 they just leave. JABB Business captures real feedback via audio, text, photos, and AI-driven Q&A. Monitor your brand health score, track performance by location, and benchmark across all your sites in one dashboard.",
     "services.voiceOfCustomer.cta": "Discover how it works",
@@ -312,7 +312,7 @@ export const translations = {
 
     "services.voiceOfCustomer.title": "Voix du Client",
     "services.voiceOfCustomer.subtitle":
-      "Votre QG exp\u00E9rience client en temps r\u00E9el",
+      "Votre dashboard Business en temps r\u00E9el",
     "services.voiceOfCustomer.desc":
       "96% des clients m\u00E9contents ne disent rien \u2014 ils disparaissent. JABB Business capte leur v\u00E9rit\u00E9 via audio, texte, photos et Q&A intelligent. Suivez votre score de sant\u00E9 de marque, analysez par site et comparez toutes vos enseignes depuis un seul tableau de bord.",
     "services.voiceOfCustomer.cta": "D\u00E9couvrir comment \u00E7a marche",
@@ -554,7 +554,7 @@ export const translations = {
 
     "services.voiceOfCustomer.title": "\u0635\u0648\u062A \u0627\u0644\u0639\u0645\u064A\u0644",
     "services.voiceOfCustomer.subtitle":
-      "\u0633\u0645\u0639 \u0627\u0644\u0644\u064A \u0645\u0627 \u0639\u0645\u0631\u0647\u0645 \u0643\u064A\u0647\u0636\u0631\u0648 \u2014 \u0642\u0628\u0644 \u0645\u0627 \u064A\u0645\u0634\u064A\u0648",
+      "\u0642\u064A\u0651\u0645 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u0627\u0644\u0645\u0627\u0634\u064A \u0631\u0627\u0636\u064A",
     "services.voiceOfCustomer.desc":
       "96% \u062F\u064A\u0627\u0644 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u0627\u0644\u0645\u0627\u0634\u064A \u0631\u0627\u0636\u064A\u064A\u0646 \u0645\u0627 \u0643\u064A\u0634\u062A\u0643\u064A\u0648\u0634 \u2014 \u0643\u064A\u0645\u0634\u064A\u0648 \u0648\u0635\u0627\u0641\u064A. JABB \u0643\u064A\u0644\u0642\u0637 \u0627\u0644\u062D\u0642\u064A\u0642\u0629 \u0628\u0627\u0644\u0635\u0648\u062A\u060C \u0627\u0644\u0646\u0635\u060C \u0627\u0644\u062A\u0635\u0627\u0648\u0631 \u0648 Q&A \u0630\u0643\u064A. \u062A\u0642\u062F\u0631 \u062D\u062A\u0649 \u062A\u0637\u0644\u0642 \u0645\u0647\u0627\u0645 \u0639\u0645\u064A\u0644 \u0633\u0631\u064A \u062F\u064A\u0631\u0643\u062A \u0644\u0644\u0640 JABBers \u0645\u0646 \u0627\u0644\u0623\u0628\u0644\u064A\u0643\u0627\u0633\u064A\u0648\u0646.",
     "services.voiceOfCustomer.cta": "\u0627\u0643\u062A\u0634\u0641 \u0643\u064A\u0641\u0627\u0634 \u0643\u064A\u062E\u062F\u0645",

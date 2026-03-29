@@ -38,20 +38,20 @@ export default function CxAuditsPage() {
 
       <main className="font-body">
         {/* ── Hero: Full-width gradient ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary to-primary-light pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary to-primary-light pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-white blur-3xl" />
             <div className="absolute bottom-10 right-20 h-96 w-96 rounded-full bg-white blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="max-w-xl">
                 <span className="inline-block rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur-sm mb-6">
                   CX Audits
                 </span>
-                <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                   360-degree view of your{" "}
                   <span className="text-white/90">customer journey</span>
                 </h1>
@@ -86,13 +86,13 @@ export default function CxAuditsPage() {
         </section>
 
         {/* ── What We Audit: 4x2 grid ── */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="py-20 lg:py-28 bg-[var(--color-bg)]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
                 What We Audit
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 Eight core dimensions evaluated in every CX audit, scored on a 10-point scale.
               </p>
             </div>
@@ -106,7 +106,7 @@ export default function CxAuditsPage() {
                 return (
                   <div
                     key={cat.label}
-                    className="flex flex-col items-center rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+                    className="flex flex-col items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
                   >
                     {/* Circular progress */}
                     <div className="relative h-24 w-24">
@@ -123,11 +123,11 @@ export default function CxAuditsPage() {
                           strokeDashoffset={offset}
                         />
                       </svg>
-                      <span className="absolute inset-0 flex items-center justify-center font-display text-lg font-bold text-ink">
+                      <span className="absolute inset-0 flex items-center justify-center font-display text-lg font-bold text-[var(--color-text)]">
                         {cat.score}
                       </span>
                     </div>
-                    <span className="mt-4 text-sm font-semibold text-ink">
+                    <span className="mt-4 text-sm font-semibold text-[var(--color-text)]">
                       {cat.label}
                     </span>
                   </div>
@@ -138,8 +138,8 @@ export default function CxAuditsPage() {
         </section>
 
         {/* ── Alternating sections ── */}
-        <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-24">
+        <section className="py-20 lg:py-28 bg-[var(--color-surface)]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
             {/* Row 1: image left, text right */}
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="overflow-hidden rounded-2xl shadow-lg">
@@ -152,10 +152,10 @@ export default function CxAuditsPage() {
                 />
               </div>
               <div>
-                <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+                <h3 className="font-display text-2xl font-bold text-[var(--color-text)] sm:text-3xl">
                   Full Journey Mapping
                 </h3>
-                <p className="mt-4 text-ink-light leading-relaxed">
+                <p className="mt-4 text-[var(--color-text-light)] leading-relaxed">
                   We map every touchpoint from discovery to post-purchase,
                   identifying where customers drop off or disengage. Our
                   evaluators follow a structured framework that covers digital,
@@ -163,7 +163,7 @@ export default function CxAuditsPage() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   {["Online presence review", "In-store experience audit", "Post-purchase follow-up analysis"].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-ink-light">
+                    <li key={item} className="flex items-start gap-3 text-[var(--color-text-light)]">
                       <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -177,10 +177,10 @@ export default function CxAuditsPage() {
             {/* Row 2: text left, image right */}
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="order-2 lg:order-1">
-                <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+                <h3 className="font-display text-2xl font-bold text-[var(--color-text)] sm:text-3xl">
                   Benchmark Scoring
                 </h3>
-                <p className="mt-4 text-ink-light leading-relaxed">
+                <p className="mt-4 text-[var(--color-text-light)] leading-relaxed">
                   Your CX performance scored against industry benchmarks so you
                   know exactly where you stand versus competitors. We compile
                   data from hundreds of evaluations to provide meaningful
@@ -188,7 +188,7 @@ export default function CxAuditsPage() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   {["Industry-standard frameworks", "Competitor benchmarking", "Trend analysis over time"].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-ink-light">
+                    <li key={item} className="flex items-start gap-3 text-[var(--color-text-light)]">
                       <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -211,22 +211,22 @@ export default function CxAuditsPage() {
         </section>
 
         {/* ── Comparison Table ── */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+        <section className="py-20 lg:py-28 bg-[var(--color-bg)]">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
                 JABB vs Traditional Audits
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 See why leading businesses choose JABB for their CX auditing needs.
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-sm">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-slate-50">
-                    <th className="px-6 py-4 text-sm font-semibold text-ink">Feature</th>
+                  <tr className="bg-[var(--color-surface)]">
+                    <th className="px-6 py-4 text-sm font-semibold text-[var(--color-text)]">Feature</th>
                     <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
                       JABB CX Audits
                     </th>
@@ -239,9 +239,9 @@ export default function CxAuditsPage() {
                   {comparisonRows.map((row, i) => (
                     <tr
                       key={row.feature}
-                      className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}
+                      className={i % 2 === 0 ? "bg-[var(--color-bg)]" : "bg-[var(--color-surface)]/50"}
                     >
-                      <td className="px-6 py-4 text-sm text-ink">{row.feature}</td>
+                      <td className="px-6 py-4 text-sm text-[var(--color-text)]">{row.feature}</td>
                       <td className="px-6 py-4 text-center">
                         {row.jabb ? (
                           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">
@@ -282,7 +282,7 @@ export default function CxAuditsPage() {
 
         {/* ── CTA ── */}
         <section className="py-20 lg:py-24 bg-gradient-to-br from-primary to-[#3028C0]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Get a complete picture of your customer experience
             </h2>

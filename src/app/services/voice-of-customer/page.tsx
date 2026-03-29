@@ -103,18 +103,18 @@ export default function VoiceOfCustomerPage() {
 
       <main className="font-body">
         {/* ── Hero: Soft warm gradient ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-[var(--color-bg)] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-primary/5 blur-3xl" />
 
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
               Voice of Customer
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl md:text-5xl lg:text-6xl">
               Hear what your customers{" "}
               <span className="text-primary">really think</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-light">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-light)]">
               Traditional feedback only captures extremes. JABB captures the
               silent majority through structured interviews, surveys, and AI
               sentiment analysis.
@@ -129,18 +129,18 @@ export default function VoiceOfCustomerPage() {
         </section>
 
         {/* ── 3 Feedback Channels ── */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="py-20 lg:py-28 bg-[var(--color-bg)]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
                 Three Channels, One Truth
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 We collect feedback through multiple channels to give you the complete picture.
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {channels.map((ch) => (
                 <div
                   key={ch.title}
@@ -149,10 +149,10 @@ export default function VoiceOfCustomerPage() {
                   <div className={`inline-flex h-14 w-14 items-center justify-center rounded-xl ${ch.iconBg}`}>
                     {ch.icon}
                   </div>
-                  <h3 className="mt-6 font-display text-xl font-bold text-ink">
+                  <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-text)]">
                     {ch.title}
                   </h3>
-                  <p className="mt-3 text-ink-light leading-relaxed">
+                  <p className="mt-3 text-[var(--color-text-light)] leading-relaxed">
                     {ch.desc}
                   </p>
                 </div>
@@ -162,13 +162,13 @@ export default function VoiceOfCustomerPage() {
         </section>
 
         {/* ── What Customers Say — masonry-like ── */}
-        <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-primary-50/30">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="py-20 lg:py-28 bg-gradient-to-b from-[var(--color-bg)] to-primary-50/30">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
                 What Customers Say
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 Real feedback captured through JABB, helping businesses understand their customers.
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function VoiceOfCustomerPage() {
               {testimonials.map((t, i) => (
                 <div
                   key={i}
-                  className="mb-6 break-inside-avoid rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+                  className="mb-6 break-inside-avoid rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm"
                 >
                   {/* Stars */}
                   <div className="flex gap-0.5">
@@ -194,7 +194,7 @@ export default function VoiceOfCustomerPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="mt-4 text-ink-light leading-relaxed italic">
+                  <p className="mt-4 text-[var(--color-text-light)] leading-relaxed italic">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <div className="mt-4 flex items-center gap-3">
@@ -202,7 +202,7 @@ export default function VoiceOfCustomerPage() {
                       {t.name[0]}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-ink">{t.name}</p>
+                      <p className="text-sm font-semibold text-[var(--color-text)]">{t.name}</p>
                       <p className="text-xs text-ink-muted">{t.role}</p>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ export default function VoiceOfCustomerPage() {
 
         {/* ── Key Metrics ── */}
         <section className="py-20 lg:py-24 bg-white">
-          <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 sm:grid-cols-3">
               {metrics.map((m) => (
                 <div
@@ -224,7 +224,7 @@ export default function VoiceOfCustomerPage() {
                   <span className="font-display text-5xl font-extrabold text-primary">
                     {m.value}
                   </span>
-                  <p className="mt-2 text-sm font-medium text-ink-light uppercase tracking-wide">
+                  <p className="mt-2 text-sm font-medium text-[var(--color-text-light)] uppercase tracking-wide">
                     {m.label}
                   </p>
                 </div>
@@ -235,7 +235,7 @@ export default function VoiceOfCustomerPage() {
 
         {/* ── CTA ── */}
         <section className="py-20 lg:py-24 bg-gradient-to-br from-primary to-[#38B2AC]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Start listening to your customers today
             </h2>

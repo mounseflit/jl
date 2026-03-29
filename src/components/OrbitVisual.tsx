@@ -139,7 +139,7 @@ export default function OrbitVisual() {
   }, [animate]);
 
   return (
-    <section className="orbit-section">
+    <section id="section-omnichannel" className="orbit-section">
       {/* Section header */}
       <div className="orbit-section__header">
         <span className="orbit-section__badge">{t("orbit.badge")}</span>

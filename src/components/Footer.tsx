@@ -32,7 +32,7 @@ export default function Footer() {
     {
       title: t("footer.company"),
       links: [
-        { label: t("footer.aboutUs"), href: "/about" },
+        { label: t("footer.aboutUs"), href: "/#section-omnichannel" },
         { label: t("footer.contact"), href: "/contact" },
         { label: t("footer.blog") || "Blog", href: "#" },
       ],
@@ -51,9 +51,9 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: t("footer.aboutUs"), href: "/about" },
+    { label: t("footer.aboutUs"), href: "/#section-omnichannel" },
     { label: t("footer.contact"), href: "/contact" },
-    { label: t("footer.howItWorks") || "How JABB Works", href: "/about" },
+    { label: t("footer.howItWorks") || "How JABB Works", href: "/#section-omnichannel" },
     { label: t("footer.termsOfService"), href: "/terms" },
     { label: t("footer.privacyPolicy"), href: "/privacy" },
   ];

@@ -169,17 +169,17 @@ export default function QrCodesPage() {
 
       <main className="font-body">
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A0A1B] to-[#1d1597] pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A0A1B] to-[#1d1597] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
           {/* Glow orbs */}
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-primary/25 blur-[140px]" />
           <div className="absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-[#9F7AEA]/20 blur-[120px]" />
 
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
             <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light backdrop-blur-sm mb-6">
               QR Codes &amp; NFC Products
             </span>
 
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Smart Review Collection,{" "}
               <span className="bg-gradient-to-r from-primary-light via-[#9F7AEA] to-[#38B2AC] bg-clip-text text-transparent">
                 One Tap Away

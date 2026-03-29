@@ -37,7 +37,7 @@ export default function MobileNav() {
   const navItems = [
     { label: t("nav.services") || "Services", href: "#section-services" },
     { label: t("nav.faq") || "FAQ", href: "#section-faqs" },
-    { label: t("nav.about") || "About", href: "/about" },
+    { label: t("nav.about") || "About", href: "/#section-omnichannel" },
     { label: t("nav.contact") || "Contact", href: "#section-contact" },
   ];
 

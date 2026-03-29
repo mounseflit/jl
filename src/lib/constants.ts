@@ -37,6 +37,6 @@ export const NAV_ITEMS = [
   { label: "Services", href: "#section-services" },
   { label: "Cities", href: "#section-cities" },
   { label: "FAQ", href: "#section-faqs" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/#section-omnichannel" },
   { label: "Contact", href: "/contact" },
 ] as const;

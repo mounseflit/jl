@@ -191,19 +191,19 @@ export default function JabbAppPage() {
 
       <main className="font-body">
         {/* ── Hero: Split layout ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-white via-primary-50 to-primary-bg pt-28 pb-20 lg:pt-36 lg:pb-28">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-bg)] via-[var(--color-primary-bg)] to-[var(--color-surface)] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
               {/* Left text */}
               <div className="max-w-xl">
                 <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
                   JABB App
                 </span>
-                <h1 className="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
+                <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl md:text-5xl lg:text-6xl">
                   Earn money as a{" "}
                   <span className="text-primary">mystery shopper</span>
                 </h1>
-                <p className="mt-6 text-lg leading-relaxed text-ink-light">
+                <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-light)]">
                   Download the JABB app, pick missions near you, and get paid to
                   share honest feedback about real customer experiences. No
                   experience needed — just be yourself.
@@ -219,7 +219,7 @@ export default function JabbAppPage() {
                     </a>
                     <a
                       href="/services/cx-audits"
-                      className="inline-flex items-center rounded-xl border border-ink-faint bg-white px-7 py-3.5 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
+                      className="inline-flex items-center rounded-xl border border-ink-faint bg-white px-7 py-3.5 text-sm font-semibold text-[var(--color-text)] transition hover:border-primary hover:text-primary"
                     >
                       For Businesses
                     </a>
@@ -246,13 +246,13 @@ export default function JabbAppPage() {
         </section>
 
         {/* ── How It Works ── */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+        <section className="py-16 sm:py-20 lg:py-28 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="font-display text-2xl font-bold text-[var(--color-text)] sm:text-3xl lg:text-4xl">
                 How It Works
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 From download to payout in four simple steps.
               </p>
             </div>
@@ -272,10 +272,10 @@ export default function JabbAppPage() {
                     <span className="mt-3 inline-block font-display text-xs font-bold tracking-wider text-primary/60 uppercase">
                       Step {step.num}
                     </span>
-                    <h3 className="mt-1 font-display text-lg font-bold text-ink">
+                    <h3 className="mt-1 font-display text-lg font-bold text-[var(--color-text)]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm text-ink-light leading-relaxed">
+                    <p className="mt-2 text-sm text-[var(--color-text-light)] leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -286,18 +286,18 @@ export default function JabbAppPage() {
         </section>
 
         {/* ── Features ── */}
-        <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+        <section className="py-16 sm:py-20 lg:py-28 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="font-display text-2xl font-bold text-[var(--color-text)] sm:text-3xl lg:text-4xl">
                 Built for JABBers
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 Everything you need to complete missions quickly and accurately.
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((f) => (
                 <div
                   key={f.title}
@@ -308,10 +308,10 @@ export default function JabbAppPage() {
                   >
                     {f.icon}
                   </div>
-                  <h3 className="mt-6 font-display text-xl font-bold text-ink">
+                  <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-text)]">
                     {f.title}
                   </h3>
-                  <p className="mt-3 text-ink-light leading-relaxed">
+                  <p className="mt-3 text-[var(--color-text-light)] leading-relaxed">
                     {f.desc}
                   </p>
                 </div>
@@ -321,18 +321,18 @@ export default function JabbAppPage() {
         </section>
 
         {/* ── Who It's For (Industries) ── */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+        <section className="py-16 sm:py-20 lg:py-28 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="font-display text-2xl font-bold text-[var(--color-text)] sm:text-3xl lg:text-4xl">
                 Missions Across Industries
               </h2>
-              <p className="mt-4 text-ink-light max-w-2xl mx-auto">
+              <p className="mt-4 text-[var(--color-text-light)] max-w-2xl mx-auto">
                 Choose from a wide variety of mystery shopping missions.
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {audiences.map((a) => (
                 <div
                   key={a.label}
@@ -341,10 +341,10 @@ export default function JabbAppPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white shadow-sm">
                     {a.icon}
                   </div>
-                  <h3 className="mt-4 font-display text-xl font-bold text-ink">
+                  <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-text)]">
                     {a.label}
                   </h3>
-                  <p className="mt-3 text-ink-light leading-relaxed">
+                  <p className="mt-3 text-[var(--color-text-light)] leading-relaxed">
                     {a.desc}
                   </p>
                 </div>
@@ -354,9 +354,9 @@ export default function JabbAppPage() {
         </section>
 
         {/* ── CTA Banner ── */}
-        <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-primary-light">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-primary to-primary-light">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
               Ready to start earning as a JABBer?
             </h2>
             <p className="mt-4 text-lg text-white/80">

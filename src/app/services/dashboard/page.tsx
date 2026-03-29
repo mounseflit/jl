@@ -89,16 +89,16 @@ export default function DashboardPage() {
 
       <main className="font-body">
         {/* ── Hero: Dark tech ── */}
-        <section className="relative overflow-hidden bg-[#0F0F1A] pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-[#0F0F1A] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           {/* Gradient accent orbs */}
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[120px]" />
           <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[#38B2AC]/15 blur-[100px]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light backdrop-blur-sm mb-6">
               Business Dashboard
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-4xl mx-auto">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl mx-auto">
               Your CX intelligence,{" "}
               <span className="bg-gradient-to-r from-primary-light to-[#38B2AC] bg-clip-text text-transparent">
                 all in one place
@@ -141,7 +141,7 @@ export default function DashboardPage() {
 
         {/* ── Your Command Center: 3x2 grid ── */}
         <section className="py-20 lg:py-28 bg-[#0F0F1A]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
                 Your Command Center
@@ -174,7 +174,7 @@ export default function DashboardPage() {
 
         {/* ── Screenshot Gallery ── */}
         <section className="py-20 lg:py-28 bg-[#13132A]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
                 Designed for Clarity
@@ -184,7 +184,7 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {screenshots.map((ss, i) => (
                 <div key={i} className="group">
                   {/* Browser frame mockup */}
@@ -214,7 +214,7 @@ export default function DashboardPage() {
 
         {/* ── Available Everywhere ── */}
         <section className="py-20 lg:py-24 bg-[#0F0F1A]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Available Everywhere
             </h2>
@@ -262,7 +262,7 @@ export default function DashboardPage() {
 
         {/* ── CTA (dark variant) ── */}
         <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#3028C0]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Take control of your customer experience
             </h2>
