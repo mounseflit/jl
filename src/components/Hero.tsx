@@ -1,6 +1,5 @@
 "use client";
 
-import JabbLogo from "./JabbLogo";
 import StoreButtons from "./StoreButtons";
 import MobileNav from "./MobileNav";
 import IPhoneFrame from "./IPhoneFrame";
