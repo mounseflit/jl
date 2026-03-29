@@ -213,14 +213,15 @@ export default function HomeContent() {
                       <div className={`doc-frame ${s.fx}`}>
                         <div className="doc-frame__body">
                           {/* Stacked pages behind for depth */}
+                          <div className="doc-frame__stack doc-frame__stack--5" />
+                          <div className="doc-frame__stack doc-frame__stack--4" />
+                          <div className="doc-frame__stack doc-frame__stack--3" />
                           <div className="doc-frame__stack doc-frame__stack--2" />
                           <div className="doc-frame__stack doc-frame__stack--1" />
                           {/* Main paper */}
                           <div className="doc-frame__paper">
                             {/* 3D right edge */}
                             <div className="doc-frame__edge" />
-                            {/* Folded corner */}
-                            <div className="doc-frame__fold" />
                             {/* Header bar */}
                             <div className="doc-frame__header">
                               <div className="doc-frame__logo">
