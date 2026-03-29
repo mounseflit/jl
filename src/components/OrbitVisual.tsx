@@ -122,20 +122,52 @@ export default function OrbitVisual() {
 
             <div className="orbit-globe">
               <div className="orbit-globe__glow" />
+              {/* Atmosphere ring */}
+              <div className="orbit-globe__atmo" />
               <div className="orbit-globe__sphere">
+                {/* Specular highlight overlay */}
+                <div className="orbit-globe__specular" />
+                {/* Rim light — backlight crescent */}
+                <div className="orbit-globe__rim" />
                 <svg className="orbit-globe__grid" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="100" cy="100" r="92" stroke="currentColor" strokeWidth="0.6" opacity="0.2" />
-                  <ellipse cx="100" cy="100" rx="92" ry="28" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
-                  <ellipse cx="100" cy="100" rx="92" ry="55" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
-                  <ellipse cx="100" cy="100" rx="65" ry="92" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
-                  <ellipse cx="100" cy="100" rx="32" ry="92" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
-                  <line x1="8" y1="100" x2="192" y2="100" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
-                  <line x1="100" y1="8" x2="100" y2="192" stroke="currentColor" strokeWidth="0.4" opacity="0.1" />
+                  <defs>
+                    {/* Fade grid at edges for 3D depth */}
+                    <radialGradient id="gridFade" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="white" stopOpacity="1" />
+                      <stop offset="60%" stopColor="white" stopOpacity="0.9" />
+                      <stop offset="85%" stopColor="white" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="white" stopOpacity="0" />
+                    </radialGradient>
+                    <mask id="sphereMask">
+                      <circle cx="100" cy="100" r="94" fill="url(#gridFade)" />
+                    </mask>
+                  </defs>
+                  <g mask="url(#sphereMask)">
+                    {/* Outer circle */}
+                    <circle cx="100" cy="100" r="94" stroke="currentColor" strokeWidth="1.2" opacity="0.55" />
+                    {/* Latitudes */}
+                    <ellipse cx="100" cy="100" rx="94" ry="12" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
+                    <ellipse cx="100" cy="100" rx="94" ry="30" stroke="currentColor" strokeWidth="0.9" opacity="0.4" />
+                    <ellipse cx="100" cy="100" rx="94" ry="50" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+                    <ellipse cx="100" cy="100" rx="94" ry="70" stroke="currentColor" strokeWidth="0.9" opacity="0.45" />
+                    <ellipse cx="100" cy="100" rx="94" ry="85" stroke="currentColor" strokeWidth="0.8" opacity="0.35" />
+                    {/* Longitudes */}
+                    <ellipse cx="100" cy="100" rx="12" ry="94" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
+                    <ellipse cx="100" cy="100" rx="30" ry="94" stroke="currentColor" strokeWidth="0.9" opacity="0.4" />
+                    <ellipse cx="100" cy="100" rx="50" ry="94" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+                    <ellipse cx="100" cy="100" rx="70" ry="94" stroke="currentColor" strokeWidth="0.9" opacity="0.45" />
+                    <ellipse cx="100" cy="100" rx="85" ry="94" stroke="currentColor" strokeWidth="0.8" opacity="0.35" />
+                    {/* Equator (bold) + prime meridian */}
+                    <ellipse cx="100" cy="100" rx="94" ry="1" stroke="currentColor" strokeWidth="1.5" opacity="0.65" />
+                    <ellipse cx="100" cy="100" rx="1" ry="94" stroke="currentColor" strokeWidth="1.5" opacity="0.65" />
+                  </g>
                 </svg>
                 <div className="orbit-globe__logo">
-                  <JabbLogo size={48} />
+                  <JabbLogo size={52} />
                 </div>
               </div>
+              {/* Shadow underneath */}
+              <div className="orbit-globe__shadow" />
             </div>
           </div>
         </div>

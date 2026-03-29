@@ -177,6 +177,8 @@ body {
   max-width: 460px;
   height: 280px;
   margin: 0 auto;
+  perspective: 900px;
+  transform-style: preserve-3d;
 }
 
 /* ── Decorative ellipse rings ── */
@@ -191,37 +193,44 @@ body {
 
 .orbit-ellipse--1 {
   width: calc(var(--orbit-rx) * 2 + 20px);
-  height: calc(var(--orbit-ry) * 2 + 20px);
-  transform: translate(-50%, -50%);
-  border: 1px dashed var(--color-border);
-  opacity: 0.5;
+  height: calc(var(--orbit-rx) * 2 + 20px);
+  transform: translate(-50%, -50%) rotateX(70deg);
+  border: 2px solid rgba(108, 99, 255, 0.4);
+  box-shadow:
+    0 0 16px 2px rgba(108, 99, 255, 0.15),
+    0 2px 4px rgba(108, 99, 255, 0.1),
+    inset 0 0 8px 1px rgba(108, 99, 255, 0.05);
 }
 
 .orbit-ellipse--2 {
   width: calc(var(--orbit-rx) * 2 + 80px);
-  height: calc(var(--orbit-ry) * 2 + 80px);
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(29, 21, 151, 0.08);
-  opacity: 0.4;
+  height: calc(var(--orbit-rx) * 2 + 80px);
+  transform: translate(-50%, -50%) rotateX(70deg);
+  border: 1.5px solid rgba(108, 99, 255, 0.2);
+  box-shadow:
+    0 0 12px 1px rgba(108, 99, 255, 0.08),
+    0 1px 3px rgba(108, 99, 255, 0.06);
 }
 
-/* ── Orbit scene — centered container for items ── */
+/* ── Orbit scene — 3D tilted ring container ── */
 .orbit-scene {
   position: absolute;
   left: 50%;
   top: 50%;
   width: 0;
   height: 0;
-  z-index: 3;
+  transform-style: preserve-3d;
+  transform: rotateX(75deg);
 }
 
-/* Each pill orbits on its own elliptical path via a shared keyframe
-   with staggered animation-delay. Pills stay completely upright. */
+/* Each pill orbits via rotateY around the center in 3D space.
+   Counter-rotations keep the pill label facing the viewer. */
 .orbit-item {
   position: absolute;
   left: 0;
   top: 0;
-  animation: orbit-ellipse var(--orbit-speed) linear infinite;
+  transform-style: preserve-3d;
+  animation: orbit-3d var(--orbit-speed) linear infinite;
 }
 
 /* 8 items spaced evenly: delay = -(i/8) * speed  */
@@ -234,24 +243,52 @@ body {
 .orbit-item:nth-child(7) { animation-delay: calc(var(--orbit-speed) * -6 / 8); }
 .orbit-item:nth-child(8) { animation-delay: calc(var(--orbit-speed) * -7 / 8); }
 
-/* Elliptical path: 12-step keyframes for smooth orbit.
-   X = rx * cos(angle), Y = ry * sin(angle)
-   At 0° (right), 90° (bottom-front), 180° (left), 270° (top-back)
-   Items at top (behind globe) shrink + fade for depth. */
-@keyframes orbit-ellipse {
-  0%      { transform: translate(var(--orbit-rx),  0px);                                      opacity: 1;    scale: 1;    z-index: 4; }
-  8.33%   { transform: translate(calc(var(--orbit-rx) * 0.866),  calc(var(--orbit-ry) * 0.5));   opacity: 1;    scale: 1;    z-index: 4; }
-  16.67%  { transform: translate(calc(var(--orbit-rx) * 0.5),    var(--orbit-ry));               opacity: 1;    scale: 1;    z-index: 4; }
-  25%     { transform: translate(0px,                            var(--orbit-ry));               opacity: 1;    scale: 1;    z-index: 4; }
-  33.33%  { transform: translate(calc(var(--orbit-rx) * -0.5),   var(--orbit-ry));               opacity: 1;    scale: 1;    z-index: 4; }
-  41.67%  { transform: translate(calc(var(--orbit-rx) * -0.866), calc(var(--orbit-ry) * 0.5));   opacity: 1;    scale: 1;    z-index: 4; }
-  50%     { transform: translate(calc(var(--orbit-rx) * -1),     0px);                          opacity: 1;    scale: 1;    z-index: 4; }
-  58.33%  { transform: translate(calc(var(--orbit-rx) * -0.866), calc(var(--orbit-ry) * -0.5));  opacity: 0.5;  scale: 0.85; z-index: 1; }
-  66.67%  { transform: translate(calc(var(--orbit-rx) * -0.5),   calc(var(--orbit-ry) * -1));    opacity: 0.35; scale: 0.78; z-index: 1; }
-  75%     { transform: translate(0px,                            calc(var(--orbit-ry) * -1));    opacity: 0.3;  scale: 0.75; z-index: 1; }
-  83.33%  { transform: translate(calc(var(--orbit-rx) * 0.5),    calc(var(--orbit-ry) * -1));    opacity: 0.35; scale: 0.78; z-index: 1; }
-  91.67%  { transform: translate(calc(var(--orbit-rx) * 0.866),  calc(var(--orbit-ry) * -0.5));  opacity: 0.5;  scale: 0.85; z-index: 1; }
-  100%    { transform: translate(var(--orbit-rx),                0px);                          opacity: 1;    scale: 1;    z-index: 4; }
+/* True 3D orbit: items rotate around Y axis in the tilted plane,
+   then counter-rotate to face the viewer. translateZ pushes them
+   out to the orbit radius. The perspective + rotateX on the scene
+   creates the natural elliptical appearance with real depth. */
+@keyframes orbit-3d {
+  0% {
+    transform: rotateY(0deg) translateX(var(--orbit-rx)) rotateY(0deg) rotateX(-75deg);
+    opacity: 1;
+    scale: 1;
+  }
+  /* Front-bottom: fully visible, closest to viewer */
+  25% {
+    transform: rotateY(90deg) translateX(var(--orbit-rx)) rotateY(-90deg) rotateX(-75deg);
+    opacity: 1;
+    scale: 1;
+  }
+  /* Left side: transitioning to back */
+  40% {
+    opacity: 0.6;
+    scale: 0.9;
+  }
+  /* Back-top: farthest away, behind globe */
+  50% {
+    opacity: 0.2;
+    scale: 0.75;
+  }
+  /* Still behind */
+  60% {
+    opacity: 0.2;
+    scale: 0.75;
+  }
+  /* Right side: coming back to front */
+  75% {
+    transform: rotateY(270deg) translateX(var(--orbit-rx)) rotateY(-270deg) rotateX(-75deg);
+    opacity: 0.5;
+    scale: 0.88;
+  }
+  90% {
+    opacity: 0.9;
+    scale: 0.97;
+  }
+  100% {
+    transform: rotateY(360deg) translateX(var(--orbit-rx)) rotateY(-360deg) rotateX(-75deg);
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 /* ── Pill styling ── */
@@ -475,43 +512,81 @@ body {
   line-height: 1;
 }
 
-/* ── Center Globe ── */
+/* ── Center Globe — 3D ── */
 .orbit-globe {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  width: 105px;
-  height: 105px;
+  transform: translate(-50%, -50%) translateZ(1px);
+  width: 140px;
+  height: 140px;
 }
 
+/* Outer glow pulse */
 .orbit-globe__glow {
   position: absolute;
-  inset: -35px;
+  inset: -60px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(29, 21, 151, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.28) 0%, rgba(29, 21, 151, 0.14) 40%, transparent 70%);
   animation: globe-pulse 4s ease-in-out infinite;
-  transition: background 0.35s;
 }
 
 @keyframes globe-pulse {
   0%, 100% { transform: scale(1); opacity: 0.5; }
-  50%      { transform: scale(1.2); opacity: 1; }
+  50%      { transform: scale(1.3); opacity: 1; }
 }
 
+/* Atmosphere ring — double ring for depth */
+.orbit-globe__atmo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(140, 130, 255, 0.35);
+  box-shadow:
+    0 0 20px 4px rgba(108, 99, 255, 0.2),
+    0 0 40px 8px rgba(108, 99, 255, 0.08),
+    inset 0 0 16px 3px rgba(108, 99, 255, 0.1);
+  animation: atmo-shimmer 6s ease-in-out infinite;
+}
+.orbit-globe__atmo::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 130, 255, 0.12);
+}
+@keyframes atmo-shimmer {
+  0%, 100% { opacity: 0.6; border-color: rgba(140, 130, 255, 0.35); }
+  50%      { opacity: 1; border-color: rgba(140, 130, 255, 0.6); }
+}
+
+/* The sphere itself — strong 3D lighting */
 .orbit-globe__sphere {
   position: relative;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 35% 30%, #2E28A0 0%, #1d1597 40%, #140F6E 100%);
+  background:
+    /* Hot spot — bright upper-left highlight */
+    radial-gradient(ellipse at 28% 22%, rgba(180, 170, 255, 0.5) 0%, transparent 35%),
+    /* Secondary fill light from top */
+    radial-gradient(ellipse at 50% 15%, rgba(108, 99, 255, 0.3) 0%, transparent 45%),
+    /* Main sphere body — deep multi-stop gradient */
+    radial-gradient(ellipse at 40% 35%, #4A40E8 0%, #3830D0 18%, #2520A8 35%, #1d1597 52%, #110E5A 75%, #080630 100%);
   box-shadow:
-    0 0 0 1px rgba(29, 21, 151, 0.3),
-    0 0 0 4px rgba(29, 21, 151, 0.08),
-    inset 0 -15px 30px rgba(0, 0, 0, 0.3),
-    0 8px 40px rgba(29, 21, 151, 0.25),
-    0 2px 80px rgba(29, 21, 151, 0.1);
+    /* Terminator shadow — dark bottom edge */
+    inset 0 -28px 50px rgba(0, 0, 0, 0.55),
+    /* Right-side shadow for roundness */
+    inset -15px 0 30px rgba(0, 0, 0, 0.3),
+    /* Top fill light */
+    inset 0 12px 25px rgba(108, 99, 255, 0.2),
+    /* Left fill light */
+    inset 10px 0 20px rgba(140, 130, 255, 0.1),
+    /* Rim light — thin bright edge */
+    0 0 0 1.5px rgba(140, 130, 255, 0.3),
+    /* Ambient glow */
+    0 0 30px rgba(108, 99, 255, 0.25),
+    0 15px 50px -10px rgba(29, 21, 151, 0.5);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -519,23 +594,55 @@ body {
   transition: box-shadow 0.35s;
 }
 
+/* Specular highlight — strong glass-like reflection */
+.orbit-globe__specular {
+  position: absolute;
+  top: 6%;
+  left: 12%;
+  width: 45%;
+  height: 40%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 45% 45%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.1) 35%, transparent 60%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Rim light — crescent on edge for backlight feel */
+.orbit-globe__rim {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 40%, rgba(140, 130, 255, 0.15) 70%, rgba(180, 170, 255, 0.3) 88%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Wireframe grid — static */
 .orbit-globe__grid {
   position: absolute;
-  inset: 5px;
-  color: rgba(255, 255, 255, 0.35);
-  animation: grid-spin 30s linear infinite;
+  inset: 4px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-@keyframes grid-spin {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
-
+/* JABB logo in center */
 .orbit-globe__logo {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   color: white;
-  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 12px rgba(108, 99, 255, 0.4));
+}
+
+/* Drop shadow underneath globe */
+.orbit-globe__shadow {
+  position: absolute;
+  bottom: -18px;
+  left: 8%;
+  right: 8%;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(29, 21, 151, 0.3) 0%, rgba(0, 0, 0, 0.15) 40%, transparent 70%);
+  filter: blur(6px);
 }
 
 /* ── DARK MODE — orbit overrides ── */
@@ -549,14 +656,6 @@ body {
   background: rgba(91, 84, 255, 0.12);
   color: #7B75FF;
   border-color: rgba(91, 84, 255, 0.2);
-}
-
-.dark .orbit-ellipse--1 {
-  border-color: rgba(255, 255, 255, 0.06);
-}
-
-.dark .orbit-ellipse--2 {
-  border-color: rgba(91, 84, 255, 0.08);
 }
 
 .dark .orbit-pill {
@@ -582,21 +681,63 @@ body {
 }
 
 .dark .orbit-globe__glow {
-  background: radial-gradient(circle, rgba(91, 84, 255, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(91, 84, 255, 0.3) 0%, rgba(91, 84, 255, 0.08) 40%, transparent 70%);
+}
+
+.dark .orbit-globe__atmo {
+  border-color: rgba(91, 84, 255, 0.45);
+  box-shadow:
+    0 0 24px 5px rgba(91, 84, 255, 0.3),
+    0 0 50px 10px rgba(91, 84, 255, 0.1),
+    inset 0 0 16px 3px rgba(91, 84, 255, 0.15);
 }
 
 .dark .orbit-globe__sphere {
-  background: radial-gradient(ellipse at 35% 30%, #1E1B4B 0%, #0E0D20 60%, #0A0918 100%);
+  background:
+    radial-gradient(ellipse at 28% 22%, rgba(140, 130, 255, 0.45) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 15%, rgba(91, 84, 255, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse at 40% 35%, #3028C0 0%, #2520A8 18%, #1E1B4B 40%, #0E0D20 65%, #0A0918 100%);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 0 4px rgba(91, 84, 255, 0.08),
-    inset 0 -20px 40px rgba(0, 0, 0, 0.4),
-    0 0 60px rgba(91, 84, 255, 0.3),
-    0 0 120px rgba(91, 84, 255, 0.1);
+    inset 0 -28px 50px rgba(0, 0, 0, 0.6),
+    inset -15px 0 30px rgba(0, 0, 0, 0.35),
+    inset 0 12px 25px rgba(91, 84, 255, 0.25),
+    inset 10px 0 20px rgba(140, 130, 255, 0.08),
+    0 0 0 1.5px rgba(91, 84, 255, 0.3),
+    0 0 40px rgba(91, 84, 255, 0.25),
+    0 15px 50px -10px rgba(29, 21, 151, 0.6);
+}
+
+.dark .orbit-globe__specular {
+  background: radial-gradient(ellipse at 45% 45%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 35%, transparent 60%);
+}
+
+.dark .orbit-globe__rim {
+  background: linear-gradient(135deg, transparent 40%, rgba(91, 84, 255, 0.2) 70%, rgba(140, 130, 255, 0.35) 88%, transparent 100%);
+}
+
+.dark .orbit-globe__shadow {
+  background: radial-gradient(ellipse, rgba(91, 84, 255, 0.2) 0%, rgba(0, 0, 0, 0.1) 40%, transparent 70%);
 }
 
 .dark .orbit-globe__grid {
-  color: rgba(91, 84, 255, 0.4);
+  color: rgba(140, 130, 255, 0.75);
+}
+
+.dark .orbit-ellipse--1 {
+  border-color: rgba(91, 84, 255, 0.35);
+  box-shadow:
+    0 0 20px 3px rgba(91, 84, 255, 0.18),
+    0 2px 4px rgba(91, 84, 255, 0.12),
+    inset 0 0 8px 1px rgba(91, 84, 255, 0.06);
+  background: linear-gradient(to bottom, rgba(91, 84, 255, 0.05) 0%, transparent 50%, rgba(91, 84, 255, 0.03) 100%);
+}
+
+.dark .orbit-ellipse--2 {
+  border-color: rgba(91, 84, 255, 0.18);
+  box-shadow:
+    0 0 14px 2px rgba(91, 84, 255, 0.1),
+    0 1px 3px rgba(91, 84, 255, 0.08);
+  background: linear-gradient(to bottom, rgba(91, 84, 255, 0.03) 0%, transparent 50%, rgba(91, 84, 255, 0.02) 100%);
 }
 
 /* ── Responsive ── */
@@ -2166,7 +2307,12 @@ h5 {
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, top 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease;
+}
+.site-header--hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .site-header .container {
@@ -2203,13 +2349,6 @@ h5 {
 .site-header__nav-link:hover {
   background: rgba(255,255,255,0.12);
 }
-.site-header--scrolled .site-header__nav-link {
-  color: var(--color-text);
-}
-.site-header--scrolled .site-header__nav-link:hover {
-  background: var(--color-primary-bg);
-  color: var(--color-primary);
-}
 
 /* Hamburger + brand start white over hero */
 .site-header__open-menu {
@@ -2221,12 +2360,30 @@ h5 {
   transition: color 0.3s ease;
 }
 
-/* Scrolled header */
+/* ── Scrolled header — Liquid Glass Effect ── */
 .site-header--scrolled {
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  top: 10px;
+  left: 16px;
+  right: 16px;
+  width: auto;
+  border-radius: 20px;
+  /* Ultra-transparent base — let the blur do the work */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.12) 40%,
+      rgba(255, 255, 255, 0.18) 70%,
+      rgba(255, 255, 255, 0.25) 100%
+    );
+  backdrop-filter: blur(40px) saturate(2) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(2) brightness(1.05);
+  /* No hard border — only soft shadow edges */
+  border: none;
+  box-shadow:
+    0 8px 32px -8px rgba(29, 21, 151, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.03),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.5);
 }
 .site-header--scrolled .brand a,
 .site-header--scrolled .site-header__open-menu {
@@ -2234,7 +2391,17 @@ h5 {
 }
 .site-header--scrolled .button--transparent {
   color: var(--color-text);
-  border-color: var(--color-border);
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+.site-header--scrolled .site-header__nav-link {
+  color: rgba(12, 10, 40, 0.75);
+}
+.site-header--scrolled .site-header__nav-link:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--color-primary);
+  border-radius: 10px;
 }
 
 /* Theme toggle & lang switcher — base styles (white over hero) */
@@ -2245,18 +2412,19 @@ h5 {
   color: white;
 }
 
-/* Theme toggle & lang switcher — adapt when scrolled */
+/* Theme toggle & lang switcher — glassy when scrolled */
 .site-header--scrolled .theme-toggle,
 .site-header--scrolled .lang-switcher-btn {
-  background: var(--color-bg);
-  border-color: var(--color-border);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
   color: var(--color-text);
+  backdrop-filter: blur(8px);
 }
 
-/* In dark mode when scrolled, keep semi-transparent feel */
+/* In dark mode when scrolled, keep glassy dark feel */
 .dark .site-header--scrolled .theme-toggle,
 .dark .site-header--scrolled .lang-switcher-btn {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--color-border);
   color: var(--color-text);
 }
@@ -3082,7 +3250,7 @@ h5 {
 .cta-banner__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #f0eeff 0%, #e8e5ff 50%, #ddd8ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
   z-index: 0;
 }
 
@@ -3233,20 +3401,40 @@ h5 {
    DARK MODE OVERRIDES FOR COMPONENTS
    ═══════════════════════════════════════════════════════ */
 .dark .site-header--scrolled {
-  background: rgba(18, 16, 40, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(91, 84, 255, 0.15);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12, 10, 40, 0.35) 0%,
+      rgba(29, 21, 151, 0.12) 40%,
+      rgba(12, 10, 40, 0.25) 70%,
+      rgba(29, 21, 151, 0.15) 100%
+    );
+  backdrop-filter: blur(40px) saturate(1.8) brightness(0.95);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8) brightness(0.95);
+  border: 1.5px solid rgba(108, 99, 255, 0.18);
+  outline: 1px solid rgba(255, 255, 255, 0.04);
+  outline-offset: -1px;
+  box-shadow:
+    0 8px 32px -8px rgba(0, 0, 0, 0.4),
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .dark .site-header--scrolled .brand a,
 .dark .site-header--scrolled .site-header__open-menu {
-  color: var(--color-text);
+  color: #fff;
+}
+.dark .site-header--scrolled .site-header__nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+.dark .site-header--scrolled .site-header__nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 .dark .site-header--scrolled .button--transparent {
-  color: var(--color-text);
-  border-color: var(--color-border);
+  color: #fff;
+  border: none;
 }
 
 .dark .service-card {

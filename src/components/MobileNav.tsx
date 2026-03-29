@@ -9,10 +9,22 @@ import { useTranslation } from "@/lib/I18nProvider";
 export default function MobileNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 60);
+      // Hide when scrolling down past hero, show when scrolling up
+      if (y > 300 && y - lastY > 5) {
+        setHidden(true);
+      } else if (lastY - y > 5) {
+        setHidden(false);
+      }
+      lastY = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -31,7 +43,7 @@ export default function MobileNav() {
 
   return (
     <>
-      <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
+      <header className={`site-header${scrolled ? " site-header--scrolled" : ""}${hidden && !menuOpen ? " site-header--hidden" : ""}`}>
         <div className="container">
           <nav className="site-header__nav">
             <div className="brand" style={{ direction: "ltr" }}>
