@@ -14,16 +14,16 @@ const MARQUEE_ITEMS: MarqueeEntry[] = [
   { type: "stat", value: "500+", labelKey: "stats.jabbers" },
   { type: "text", label: "COMMUNITY DRIVEN" },
   { type: "text", label: "REAL-TIME DASHBOARDS" },
-  { type: "stat", value: "50K+", labelKey: "stats.evaluations" },
+  { type: "stat", value: "100K+", labelKey: "stats.evaluations" },
   { type: "text", label: "GOLDEN PROOF PROTOCOL" },
-  { type: "text", label: "ANTI-FRAUD QA" },
-  { type: "stat", value: "10+", labelKey: "stats.cities" },
-  { type: "text", label: "DENSITY-FIRST" },
+  { type: "text", label: "YOUR VOICE MATTERS" },
+  { type: "stat", value: "30s", labelKey: "stats.time" },
+  { type: "text", label: "AI-NATIVE ANALYTICS" },
   { type: "text", label: "MYSTERY SHOPPING REIMAGINED" },
-  { type: "stat", value: "98%", labelKey: "stats.accuracy" },
+  { type: "stat", value: "100%", labelKey: "stats.accuracy" },
   { type: "text", label: "VERIFIED FIELD DATA" },
   { type: "text", label: "ACTIONABLE INSIGHTS" },
-  { type: "text", label: "PRIVACY BY DESIGN" },
+  { type: "text", label: "THE VOC PLATFORM" },
 ];
 
 export default function Hero() {
@@ -43,8 +43,12 @@ export default function Hero() {
               <div className="hero-done__text">
                 <div className="brand hidden lg:block" style={{ width: "9.5rem" }}>
                   <a href="/" aria-label="JABB Home">
-                    <JabbLogo size={40} />
-                    <span className="brand__text">JABB</span>
+                    <span className="brand__text">
+
+
+
+
+                    </span>
                   </a>
                 </div>
                 <h1 className="font-display text-white font-extrabold leading-[1.1] tracking-tight text-[clamp(1.6rem,3.8vw,2.6rem)]">

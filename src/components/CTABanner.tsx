@@ -19,7 +19,7 @@ export default function CTABanner() {
           <p className="text-white/60 mb-8 max-w-[440px] mx-auto text-xs sm:text-sm leading-relaxed">
             {t("cta.subtitle")}
           </p>
-          <div className="cta-store-buttons">
+          <div className="cta-store-buttons" style={{ display: "flex", justifyContent: "center" }}>
             <StoreButtons />
           </div>
         </div>

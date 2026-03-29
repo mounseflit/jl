@@ -26,7 +26,7 @@ export default function MobileNav() {
     { label: t("nav.services") || "Services", href: "#section-services" },
     { label: t("nav.faq") || "FAQ", href: "#section-faqs" },
     { label: t("nav.about") || "About", href: "/about" },
-    { label: t("nav.contact") || "Contact", href: "/contact" },
+    { label: t("nav.contact") || "Contact", href: "#section-contact" },
   ];
 
   return (
@@ -34,7 +34,6 @@ export default function MobileNav() {
       <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
         <div className="container">
           <nav className="site-header__nav">
-            {/* LEFT: Brand logo — never flips in RTL */}
             <div className="brand" style={{ direction: "ltr" }}>
               <a href="/" aria-label="JABB Home">
                 <JabbLogo size={28} />
@@ -42,7 +41,6 @@ export default function MobileNav() {
               </a>
             </div>
 
-            {/* RIGHT: Section links + CTA buttons + language + theme (desktop) */}
             <div className="site-header__nav__list">
               {navItems.map((item) => (
                 <a key={item.href} href={item.href} className="site-header__nav-link">
@@ -61,11 +59,6 @@ export default function MobileNav() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="3" y="10" width="7" height="11" rx="1" />
                   <rect x="14" y="4" width="7" height="17" rx="1" />
-                  <line x1="5" y1="14" x2="8" y2="14" opacity="0.5" />
-                  <line x1="5" y1="17" x2="8" y2="17" opacity="0.5" />
-                  <line x1="16" y1="8" x2="19" y2="8" opacity="0.5" />
-                  <line x1="16" y1="11" x2="19" y2="11" opacity="0.5" />
-                  <line x1="16" y1="14" x2="19" y2="14" opacity="0.5" />
                 </svg>
                 <span style={{ marginInlineStart: "0.4rem" }}>{t("nav.becomePartner")}</span>
               </a>
@@ -73,7 +66,6 @@ export default function MobileNav() {
               <ThemeToggle />
             </div>
 
-            {/* Hamburger (mobile only — hidden on desktop via CSS) */}
             <button
               className="site-header__open-menu"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -88,43 +80,57 @@ export default function MobileNav() {
         </div>
       </header>
 
-      {/* Slide-out mobile menu */}
+      {/* ── Fullscreen Awwwards-style mobile menu ── */}
       <div
-        className={`site-menu${menuOpen ? " site-menu--open" : ""}`}
+        className={`fm${menuOpen ? " fm--open" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
       >
-        <div className="site-menu__overlay" onClick={() => setMenuOpen(false)} />
-        <div className="site-menu__content">
-          <div className="site-menu__header">
-            <div className="brand" style={{ direction: "ltr" }}>
-              <a href="/" aria-label="JABB Home">
-                <JabbLogo size={28} />
-                <span className="brand__text" style={{ fontSize: "1.2rem" }}>JABB</span>
-              </a>
-            </div>
-            <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="site-menu__close">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
+        {/* Top bar: logo + close */}
+        <div className="fm__top">
+          <div className="brand" style={{ direction: "ltr" }}>
+            <a href="/" aria-label="JABB Home">
+              <JabbLogo size={28} />
+              <span className="brand__text" style={{ fontSize: "1.2rem" }}>JABB</span>
+            </a>
           </div>
+          <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="fm__close">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
-          <ul className="site-menu__links">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
-              </li>
-            ))}
-            <li>
-              <a href="/partner" onClick={() => setMenuOpen(false)} className="site-menu__cta">
-                {t("nav.becomePartner")}
-              </a>
-            </li>
-          </ul>
+        {/* Center: large nav links */}
+        <nav className="fm__nav">
+          {navItems.map((item, i) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="fm__link"
+              style={{ transitionDelay: menuOpen ? `${0.08 + i * 0.05}s` : "0s" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="fm__link-num">0{i + 1}</span>
+              <span className="fm__link-text">{item.label}</span>
+            </a>
+          ))}
+        </nav>
 
-          <div className="site-menu__controls">
+        {/* Bottom: CTAs + controls */}
+        <div className="fm__bottom">
+          <div className="fm__ctas">
+            <a href="/go" onClick={() => setMenuOpen(false)} className="fm__cta fm__cta--ghost">
+              {t("nav.becomeJabber")}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+            </a>
+            <a href="/partner" onClick={() => setMenuOpen(false)} className="fm__cta fm__cta--fill">
+              {t("nav.becomePartner")}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+            </a>
+          </div>
+          <div className="fm__controls">
             <LanguageSwitcher />
             <ThemeToggle />
           </div>

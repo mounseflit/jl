@@ -6,38 +6,108 @@ export default function Partners() {
   const { t } = useTranslation();
 
   return (
-    <section id="section-partners" className="partners">
-      <div className="skewed"></div>
-      <div className="container">
-        <div className="max-w-md m-x-auto">
-          <h3 className="text-center">{t("partners.title")}</h3>
-          <h5 className="text-center">{t("partners.subtitle")}</h5>
+    <section id="section-partners" className="partners-3d">
+      <div className="partners-3d__bg">
+        <div className="partners-3d__orb partners-3d__orb--1" />
+        <div className="partners-3d__orb partners-3d__orb--2" />
+        <div className="partners-3d__grid-lines" />
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+        <div className="partners-3d__header">
+          <span className="partners-3d__badge">{t("partners.title")}</span>
+          <h3 className="partners-3d__title">{t("partners.subtitle")}</h3>
         </div>
 
-        <div className="partners-grid">
-          <div className="grid-2 gap-6 grid-1-md">
-            <div className="partner-box fade-up">
-              <div className="partner-box__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                  <path d="M4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
+        <div className="partners-3d__cards">
+          {/* Jabber Card */}
+          <div className="p3d-card p3d-card--jabber">
+            <div className="p3d-card__glow" />
+            <div className="p3d-card__inner">
+              <div className="p3d-card__icon-wrap">
+                <div className="p3d-card__icon-sphere">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    <path d="M4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                  </svg>
+                </div>
+                <div className="p3d-card__float-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14" /></svg>
+                </div>
               </div>
-              <h4>{t("partners.jabber.title")}</h4>
-              <div className="partner-box__desc">{t("partners.jabber.desc")}</div>
-              <a href="/go" className="button">{t("partners.jabber.cta")}</a>
-            </div>
 
-            <div className="partner-box fade-up">
-              <div className="partner-box__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349" />
-                  <path d="M1.5 12l10.5-9 10.5 9" />
-                </svg>
+              <div className="p3d-card__tag p3d-card__tag--purple">{t("partners.jabber.title")}</div>
+
+              <h4 className="p3d-card__title">{t("partners.jabber.title")}</h4>
+              <p className="p3d-card__desc">{t("partners.jabber.desc")}</p>
+
+              <div className="p3d-card__features">
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>Earn Coins & XP</span>
+                </div>
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>Mystery Missions</span>
+                </div>
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>Real Impact</span>
+                </div>
               </div>
-              <h4>{t("partners.business.title")}</h4>
-              <div className="partner-box__desc">{t("partners.business.desc")}</div>
-              <a href="/partner" className="button">{t("partners.business.cta")}</a>
+
+              <a href="/go" className="p3d-card__cta p3d-card__cta--primary">
+                <span>{t("partners.jabber.cta")}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Business Card */}
+          <div className="p3d-card p3d-card--business">
+            <div className="p3d-card__glow" />
+            <div className="p3d-card__inner">
+              <div className="p3d-card__icon-wrap">
+                <div className="p3d-card__icon-sphere p3d-card__icon-sphere--dark">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3.75 21V9.349M20.25 21V9.349" />
+                    <path d="M1.5 12l10.5-9 10.5 9" />
+                    <path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21" />
+                  </svg>
+                </div>
+                <div className="p3d-card__float-badge p3d-card__float-badge--dark">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                </div>
+              </div>
+
+              <div className="p3d-card__tag p3d-card__tag--dark">{t("partners.business.title")}</div>
+
+              <h4 className="p3d-card__title">{t("partners.business.title")}</h4>
+              <p className="p3d-card__desc">{t("partners.business.desc")}</p>
+
+              <div className="p3d-card__features">
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>AI Analytics</span>
+                </div>
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>GPS Verified</span>
+                </div>
+                <div className="p3d-feat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                  <span>Real-time CX</span>
+                </div>
+              </div>
+
+              <a href="/partner" className="p3d-card__cta p3d-card__cta--dark">
+                <span>{t("partners.business.cta")}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>

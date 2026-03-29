@@ -4,6 +4,7 @@ import WhatYouGet from "@/components/WhatYouGet";
 import OrbitVisual from "@/components/OrbitVisual";
 import Partners from "@/components/Partners";
 import FAQ from "@/components/FAQ";
+import ContactForm from "@/components/ContactForm";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -13,11 +14,12 @@ export default function Home() {
       <main>
         <Hero />
         <HomeContent />
+        <CTABanner />
         <WhatYouGet />
         <OrbitVisual />
         <Partners />
         <FAQ />
-        <CTABanner />
+        <ContactForm />
       </main>
       <Footer />
     </>

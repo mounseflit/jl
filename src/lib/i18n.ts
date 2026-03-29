@@ -37,7 +37,7 @@ export const translations = {
     // ── Stats ──
     "stats.jabbers": "JABBers",
     "stats.evaluations": "Reviews",
-    "stats.cities": "Cities",
+    "stats.time": "Feedback Time",
     "stats.accuracy": "Accuracy",
 
     // ── How It Works ──
@@ -69,7 +69,7 @@ export const translations = {
     "services.cxAudits.subtitle":
       "360\u00B0 view of your entire customer journey",
     "services.cxAudits.desc":
-      "Launch omnichannel CX missions. Your best JABBers execute in-store and digital audits with structured reports, scoring, and multi-site benchmarking.",
+      "Launch omnichannel CX missions including mystery client missions. Your best JABBers execute in-store and digital audits with structured reports, scoring, GPS verification, and multi-site benchmarking.",
     "services.cxAudits.cta": "Learn more",
 
     "services.voiceOfCustomer.title": "Voice of Customer",
@@ -85,12 +85,19 @@ export const translations = {
       "Real-time dashboard with AI analysis by location, team, hour, and channel. Instant alerts, automated reports, and inter-site benchmarking \u2014 your single source of CX truth.",
     "services.dashboard.cta": "See the dashboard",
 
-    "services.aiReports.title": "AI-Powered Reports",
+    "services.aiReports.title": "JABB Business",
     "services.aiReports.subtitle":
-      "From raw feedback to strategic clarity",
+      "Your CX command center, always on",
     "services.aiReports.desc":
-      "AI categorizes sentiment, detects issues, and generates actionable reports automatically. Faster analysis, smarter decisions \u2014 no manual processing needed.",
+      "Monitor your reputation in real time. AI-powered dashboard with ratings, reviews, sentiment analysis, and actionable reports by location, team, and channel. Claim your business, track performance, and make smarter decisions \u2014 all in one place.",
     "services.aiReports.cta": "See how it works",
+
+    "services.qrCodes.title": "QR Codes",
+    "services.qrCodes.subtitle":
+      "Every store gets its own review QR code",
+    "services.qrCodes.desc":
+      "Each claimed business receives a unique JABB QR code. Display it at your point of sale so customers can scan and leave a review in seconds \u2014 no app download required. Boost your review volume effortlessly.",
+    "services.qrCodes.cta": "Learn more",
 
     "services.rewardSystem.title": "Coins & Rewards",
     "services.rewardSystem.subtitle":
@@ -131,11 +138,11 @@ export const translations = {
       "Whether you want your voice heard or your business improved \u2014 JABB connects both sides.",
     "partners.jabber.title": "Become a JABBer",
     "partners.jabber.desc":
-      "Download the app, review places you visit, and earn JABB Coins & XP. Redeem at partner stores. Level up to unlock mystery missions with bigger rewards.",
+      "Download the app, review places you visit, and earn JABB Coins & XP. Redeem at partner stores. Level up to unlock mystery missions with bigger rewards. Your honest opinions can make a real impact \u2014 and get you real perks.",
     "partners.jabber.cta": "Start reviewing",
     "partners.business.title": "Become a Partner",
     "partners.business.desc":
-      "Get real-time, structured customer feedback delivered directly to your dashboard. AI-analyzed, GPS-verified, and actionable \u2014 from 250 MAD/month per location.",
+      "Get real-time, structured customer feedback delivered directly to your dashboard. AI-analyzed, GPS-verified, and actionable \u2014 everything you need to improve your customer experience and grow your business.",
     "partners.business.cta": "Partner with us",
 
     // ── FAQ ──
@@ -174,6 +181,24 @@ export const translations = {
     "faq.a10":
       "Businesses use the JABB VOC dashboard \u2014 real-time AI analytics by location, team, hour, and channel. Instant alerts, automated reports, and inter-site benchmarking included.",
 
+    // ── Contact Form ──
+    "contactForm.q1": "What's your name?",
+    "contactForm.p1": "e.g. Ahmed Benali",
+    "contactForm.q2": "What's your email?",
+    "contactForm.p2": "e.g. ahmed@email.com",
+    "contactForm.q3": "What's your phone number?",
+    "contactForm.p3": "e.g. +212 6XX-XXXXXX",
+    "contactForm.q4": "What's your business or company?",
+    "contactForm.p4": "e.g. Caf\u00E9 Noir (optional)",
+    "contactForm.q5": "What's the reason for your message?",
+    "contactForm.p5": "Select a reason",
+    "contactForm.q6": "Tell us more about your request",
+    "contactForm.p6": "Write your message here...",
+    "contactForm.next": "Next",
+    "contactForm.send": "Send",
+    "contactForm.thankYou": "Thank you",
+    "contactForm.successMsg": "We received your message and will get back to you shortly.",
+
     // ── CTA ──
     "cta.title": "Your opinion is worth gold. Start sharing it.",
     "cta.subtitle":
@@ -193,12 +218,28 @@ export const translations = {
     "footer.termsOfService": "Terms of Service",
     "footer.privacyPolicy": "Privacy Policy",
     "footer.cookiePolicy": "Cookie Policy",
-    "footer.allRightsReserved": "All rights reserved JABB",
+    "footer.allRightsReserved": "All rights reserved",
 
     // ── Orbit ──
     "orbit.badge": "Omnichannel",
     "orbit.title": "Every touchpoint, one platform",
-    "orbit.subtitle": "JABB captures customer experience data across all channels — web, mobile, in-store, and beyond.",
+    "orbit.subtitle": "JABB captures customer experience data across all channels \u2014 web, mobile, in-store, and beyond.",
+    "orbit.item.web.title": "Websites & Web Apps",
+    "orbit.item.web.desc": "Test UX flows, detect bugs, spot latency issues, and know instantly if your server goes down \u2014 all through real user feedback. JABBers navigate your website or web app and report on usability, broken features, and new releases. Collect insights via embedded widgets, QR codes, and smart links with zero friction.",
+    "orbit.item.location.title": "In-Store Visits",
+    "orbit.item.location.desc": "Wherever you go, JABB is your pal. Whatever you feel will reach the business \u2014 and you get rewarded in just 30 seconds. When we say your voice will be heard, we mean it. We analyse your audio, video, text, and images to understand you deeply \u2014 whether it\u2019s positive or negative. GPS-verified, photo-documented, real-time scoring.",
+    "orbit.item.product.title": "Products & Apps",
+    "orbit.item.product.desc": "Run Product-Market Fit analysis, User Acceptance Testing (UAT), and test new features before launch. JABBers evaluate your product, detect bugs, test UX, flag latency, and submit structured feedback with recommendations and tickets \u2014 real users, real insights, real fast.",
+    "orbit.item.app.title": "Mobile App",
+    "orbit.item.app.desc": "Test your mobile app\u2019s UX, detect bugs, flag latency issues, and validate new features with real users. JABBers leave reviews via text, audio, photos, or AI-guided Q&A \u2014 all in under 30 seconds. Know if your server is down before your users complain.",
+    "orbit.item.calls.title": "Call Center",
+    "orbit.item.calls.desc": "Review call center interactions and evaluate support quality. JABBers rate agent performance, measure resolution time, and score caller satisfaction. Integrate JABB to capture post-call feedback automatically and benchmark your support team.",
+    "orbit.item.data.title": "Data & Privacy",
+    "orbit.item.data.desc": "All channels feed into one AI-powered dashboard with sentiment analysis, trend detection, and actionable reports. Privacy-first: JABBers are fully anonymous, and business reviews and data are strictly confidential \u2014 only the business sees their feedback. Your data is protected, always.",
+    "orbit.item.audit.title": "Mystery Clients Audits",
+    "orbit.item.audit.desc": "A niche audit like no other. Choose the exact population for your Mystery Clients mission. Our AI-generated process creates such a natural experience that the mystery client never feels like one \u2014 capturing maximum data for a true 360\u00B0 vision. Structured scoring, GPS verification, and multi-site benchmarking included.",
+    "orbit.item.store.title": "Rewards Store",
+    "orbit.item.store.desc": "Redeem your JABB Coins as coupons at partner businesses. Every review earns you coins \u2014 spend them at local stores, restaurants, and services. Our partner network keeps growing, turning your honest opinions into real-world perks and discounts.",
 
     // ── Common ──
     "common.english": "English",
@@ -234,7 +275,7 @@ export const translations = {
     // ── Stats ──
     "stats.jabbers": "JABBeurs",
     "stats.evaluations": "Avis",
-    "stats.cities": "Villes",
+    "stats.time": "Temps de feedback",
     "stats.accuracy": "Pr\u00E9cision",
 
     // ── How It Works ──
@@ -266,7 +307,7 @@ export const translations = {
     "services.cxAudits.subtitle":
       "Chaque \u00E9tape du parcours client, pass\u00E9e au crible",
     "services.cxAudits.desc":
-      "Missions omnicanales ex\u00E9cut\u00E9es par vos meilleurs JABBeurs \u2014 en magasin et en ligne. Rapports structur\u00E9s, scoring standardis\u00E9 et benchmarking multi-sites pour voir clair.",
+      "Lancez des missions omnicanales incluant des missions client myst\u00E8re. Vos meilleurs JABBeurs ex\u00E9cutent audits terrain et digitaux avec rapports structur\u00E9s, scoring, v\u00E9rification GPS et benchmarking multi-sites.",
     "services.cxAudits.cta": "En savoir plus",
 
     "services.voiceOfCustomer.title": "Voix du Client",
@@ -283,12 +324,19 @@ export const translations = {
       "Tout sous vos yeux : analyse IA par site, \u00E9quipe, heure et canal. Alertes instantan\u00E9es, rapports auto, benchmarking inter-sites. Z\u00E9ro angle mort.",
     "services.dashboard.cta": "Voir le dashboard",
 
-    "services.aiReports.title": "Rapports IA",
+    "services.aiReports.title": "JABB Business",
     "services.aiReports.subtitle":
-      "Vos donn\u00E9es brutes deviennent des d\u00E9cisions",
+      "Votre QG exp\u00E9rience client, toujours actif",
     "services.aiReports.desc":
-      "L\u2019IA d\u00E9crypte le sentiment, rep\u00E8re les probl\u00E8mes et g\u00E9n\u00E8re des rapports actionnables en un clic. Fini le traitement manuel \u2014 place \u00E0 la strat\u00E9gie.",
+      "Suivez votre r\u00E9putation en temps r\u00E9el. Dashboard IA avec notes, avis, analyse de sentiment et rapports actionnables par site, \u00E9quipe et canal. Revendiquez votre \u00E9tablissement, suivez vos performances et prenez des d\u00E9cisions plus intelligentes \u2014 tout au m\u00EAme endroit.",
     "services.aiReports.cta": "Voir comment \u00E7a marche",
+
+    "services.qrCodes.title": "QR Codes",
+    "services.qrCodes.subtitle":
+      "Un QR code, des avis instantan\u00E9s",
+    "services.qrCodes.desc":
+      "Chaque \u00E9tablissement revendiqu\u00E9 re\u00E7oit un QR code JABB unique. Affichez-le en point de vente pour que vos clients laissent un avis en quelques secondes \u2014 sans t\u00E9l\u00E9charger d\u2019app. Boostez votre volume d\u2019avis sans effort.",
+    "services.qrCodes.cta": "En savoir plus",
 
     "services.rewardSystem.title": "Coins & R\u00E9compenses",
     "services.rewardSystem.subtitle":
@@ -330,11 +378,11 @@ export const translations = {
       "Vous voulez faire entendre votre voix ou transformer votre CX ? JABB connecte les deux mondes.",
     "partners.jabber.title": "Devenez JABBeur",
     "partners.jabber.desc":
-      "T\u00E9l\u00E9chargez, donnez votre avis, empochez des Coins & XP. D\u00E9pensez-les chez nos partenaires. Grimpez les niveaux, d\u00E9bloquez les missions myst\u00E8re \u2014 et faites de votre opinion un superpouvoir.",
+      "T\u00E9l\u00E9chargez, donnez votre avis, empochez des Coins & XP. D\u00E9pensez-les chez nos partenaires. Grimpez les niveaux, d\u00E9bloquez les missions myst\u00E8re \u2014 et faites de votre opinion un superpouvoir. Votre honn\u00EAtet\u00E9 peut faire bouger les choses \u2014 et vous rapporter gros.",
     "partners.jabber.cta": "Je me lance",
     "partners.business.title": "Devenez Partenaire",
     "partners.business.desc":
-      "Feedback client structur\u00E9, en temps r\u00E9el, direct sur votre dashboard. Analys\u00E9 par IA, v\u00E9rifi\u00E9 GPS, actionnable d\u00E8s le premier jour \u2014 \u00E0 partir de 250 MAD/mois par point de vente.",
+      "Feedback client structur\u00E9, en temps r\u00E9el, direct sur votre dashboard. Analys\u00E9 par IA, v\u00E9rifi\u00E9 GPS, actionnable d\u00E8s le premier jour \u2014 \u00E0 tout moment, pour tout point de vente. Am\u00E9liorez votre CX, boostez votre business.",
     "partners.business.cta": "Devenir partenaire",
 
     // ── FAQ ──
@@ -374,6 +422,24 @@ export const translations = {
     "faq.a10":
       "Via le dashboard JABB VOC \u2014 analytique IA en temps r\u00E9el par site, \u00E9quipe, heure et canal. Alertes instantan\u00E9es, rapports auto et benchmarking inter-sites inclus.",
 
+    // ── Contact Form ──
+    "contactForm.q1": "Quel est votre nom\u00A0?",
+    "contactForm.p1": "ex. Ahmed Benali",
+    "contactForm.q2": "Quel est votre email\u00A0?",
+    "contactForm.p2": "ex. ahmed@email.com",
+    "contactForm.q3": "Quel est votre num\u00E9ro de t\u00E9l\u00E9phone\u00A0?",
+    "contactForm.p3": "ex. +212 6XX-XXXXXX",
+    "contactForm.q4": "Quelle est votre entreprise\u00A0?",
+    "contactForm.p4": "ex. Caf\u00E9 Noir (optionnel)",
+    "contactForm.q5": "Quel est le motif de votre message\u00A0?",
+    "contactForm.p5": "Choisir un motif",
+    "contactForm.q6": "D\u00E9crivez votre demande",
+    "contactForm.p6": "\u00C9crivez votre message ici...",
+    "contactForm.next": "Suivant",
+    "contactForm.send": "Envoyer",
+    "contactForm.thankYou": "Merci",
+    "contactForm.successMsg": "Nous avons bien re\u00E7u votre message et reviendrons vers vous tr\u00E8s vite.",
+
     // ── CTA ──
     "cta.title":
       "Votre avis vaut de l\u2019or.\nCommencez \u00E0 le monnayer.",
@@ -400,6 +466,22 @@ export const translations = {
     "orbit.badge": "Omnicanal",
     "orbit.title": "Tous vos canaux, une seule plateforme",
     "orbit.subtitle": "JABB capte l\u2019exp\u00E9rience client partout \u2014 web, mobile, en magasin et au-del\u00E0.",
+    "orbit.item.web.title": "Sites & Apps Web",
+    "orbit.item.web.desc": "Testez l\u2019UX, d\u00E9tectez les bugs, rep\u00E9rez la latence et soyez alert\u00E9 si votre serveur tombe \u2014 tout via du feedback utilisateur r\u00E9el. Les JABBeurs naviguent votre site ou web app et rapportent sur l\u2019ergonomie, les fonctionnalit\u00E9s cass\u00E9es et les nouvelles releases. Widgets, QR codes, liens intelligents \u2014 z\u00E9ro friction.",
+    "orbit.item.location.title": "Visites en Magasin",
+    "orbit.item.location.desc": "O\u00F9 que vous alliez, JABB est votre alli\u00E9. Ce que vous ressentez arrive au commerce \u2014 et vous \u00EAtes r\u00E9compens\u00E9 en 30 secondes. Quand on dit que votre voix sera entendue, on le pense vraiment. On analyse votre audio, vid\u00E9o, texte et images pour vous comprendre en profondeur \u2014 positif ou n\u00E9gatif. Preuve GPS, photos, scoring en temps r\u00E9el.",
+    "orbit.item.product.title": "Produits & Apps",
+    "orbit.item.product.desc": "Lancez des analyses Product-Market Fit, des tests d\u2019acceptation utilisateur (UAT) et testez vos nouvelles features avant le lancement. Les JABBeurs \u00E9valuent votre produit, d\u00E9tectent les bugs, testent l\u2019UX, signalent la latence et soumettent un feedback structur\u00E9 avec recommandations et tickets.",
+    "orbit.item.app.title": "Application Mobile",
+    "orbit.item.app.desc": "Testez l\u2019UX de votre app mobile, d\u00E9tectez les bugs, signalez la latence et validez vos nouvelles features avec de vrais utilisateurs. Les JABBeurs laissent des avis via texte, audio, photos ou Q&A guid\u00E9 par IA \u2014 en 30 secondes. Sachez si votre serveur est down avant que vos utilisateurs ne se plaignent.",
+    "orbit.item.calls.title": "Centre d\u2019Appels",
+    "orbit.item.calls.desc": "\u00C9valuez les interactions de votre centre d\u2019appels et la qualit\u00E9 du support. Les JABBeurs notent la performance des agents, mesurent le temps de r\u00E9solution et \u00E9valuent la satisfaction. Int\u00E9grez JABB pour capturer le feedback post-appel automatiquement et benchmarker votre \u00E9quipe support.",
+    "orbit.item.data.title": "Data & Confidentialit\u00E9",
+    "orbit.item.data.desc": "Tous les canaux alimentent un seul dashboard IA avec analyse de sentiment, d\u00E9tection de tendances et rapports actionnables. Confidentialit\u00E9 d\u2019abord : les JABBeurs sont totalement anonymes, et les donn\u00E9es et avis des commerces restent strictement confidentiels \u2014 seul le commerce voit ses retours. Vos donn\u00E9es sont prot\u00E9g\u00E9es, toujours.",
+    "orbit.item.audit.title": "Audits Client Myst\u00E8re",
+    "orbit.item.audit.desc": "Un audit de niche unique. Choisissez la population exacte pour votre mission de client myst\u00E8re. Notre processus g\u00E9n\u00E9r\u00E9 par IA cr\u00E9e une exp\u00E9rience si naturelle que le client myst\u00E8re ne se sent jamais comme tel \u2014 captant un maximum de donn\u00E9es pour une vraie vision 360\u00B0. Scoring structur\u00E9, v\u00E9rification GPS et benchmarking multi-sites inclus.",
+    "orbit.item.store.title": "Boutique R\u00E9compenses",
+    "orbit.item.store.desc": "\u00C9changez vos JABB Coins contre des coupons chez nos partenaires. Chaque avis vous rapporte des coins \u2014 d\u00E9pensez-les dans les magasins, restaurants et services locaux. Notre r\u00E9seau partenaire grandit sans cesse, transformant vos avis honn\u00EAtes en avantages et r\u00E9ductions concrets.",
 
     // ── Common ──
     "common.english": "English",
@@ -435,7 +517,7 @@ export const translations = {
     // ── Stats ──
     "stats.jabbers": "JABBer",
     "stats.evaluations": "\u062A\u0642\u064A\u064A\u0645",
-    "stats.cities": "\u0645\u062F\u064A\u0646\u0629",
+    "stats.time": "\u0648\u0642\u062A \u0627\u0644\u062A\u0639\u0644\u064A\u0642",
     "stats.accuracy": "\u062F\u0642\u0629",
 
     // ── How It Works ──
@@ -467,7 +549,7 @@ export const translations = {
     "services.cxAudits.subtitle":
       "\u0643\u0644 \u062E\u0637\u0648\u0629 \u0641\u064A \u0645\u0633\u0627\u0631 \u0627\u0644\u0643\u0644\u064A\u0627\u0646\u060C \u062A\u062D\u062A \u0627\u0644\u0645\u062C\u0647\u0631",
     "services.cxAudits.desc":
-      "\u0645\u0647\u0627\u0645 \u0634\u0627\u0645\u0644\u0629 \u0641\u064A \u0627\u0644\u0645\u064A\u062F\u0627\u0646 \u0648\u0627\u0644\u062F\u064A\u062C\u064A\u062A\u0627\u0644. \u0623\u062D\u0633\u0646 \u0627\u0644\u0640 JABBers \u0643\u064A\u0646\u0641\u0630\u0648 \u0627\u0644\u0623\u0648\u062F\u064A\u062A \u0628\u062A\u0642\u0627\u0631\u064A\u0631 \u0645\u0647\u064A\u0643\u0644\u0629\u060C scoring \u0648\u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639. \u0634\u0648\u0641 \u0648\u0627\u0636\u062D.",
+      "\u0637\u0644\u0642 \u0645\u0647\u0627\u0645 \u0634\u0627\u0645\u0644\u0629 \u0628\u0645\u0627 \u0641\u064A\u0647\u0627 \u0645\u0647\u0627\u0645 \u0639\u0645\u064A\u0644 \u0633\u0631\u064A. \u0623\u062D\u0633\u0646 \u0627\u0644\u0640 JABBers \u0643\u064A\u0646\u0641\u0630\u0648 \u0627\u0644\u0623\u0648\u062F\u064A\u062A \u0641\u064A \u0627\u0644\u0645\u064A\u062F\u0627\u0646 \u0648\u0627\u0644\u062F\u064A\u062C\u064A\u062A\u0627\u0644 \u0628\u062A\u0642\u0627\u0631\u064A\u0631 \u0645\u0647\u064A\u0643\u0644\u0629\u060C scoring\u060C \u0625\u062B\u0628\u0627\u062A GPS \u0648\u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639.",
     "services.cxAudits.cta": "\u0627\u0639\u0631\u0641 \u0623\u0643\u062B\u0631",
 
     "services.voiceOfCustomer.title": "\u0635\u0648\u062A \u0627\u0644\u0639\u0645\u064A\u0644",
@@ -484,12 +566,19 @@ export const translations = {
       "\u0643\u0644\u0634\u064A \u0642\u062F\u0627\u0645 \u0639\u064A\u0646\u064A\u0643: \u062A\u062D\u0644\u064A\u0644 IA \u0628\u0627\u0644\u0645\u0648\u0642\u0639\u060C \u0627\u0644\u0641\u0631\u064A\u0642\u060C \u0627\u0644\u0648\u0642\u062A \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u062A\u0646\u0628\u064A\u0647\u0627\u062A \u0641\u0648\u0631\u064A\u0629\u060C \u062A\u0642\u0627\u0631\u064A\u0631 \u0623\u0648\u062A\u0648\u0645\u0627\u062A\u064A\u0643\u064A\u0629\u060C \u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639. \u0632\u064A\u0631\u0648 \u0632\u0627\u0648\u064A\u0629 \u0645\u064A\u062A\u0629.",
     "services.dashboard.cta": "\u0634\u0648\u0641 \u0627\u0644\u062F\u0627\u0634\u0628\u0648\u0631\u062F",
 
-    "services.aiReports.title": "\u062A\u0642\u0627\u0631\u064A\u0631 IA",
+    "services.aiReports.title": "JABB Business",
     "services.aiReports.subtitle":
-      "\u0645\u0646 \u0628\u064A\u0627\u0646\u0627\u062A \u062E\u0627\u0645 \u0644\u0642\u0631\u0627\u0631\u0627\u062A \u0630\u0643\u064A\u0629",
+      "QG \u062F\u064A\u0627\u0644 \u062A\u062C\u0631\u0628\u0629 \u0627\u0644\u0643\u0644\u064A\u0627\u0646\u060C \u062F\u0627\u064A\u0645\u0627 \u0641\u0627\u064A\u0642",
     "services.aiReports.desc":
-      "\u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064A \u0643\u064A\u0641\u0643\u0643 \u0627\u0644\u0645\u0634\u0627\u0639\u0631\u060C \u0643\u064A\u062D\u062F\u062F \u0627\u0644\u0645\u0634\u0627\u0643\u0644\u060C \u0648\u0643\u064A\u0648\u0644\u062F \u062A\u0642\u0627\u0631\u064A\u0631 \u062C\u0627\u0647\u0632\u0629 \u0628\u0643\u0644\u064A\u0643. \u0633\u0627\u0644\u0627 \u0645\u0646 \u0627\u0644\u0645\u0639\u0627\u0644\u062C\u0629 \u0627\u0644\u064A\u062F\u0648\u064A\u0629 \u2014 \u062F\u0627\u0628\u0627 \u0648\u0642\u062A \u0627\u0644\u0627\u0633\u062A\u0631\u0627\u062A\u064A\u062C\u064A\u0629.",
+      "\u062A\u0627\u0628\u0639 \u0633\u0645\u0639\u062A\u0643 \u0641\u064A \u0627\u0644\u0648\u0642\u062A \u0627\u0644\u062D\u0642\u064A\u0642\u064A. \u062F\u0627\u0634\u0628\u0648\u0631\u062F IA \u0628\u0627\u0644\u0646\u0642\u0627\u0637\u060C \u0627\u0644\u0622\u0631\u0627\u0621\u060C \u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u0634\u0627\u0639\u0631 \u0648\u062A\u0642\u0627\u0631\u064A\u0631 \u0628\u0627\u0644\u0645\u0648\u0642\u0639 \u0648\u0627\u0644\u0641\u0631\u064A\u0642 \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u0637\u0627\u0644\u0628 \u0628\u0645\u062D\u0644\u0643\u060C \u062A\u0627\u0628\u0639 \u0623\u062F\u0627\u0621\u0643 \u0648\u062E\u0630 \u0642\u0631\u0627\u0631\u0627\u062A \u0630\u0643\u064A\u0629 \u2014 \u0643\u0644\u0634\u064A \u0641\u0628\u0644\u0627\u0635\u0629 \u0648\u062D\u062F\u0629.",
     "services.aiReports.cta": "\u0634\u0648\u0641 \u0643\u064A\u0641\u0627\u0634 \u0643\u064A\u062E\u062F\u0645",
+
+    "services.qrCodes.title": "QR Codes",
+    "services.qrCodes.subtitle":
+      "\u0643\u0644 \u0645\u062D\u0644 \u0643\u064A\u0627\u062E\u062F QR code \u062F\u064A\u0627\u0644\u0648 \u0644\u0644\u0622\u0631\u0627\u0621",
+    "services.qrCodes.desc":
+      "\u0643\u0644 \u0645\u062D\u0644 \u0645\u0637\u0627\u0644\u0628 \u0628\u064A\u0647 \u0643\u064A\u062A\u0648\u0635\u0644 QR code JABB \u062E\u0627\u0635 \u0628\u064A\u0647. \u062D\u0637\u0648 \u0641\u0627\u0644\u0645\u062D\u0644 \u0628\u0627\u0634 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u064A\u0633\u0643\u0627\u0646\u064A\u0648 \u0648\u064A\u062E\u0644\u064A\u0648 \u0631\u0623\u064A\u0647\u0645 \u0641\u062B\u0648\u0627\u0646\u064A \u2014 \u0628\u0644\u0627 \u0645\u0627 \u064A\u062A\u064A\u0644\u064A\u0634\u0627\u0631\u062C\u064A\u0648 \u0627\u0644\u0623\u0628\u0644\u064A\u0643\u0627\u0633\u064A\u0648\u0646.",
+    "services.qrCodes.cta": "\u0627\u0639\u0631\u0641 \u0623\u0643\u062B\u0631",
 
     "services.rewardSystem.title": "Coins & \u0645\u0643\u0627\u0641\u0622\u062A",
     "services.rewardSystem.subtitle":
@@ -530,11 +619,11 @@ export const translations = {
       "\u0628\u063A\u064A\u062A\u064A \u0635\u0648\u062A\u0643 \u064A\u0648\u0635\u0644 \u0648\u0644\u0627 \u0628\u063A\u064A\u062A\u064A \u062A\u062D\u0633\u0646 \u0628\u064A\u0632\u0646\u0633\u0643\u061F JABB \u0643\u062A\u0631\u0628\u0637 \u0627\u0644\u0637\u0631\u0641\u064A\u0646.",
     "partners.jabber.title": "\u0648\u0644\u0651\u064A JABBer",
     "partners.jabber.desc":
-      "\u0646\u0632\u0651\u0644\u060C \u0642\u064A\u0651\u0645\u060C \u0627\u0631\u0628\u062D Coins & XP. \u0627\u0633\u062A\u0639\u0645\u0644\u0647\u0645 \u0639\u0646\u062F \u0627\u0644\u0634\u0631\u0643\u0627\u0621. \u0637\u0644\u0639 \u0641\u064A \u0627\u0644\u0644\u064A\u0641\u0644 \u0648\u0641\u062A\u062D \u0645\u0647\u0627\u0645 \u0633\u0631\u064A\u0629 \u2014 \u062E\u0644\u0651\u064A \u0631\u0623\u064A\u0643 \u0633\u0648\u0628\u064A\u0631 \u0628\u0627\u0648\u0631.",
+      "\u0646\u0632\u0651\u0644\u060C \u0642\u064A\u0651\u0645\u060C \u0627\u0631\u0628\u062D Coins & XP. \u0627\u0633\u062A\u0639\u0645\u0644\u0647\u0645 \u0639\u0646\u062F \u0627\u0644\u0634\u0631\u0643\u0627\u0621. \u0637\u0644\u0639 \u0641\u064A \u0627\u0644\u0644\u064A\u0641\u0644 \u0648\u0641\u062A\u062D \u0645\u0647\u0627\u0645 \u0633\u0631\u064A\u0629 \u2014 \u062E\u0644\u0651\u064A \u0631\u0623\u064A\u0643 \u0633\u0648\u0628\u064A\u0631 \u0628\u0627\u0648\u0631. \u0623\u0646\u062A \u0627\u0644\u0628\u0627\u0637\u0631\u0648\u0646.",
     "partners.jabber.cta": "\u064A\u0627\u0644\u0644\u0627\u0647 \u0646\u0628\u062F\u0627",
     "partners.business.title": "\u0643\u0646 \u0634\u0631\u064A\u0643",
     "partners.business.desc":
-      "Feedback \u0645\u0647\u064A\u0643\u0644\u060C \u0641\u0648\u0631\u064A\u060C \u062F\u064A\u0631\u0643\u062A \u0639\u0644\u0649 \u0627\u0644\u062F\u0627\u0634\u0628\u0648\u0631\u062F \u062F\u064A\u0627\u0644\u0643. \u0645\u062D\u0644\u0644 \u0628\u0627\u0644 IA\u060C \u0645\u0648\u062B\u0642 GPS \u0648\u0642\u0627\u0628\u0644 \u0644\u0644\u062A\u0646\u0641\u064A\u0630 \u0645\u0646 \u0627\u0644\u064A\u0648\u0645 \u0627\u0644\u0623\u0648\u0644 \u2014 \u0645\u0646 250 \u062F\u0631\u0647\u0645/\u0634\u0647\u0631.",
+      "Feedback \u0645\u0647\u064A\u0643\u0644\u060C \u0641\u0648\u0631\u064A\u060C \u062F\u064A\u0631\u0643\u062A \u0639\u0644\u0649 \u0627\u0644\u062F\u0627\u0634\u0628\u0648\u0631\u062F \u062F\u064A\u0627\u0644\u0643. \u0645\u062D\u0644\u0644 \u0628\u0627\u0644 IA\u060C \u0645\u0648\u062B\u0642 GPS \u0648\u0642\u0627\u0628\u0644 \u0644\u0644\u062A\u0646\u0641\u064A\u0630 \u0645\u0646 \u0627\u0644\u064A\u0648\u0645 \u0627\u0644\u0623\u0648\u0644\u060C \u0645\u062D\u0644\u0644 \u0628\u0627\u0644\u0645\u0648\u0642\u0639 \u0648\u0627\u0644\u0641\u0631\u064A\u0642 \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u0623\u0646\u062A \u0627\u0644\u0628\u0627\u0637\u0631\u0648\u0646.",
     "partners.business.cta": "\u0643\u0646 \u0634\u0631\u064A\u0643\u0646\u0627",
 
     // ── FAQ ──
@@ -573,6 +662,24 @@ export const translations = {
     "faq.a10":
       "\u0639\u0628\u0631 \u062F\u0627\u0634\u0628\u0648\u0631\u062F JABB VOC \u2014 \u062A\u062D\u0644\u064A\u0644 IA \u0641\u064A \u0627\u0644\u0648\u0642\u062A \u0627\u0644\u0641\u0639\u0644\u064A \u0628\u0627\u0644\u0645\u0648\u0642\u0639\u060C \u0627\u0644\u0641\u0631\u064A\u0642\u060C \u0627\u0644\u0633\u0627\u0639\u0629 \u0648\u0627\u0644\u0642\u0646\u0627\u0629. \u062A\u0646\u0628\u064A\u0647\u0627\u062A \u0641\u0648\u0631\u064A\u0629\u060C \u062A\u0642\u0627\u0631\u064A\u0631 \u0623\u0648\u062A\u0648\u060C \u0648\u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u064A\u0646 \u0627\u0644\u0645\u0648\u0627\u0642\u0639.",
 
+    // ── Contact Form ──
+    "contactForm.q1": "\u0634\u0646\u0648 \u0633\u0645\u064A\u062A\u0643\u061F",
+    "contactForm.p1": "\u0645\u062B\u0644\u0627: \u0623\u062D\u0645\u062F \u0628\u0646\u0639\u0644\u064A",
+    "contactForm.q2": "\u0634\u0646\u0648 \u0627\u0644\u0625\u064A\u0645\u064A\u0644 \u062F\u064A\u0627\u0644\u0643\u061F",
+    "contactForm.p2": "\u0645\u062B\u0644\u0627: ahmed@email.com",
+    "contactForm.q3": "\u0634\u0646\u0648 \u0631\u0642\u0645 \u0627\u0644\u062A\u064A\u0644\u064A\u0641\u0648\u0646 \u062F\u064A\u0627\u0644\u0643\u061F",
+    "contactForm.p3": "\u0645\u062B\u0644\u0627: +212 6XX-XXXXXX",
+    "contactForm.q4": "\u0634\u0646\u0648 \u0627\u0644\u0634\u0631\u0643\u0629 \u062F\u064A\u0627\u0644\u0643\u061F",
+    "contactForm.p4": "\u0645\u062B\u0644\u0627: Caf\u00E9 Noir (\u0627\u062E\u062A\u064A\u0627\u0631\u064A)",
+    "contactForm.q5": "\u0634\u0646\u0648 \u0627\u0644\u0633\u0628\u0628 \u062F\u064A\u0627\u0644 \u0631\u0633\u0627\u0644\u062A\u0643\u061F",
+    "contactForm.p5": "\u062E\u062A\u0627\u0631 \u0627\u0644\u0633\u0628\u0628",
+    "contactForm.q6": "\u0642\u0648\u0644\u0646\u0627 \u0623\u0643\u062B\u0631 \u0639\u0644\u0649 \u0637\u0644\u0628\u0643",
+    "contactForm.p6": "\u0643\u062A\u0628 \u0631\u0633\u0627\u0644\u062A\u0643 \u0647\u0646\u0627...",
+    "contactForm.next": "\u0627\u0644\u062A\u0627\u0644\u064A",
+    "contactForm.send": "\u0625\u0631\u0633\u0627\u0644",
+    "contactForm.thankYou": "\u0634\u0643\u0631\u0627",
+    "contactForm.successMsg": "\u0648\u0635\u0644\u0627\u062A\u0646\u0627 \u0631\u0633\u0627\u0644\u062A\u0643\u060C \u063A\u0627\u062F\u064A \u0646\u0631\u062C\u0639\u0648 \u0644\u064A\u0643 \u0641\u0623\u0642\u0631\u0628 \u0648\u0642\u062A.",
+
     // ── CTA ──
     "cta.title": "\u0631\u0623\u064A\u0643 \u0643\u064A\u0633\u0648\u0649 \u0630\u0647\u0628.\n\u0628\u062F\u0627 \u0634\u0627\u0631\u0643\u0648.",
     "cta.subtitle":
@@ -598,6 +705,22 @@ export const translations = {
     "orbit.badge": "\u0645\u062A\u0639\u062F\u062F \u0627\u0644\u0642\u0646\u0648\u0627\u062A",
     "orbit.title": "\u0643\u0644 \u0642\u0646\u0627\u0629\u060C \u0645\u0646\u0635\u0629 \u0648\u062D\u062F\u0629",
     "orbit.subtitle": "JABB \u0643\u064A\u0644\u0642\u0637 \u062A\u062C\u0631\u0628\u0629 \u0627\u0644\u0643\u0644\u064A\u0627\u0646 \u0641\u064A \u0643\u0644 \u0645\u0643\u0627\u0646 \u2014 \u0648\u064A\u0628\u060C \u0645\u0648\u0628\u0627\u064A\u0644\u060C \u0641\u064A \u0627\u0644\u0645\u062D\u0644 \u0648\u0623\u0643\u062B\u0631.",
+    "orbit.item.web.title": "\u0645\u0648\u0627\u0642\u0639 \u0648\u062A\u0637\u0628\u064A\u0642\u0627\u062A \u0648\u064A\u0628",
+    "orbit.item.web.desc": "\u062A\u064A\u0633\u062A\u064A \u0627\u0644 UX\u060C \u0643\u062A\u0634\u0641 \u0627\u0644 bugs\u060C \u0631\u0627\u0642\u0628 \u0627\u0644 latence \u0648\u0639\u0631\u0641 \u0625\u0644\u0627 \u0627\u0644\u0633\u064A\u0631\u0641\u0631 \u0637\u0627\u062D \u2014 \u0643\u0644\u0634\u064A \u0639\u0628\u0631 \u0641\u064A\u062F\u0628\u0627\u0643 \u062D\u0642\u064A\u0642\u064A. \u0627\u0644\u0640 JABBers \u0643\u064A\u062A\u0635\u0641\u062D\u0648 \u0645\u0648\u0642\u0639\u0643 \u0648\u0643\u064A\u0631\u0627\u0628\u0648\u0631\u062A\u064A\u0648 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062A\u0639\u0645\u0627\u0644\u060C \u0627\u0644\u0645\u0634\u0627\u0643\u0644 \u0648\u0627\u0644 releases \u0627\u0644\u062C\u062F\u064A\u062F\u0629. \u0648\u064A\u062C\u064A\u062A\u0627\u062A\u060C QR codes\u060C \u0631\u0648\u0627\u0628\u0637 \u0630\u0643\u064A\u0629 \u2014 \u0632\u064A\u0631\u0648 \u0627\u062D\u062A\u0643\u0627\u0643.",
+    "orbit.item.location.title": "\u0632\u064A\u0627\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u0644",
+    "orbit.item.location.desc": "\u0641\u064A\u0646 \u0645\u0627 \u0645\u0634\u064A\u062A\u064A\u060C JABB \u0645\u0639\u0627\u0643. \u0627\u0644\u0644\u064A \u0643\u062A\u062D\u0633 \u0628\u064A\u0647 \u063A\u0627\u062F\u064A \u064A\u0648\u0635\u0644 \u0644\u0644\u0645\u062D\u0644 \u2014 \u0648\u063A\u0627\u062F\u064A \u062A\u062A\u0643\u0627\u0641\u0623 \u0641 30 \u062B\u0627\u0646\u064A\u0629. \u0645\u0644\u064A \u0643\u0646\u0642\u0648\u0644\u0648 \u0635\u0648\u062A\u0643 \u063A\u0627\u062F\u064A \u064A\u062A\u0633\u0645\u0639\u060C \u0643\u0646\u0639\u0646\u064A\u0647\u0627 \u0628\u0632\u0627\u0641. \u0643\u0646\u062D\u0644\u0644\u0648 \u0627\u0644\u0635\u0648\u062A\u060C \u0627\u0644\u0641\u064A\u062F\u064A\u0648\u060C \u0627\u0644\u0646\u0635 \u0648\u0627\u0644\u062A\u0635\u0627\u0648\u0631 \u0628\u0627\u0634 \u0646\u0641\u0647\u0645\u0648\u0643 \u0645\u0632\u064A\u0627\u0646 \u2014 \u0625\u064A\u062C\u0627\u0628\u064A \u0648\u0644\u0627 \u0633\u0644\u0628\u064A. \u0625\u062B\u0628\u0627\u062A GPS\u060C \u062A\u0635\u0627\u0648\u0631\u060C scoring \u0641\u064A \u0627\u0644\u0648\u0642\u062A \u0627\u0644\u062D\u0642\u064A\u0642\u064A.",
+    "orbit.item.product.title": "\u0645\u0646\u062A\u0648\u062C\u0627\u062A \u0648\u062A\u0637\u0628\u064A\u0642\u0627\u062A",
+    "orbit.item.product.desc": "\u062F\u064A\u0631 \u062A\u062D\u0644\u064A\u0644 Product-Market Fit\u060C \u0627\u062E\u062A\u0628\u0627\u0631 \u0642\u0628\u0648\u0644 \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645 (UAT) \u0648\u062A\u064A\u0633\u062A\u064A \u0627\u0644 features \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0642\u0628\u0644 \u0627\u0644\u0625\u0637\u0644\u0627\u0642. \u0627\u0644\u0640 JABBers \u0643\u064A\u0642\u064A\u0645\u0648 \u0645\u0646\u062A\u0648\u062C\u0643\u060C \u0643\u064A\u0643\u062A\u0634\u0641\u0648 \u0627\u0644 bugs\u060C \u0643\u064A\u062A\u064A\u0633\u062A\u064A\u0648 \u0627\u0644 UX\u060C \u0643\u064A\u0633\u064A\u063A\u0646\u0627\u0644\u064A\u0648 \u0627\u0644 latence \u0648\u0643\u064A\u0642\u062F\u0645\u0648 \u0641\u064A\u062F\u0628\u0627\u0643 \u0628\u0627\u0644\u062A\u0648\u0635\u064A\u0627\u062A \u0648\u0627\u0644\u062A\u064A\u0643\u064A\u062A\u0627\u062A.",
+    "orbit.item.app.title": "\u0627\u0644\u0623\u0628\u0644\u064A\u0643\u0627\u0633\u064A\u0648\u0646",
+    "orbit.item.app.desc": "\u062A\u064A\u0633\u062A\u064A \u0627\u0644 UX \u062F\u064A\u0627\u0644 \u0627\u0644\u0623\u0628\u0644\u064A\u0643\u0627\u0633\u064A\u0648\u0646\u060C \u0643\u062A\u0634\u0641 \u0627\u0644 bugs\u060C \u0633\u064A\u063A\u0646\u0627\u0644\u064A \u0627\u0644 latence \u0648\u0641\u0627\u0644\u064A\u062F\u064A \u0627\u0644 features \u0627\u0644\u062C\u062F\u064A\u062F\u0629 \u0645\u0639 \u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646 \u062D\u0642\u064A\u0642\u064A\u064A\u0646. \u0627\u0644\u0640 JABBers \u0643\u064A\u062E\u0644\u064A\u0648 \u0622\u0631\u0627\u0621 \u0628\u0627\u0644\u0646\u0635\u060C \u0627\u0644\u0635\u0648\u062A\u060C \u0627\u0644\u062A\u0635\u0627\u0648\u0631 \u0623\u0648 Q&A \u0628\u0627\u0644 IA \u2014 \u0641 30 \u062B\u0627\u0646\u064A\u0629. \u0639\u0631\u0641 \u0625\u0644\u0627 \u0627\u0644\u0633\u064A\u0631\u0641\u0631 \u0637\u0627\u062D \u0642\u0628\u0644 \u0645\u0627 \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646 \u064A\u0634\u062A\u0643\u064A\u0648.",
+    "orbit.item.calls.title": "\u0645\u0631\u0643\u0632 \u0627\u0644\u0627\u062A\u0635\u0627\u0644",
+    "orbit.item.calls.desc": "\u0642\u064A\u0645 \u062A\u0641\u0627\u0639\u0644\u0627\u062A \u0645\u0631\u0643\u0632 \u0627\u0644\u0627\u062A\u0635\u0627\u0644 \u0648\u062C\u0648\u062F\u0629 \u0627\u0644\u062F\u0639\u0645. \u0627\u0644\u0640 JABBers \u0643\u064A\u0646\u0648\u062A\u064A\u0648 \u0623\u062F\u0627\u0621 \u0627\u0644\u0623\u062C\u0648\u0646\u060C \u0643\u064A\u0642\u064A\u0633\u0648 \u0648\u0642\u062A \u0627\u0644\u062D\u0644 \u0648\u0643\u064A\u0642\u064A\u0645\u0648 \u0631\u0636\u0627 \u0627\u0644\u0645\u062A\u0635\u0644. \u062F\u0645\u062C JABB \u0628\u0627\u0634 \u062A\u0644\u0642\u0637 \u0627\u0644\u0641\u064A\u062F\u0628\u0627\u0643 \u0628\u0639\u062F \u0643\u0644 \u0645\u0643\u0627\u0644\u0645\u0629 \u0623\u0648\u062A\u0648\u0645\u0627\u062A\u064A\u0643\u064A\u0627 \u0648\u0628\u0627\u0646\u0634\u0645\u0627\u0631\u0643\u064A \u0641\u0631\u064A\u0642 \u0627\u0644\u062F\u0639\u0645.",
+    "orbit.item.data.title": "\u0628\u064A\u0627\u0646\u0627\u062A \u0648\u062E\u0635\u0648\u0635\u064A\u0629",
+    "orbit.item.data.desc": "\u0643\u0644 \u0627\u0644\u0642\u0646\u0648\u0627\u062A \u0643\u062A\u063A\u0630\u064A \u062F\u0627\u0634\u0628\u0648\u0631\u062F \u0648\u0627\u062D\u062F \u0628\u0627\u0644 IA \u0628\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u0634\u0627\u0639\u0631\u060C \u0643\u0634\u0641 \u0627\u0644\u0627\u062A\u062C\u0627\u0647\u0627\u062A \u0648\u062A\u0642\u0627\u0631\u064A\u0631 \u0641\u0648\u0631\u064A\u0629. \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629 \u0623\u0648\u0644\u0627: \u0627\u0644\u0640 JABBers \u0645\u062C\u0647\u0648\u0644\u064A\u0646 \u062A\u0645\u0627\u0645\u0627\u060C \u0648\u0628\u064A\u0627\u0646\u0627\u062A \u0648\u0622\u0631\u0627\u0621 \u0627\u0644\u0645\u062D\u0644\u0627\u062A \u0633\u0631\u064A\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644 \u2014 \u063A\u064A\u0631 \u0627\u0644\u0645\u062D\u0644 \u0645\u0627 \u0643\u064A\u0634\u0648\u0641 \u0627\u0644\u0641\u064A\u062F\u0628\u0627\u0643 \u062F\u064A\u0627\u0644\u0648. \u0628\u064A\u0627\u0646\u0627\u062A\u0643 \u0645\u062D\u0645\u064A\u0629\u060C \u062F\u0627\u064A\u0645\u0627.",
+    "orbit.item.audit.title": "\u062A\u062F\u0642\u064A\u0642\u0627\u062A \u0648\u062A\u062D\u0644\u064A\u0644 \u0627\u0644\u0645\u0647\u0645\u0629",
+    "orbit.item.audit.desc": "\u0623\u0648\u062F\u064A\u062A \u0645\u062A\u062E\u0635\u0635 \u0645\u0627 \u0643\u064A\u0634\u0628\u0647 \u062D\u062A\u0627 \u0634\u064A. \u062E\u062A\u0627\u0631 \u0627\u0644\u0641\u0626\u0629 \u0627\u0644\u062F\u0642\u064A\u0642\u0629 \u0644\u0644\u0645\u0647\u0645\u0629 \u062F\u064A\u0627\u0644\u0643. \u0627\u0644\u0639\u0645\u0644\u064A\u0629 \u0627\u0644\u0645\u0648\u0644\u062F\u0629 \u0628\u0627\u0644 IA \u0643\u062A\u062E\u0644\u0642 \u062A\u062C\u0631\u0628\u0629 \u0637\u0628\u064A\u0639\u064A\u0629 \u0628\u0632\u0627\u0641 \u0628\u062D\u064A\u062B \u0627\u0644\u0639\u0645\u064A\u0644 \u0627\u0644\u0633\u0631\u064A \u0645\u0627 \u0643\u064A\u062D\u0633 \u0628\u0644\u064A \u0647\u0648 \u0639\u0645\u064A\u0644 \u0633\u0631\u064A \u2014 \u0648\u0643\u062A\u0644\u0642\u0637 \u0623\u0642\u0635\u0649 \u0642\u062F\u0631 \u062F\u064A\u0627\u0644 \u0627\u0644\u0628\u064A\u0627\u0646\u0627\u062A \u0644\u0631\u0624\u064A\u0629 360\u00B0 \u062D\u0642\u064A\u0642\u064A\u0629.",
+    "orbit.item.store.title": "\u0645\u062A\u062C\u0631 \u0627\u0644\u0645\u0643\u0627\u0641\u0622\u062A",
+    "orbit.item.store.desc": "\u0627\u0633\u062A\u0639\u0645\u0644 JABB Coins \u062F\u064A\u0627\u0644\u0643 \u0643\u0643\u0648\u0628\u0648\u0646\u0627\u062A \u0639\u0646\u062F \u0627\u0644\u0634\u0631\u0643\u0627\u0621 \u062F\u064A\u0627\u0644\u0646\u0627. \u0643\u0644 \u062A\u0642\u064A\u064A\u0645 \u0643\u064A\u0631\u0628\u062D\u0643 coins \u2014 \u0635\u0631\u0641\u0647\u0645 \u0641\u0627\u0644\u0645\u062D\u0644\u0627\u062A\u060C \u0627\u0644\u0631\u064A\u0633\u062A\u0648\u0631\u0627\u0646\u0627\u062A \u0648\u0627\u0644\u062E\u062F\u0645\u0627\u062A. \u0634\u0628\u0643\u0629 \u0627\u0644\u0634\u0631\u0643\u0627\u0621 \u0643\u062A\u0643\u0628\u0631 \u062F\u0627\u064A\u0645\u0627 \u2014 \u0631\u0623\u064A\u0643 \u0643\u064A\u062A\u062D\u0648\u0644 \u0644\u0627\u0645\u062A\u064A\u0627\u0632\u0627\u062A \u062D\u0642\u064A\u0642\u064A\u0629.",
 
     // ── Common ──
     "common.english": "English",
