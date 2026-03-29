@@ -7,7 +7,7 @@ export default function CTABanner() {
   const { t } = useTranslation();
 
   return (
-    <section className="cta-banner">
+    <section className="cta-banner dark:bg-gray-900 bg-gray-50">
       <div className="cta-banner__bg" />
       <div className="container mx-auto max-w-[900px] px-6 relative z-10">
         <div className="cta-banner__card">

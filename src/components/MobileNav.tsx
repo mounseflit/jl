@@ -43,11 +43,24 @@ export default function MobileNav() {
 
             <div className="site-header__nav__list">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} className="site-header__nav-link">
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="site-header__nav-link"
+                  style={{ textDecoration: "underline", textDecorationThickness: "2px", textUnderlineOffset: "6px", textDecorationColor: "transparent", transition: "text-decoration-color 0.3s", backgroundColor: "transparent" }}
+                  onMouseEnter={(e) => e.currentTarget.style.textDecorationColor = "currentColor"}
+                  onMouseLeave={(e) => e.currentTarget.style.textDecorationColor = "transparent"}
+                >
                   {item.label}
                 </a>
               ))}
-              <a href="/go" className="button button--transparent">
+              <a
+                href="/go"
+                className="button button--transparent"
+                style={{ background: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)", color: "white" }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
+                onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}
+              >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="8" r="4" />
                   <path d="M5.5 21a6.5 6.5 0 0113 0" />
@@ -55,14 +68,20 @@ export default function MobileNav() {
                 </svg>
                 <span style={{ marginInlineStart: "0.4rem" }}>{t("nav.becomeJabber")}</span>
               </a>
-              <a href="/partner" className="button button--transparent">
+              <a
+                href="/partner"
+                className="button button--transparent"
+                style={{ background: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)", color: "white" }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
+                onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}
+              >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="10" width="7" height="11" rx="1" />
-                  <rect x="14" y="4" width="7" height="17" rx="1" />
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span style={{ marginInlineStart: "0.4rem" }}>{t("nav.becomePartner")}</span>
               </a>
-              <LanguageSwitcher />
+              <LanguageSwitcher variant="desktop" />
               <ThemeToggle />
             </div>
 
@@ -131,7 +150,7 @@ export default function MobileNav() {
             </a>
           </div>
           <div className="fm__controls">
-            <LanguageSwitcher />
+            <LanguageSwitcher variant="mobile" />
             <ThemeToggle />
           </div>
         </div>

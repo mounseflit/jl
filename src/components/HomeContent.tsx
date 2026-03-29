@@ -37,15 +37,16 @@ export default function HomeContent() {
             {/* Connector line */}
             <div className="hiw__connector" />
 
-            {/* Step 1 — Download */}
-            <div className="hiw__step">
+            {/* Step 1 — Download: Phone with arrow */}
+            <a href="/go" className="hiw__step">
               <div className="hiw__icon-wrap">
                 <div className="hiw__icon hiw__icon--1">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
+
+                  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4v20m0 0l-6-6m6 6l6-6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 32h32a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4a2 2 0 012-2z" stroke="white" strokeWidth="2.5" fill="white" fillOpacity="0.1" />
                   </svg>
+
                 </div>
                 <span className="hiw__num">01</span>
               </div>
@@ -55,14 +56,15 @@ export default function HomeContent() {
               <p className="hiw__desc">
                 {t("howItWorks.step1.desc" as keyof typeof import("@/lib/i18n").translations.en)}
               </p>
-            </div>
+            </a>
 
-            {/* Step 2 — Share */}
+            {/* Step 2 — Share: Star rating with speech bubble */}
             <div className="hiw__step">
               <div className="hiw__icon-wrap">
                 <div className="hiw__icon hiw__icon--2">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 8h24a4 4 0 014 4v14a4 4 0 01-4 4H18l-6 5v-5H8a4 4 0 01-4-4V12a4 4 0 014-4z" stroke="white" strokeWidth="2.5" fill="white" fillOpacity="0.1" />
+                    <path d="M20 14l1.76 3.56 3.94.58-2.85 2.78.67 3.92L20 22.92l-3.52 1.92.67-3.92-2.85-2.78 3.94-.58L20 14z" fill="white" fillOpacity="0.9" />
                   </svg>
                 </div>
                 <span className="hiw__num">02</span>
@@ -75,12 +77,14 @@ export default function HomeContent() {
               </p>
             </div>
 
-            {/* Step 3 — Earn */}
+            {/* Step 3 — Earn: Coin with lightning bolt */}
             <div className="hiw__step">
               <div className="hiw__icon-wrap">
                 <div className="hiw__icon hiw__icon--3">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="26" r="14" stroke="white" strokeWidth="2.5" fill="white" fillOpacity="0.1" />
+                    <circle cx="22" cy="26" r="10" stroke="white" strokeWidth="1.5" strokeDasharray="3 2" opacity="0.4" />
+                    <text x="22" y="31" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="system-ui">J</text>
                   </svg>
                 </div>
                 <span className="hiw__num">03</span>
@@ -93,13 +97,15 @@ export default function HomeContent() {
               </p>
             </div>
 
-            {/* Step 4 — Delivered */}
+            {/* Step 4 — Delivered: Rocket / send arrow with checkmark */}
             <div className="hiw__step">
               <div className="hiw__icon-wrap">
                 <div className="hiw__icon hiw__icon--4">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 2L11 13" />
-                    <path d="M22 2L15 22l-4-9-9-4z" />
+                  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* First checkmark */}
+                    <path d="M4 24l6 6 14-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    {/* Second checkmark overlapping */}
+                    <path d="M16 24l6 6 14-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
                   </svg>
                 </div>
                 <span className="hiw__num">04</span>
