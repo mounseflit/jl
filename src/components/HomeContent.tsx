@@ -225,7 +225,7 @@ export default function HomeContent() {
                             {/* Header bar */}
                             <div className="doc-frame__header">
                               <div className="doc-frame__logo">
-                                <JabbLogo size={18} />
+                                <JabbLogo size={14} />
                                 <span className="doc-frame__title">JABB Report</span>
                               </div>
                               <div className="doc-frame__status">
