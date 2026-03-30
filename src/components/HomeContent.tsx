@@ -209,56 +209,12 @@ export default function HomeContent() {
                       </div>
                     )}
                     {"docFrame" in s && s.docFrame && (
-                      /* ── 3D Document Frame — JABB Report ── */
-                      <div className={`doc-frame ${s.fx}`}>
-                        <div className="doc-frame__body">
-                          {/* Stacked pages behind for depth */}
-                          <div className="doc-frame__stack doc-frame__stack--5" />
-                          <div className="doc-frame__stack doc-frame__stack--4" />
-                          <div className="doc-frame__stack doc-frame__stack--3" />
-                          <div className="doc-frame__stack doc-frame__stack--2" />
-                          <div className="doc-frame__stack doc-frame__stack--1" />
-                          {/* Main paper */}
-                          <div className="doc-frame__paper">
-                            {/* 3D right edge */}
-                            <div className="doc-frame__edge" />
-                            {/* Header bar */}
-                            <div className="doc-frame__header">
-                              <div className="doc-frame__logo">
-                                <JabbLogo size={14} />
-                                <span className="doc-frame__title">JABB Report</span>
-                              </div>
-                              <div className="doc-frame__status">
-                                <span className="doc-frame__status-dot" />
-                                <span className="doc-frame__status-text">Generated</span>
-                              </div>
-                            </div>
-                            {/* Metrics bar */}
-                            <div className="doc-frame__metrics">
-                              <div className="doc-frame__metric">
-                                <span className="doc-frame__metric-val">+32</span>
-                                <span className="doc-frame__metric-label">Pulse Score</span>
-                              </div>
-                              <div className="doc-frame__metric">
-                                <span className="doc-frame__metric-val">86%</span>
-                                <span className="doc-frame__metric-label">Positive</span>
-                              </div>
-                              <div className="doc-frame__metric">
-                                <span className="doc-frame__metric-val">17</span>
-                                <span className="doc-frame__metric-label">Reviews</span>
-                              </div>
-                            </div>
-                            {/* Report image */}
-                            <div className="doc-frame__content">
-                              <Image src={s.image} alt={t(s.titleKey)} width={360} height={240} className="doc-frame__img" />
-                            </div>
-                            {/* Footer */}
-                            <div className="doc-frame__footer">
-                              <span className="doc-frame__powered">Powered by <strong>JABB AI</strong></span>
-                              <div className="doc-frame__accent" />
-                            </div>
-                          </div>
-                          <div className="doc-frame__shadow" />
+                      /* ── Simple Report Card ── */
+                      <div className="report-card">
+                        <div className="report-card__stack report-card__stack--2" />
+                        <div className="report-card__stack report-card__stack--1" />
+                        <div className="report-card__main">
+                          <Image src={s.image} alt={t(s.titleKey)} width={400} height={560} className="report-card__img" />
                         </div>
                       </div>
                     )}
