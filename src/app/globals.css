@@ -1587,44 +1587,50 @@ body {
   position: relative;
   max-width: 280px;
   margin: 0 auto;
+  /* Reserve space for the stacked offsets */
+  padding-right: 16px;
+  padding-bottom: 12px;
 }
 .report-card__stack {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 14px;
 }
 /* Stack 4 — furthest back, most offset */
 .report-card__stack--4 {
+  top: 16px; left: 16px;
+  width: calc(100% - 16px); height: calc(100% - 12px);
   background: linear-gradient(135deg, #d8ddef 0%, #cfd5ea 100%);
   border: 2px solid rgba(30, 52, 152, 0.15);
-  transform: translate(20px, 16px);
   box-shadow:
     3px 3px 0 rgba(30, 52, 152, 0.06),
     4px 6px 16px rgba(0, 0, 0, 0.08);
 }
 /* Stack 3 */
 .report-card__stack--3 {
+  top: 12px; left: 12px;
+  width: calc(100% - 16px); height: calc(100% - 12px);
   background: linear-gradient(135deg, #e0e5f2 0%, #d8ddef 100%);
   border: 2px solid rgba(30, 52, 152, 0.13);
-  transform: translate(15px, 12px);
   box-shadow:
     3px 3px 0 rgba(30, 52, 152, 0.05),
     4px 6px 14px rgba(0, 0, 0, 0.07);
 }
 /* Stack 2 */
 .report-card__stack--2 {
+  top: 8px; left: 8px;
+  width: calc(100% - 16px); height: calc(100% - 12px);
   background: linear-gradient(135deg, #e8ecf5 0%, #e0e5f2 100%);
   border: 2px solid rgba(30, 52, 152, 0.11);
-  transform: translate(10px, 8px);
   box-shadow:
     2px 2px 0 rgba(30, 52, 152, 0.04),
     3px 5px 12px rgba(0, 0, 0, 0.06);
 }
 /* Stack 1 — closest behind main */
 .report-card__stack--1 {
+  top: 4px; left: 4px;
+  width: calc(100% - 16px); height: calc(100% - 12px);
   background: linear-gradient(135deg, #f0f2f9 0%, #e8ecf5 100%);
   border: 2px solid rgba(30, 52, 152, 0.09);
-  transform: translate(5px, 4px);
   box-shadow:
     2px 2px 0 rgba(30, 52, 152, 0.03),
     3px 4px 10px rgba(0, 0, 0, 0.05);
@@ -1633,6 +1639,7 @@ body {
 .report-card__main {
   position: relative;
   z-index: 5;
+  width: calc(100% - 16px);
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
