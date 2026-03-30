@@ -1577,62 +1577,126 @@ body {
 }
 
 /* ── 3D Document Frame — JABB Report (Enhanced) ── */
-/* ── Simple Report Card ── */
+/* ── 3D Stacked Report Card ── */
 .report-card {
   position: relative;
-  max-width: 260px;
+  max-width: 280px;
   margin: 0 auto;
+  padding-right: 24px;
+  padding-bottom: 18px;
 }
 .report-card__stack {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  top: 0; left: 0;
+  width: calc(100% - 24px);
+  height: calc(100% - 18px);
+  border-radius: 14px;
 }
+/* Stack 4 — furthest back, most offset */
+.report-card__stack--4 {
+  background: linear-gradient(135deg, #d8ddef 0%, #cfd5ea 100%);
+  border: 2px solid rgba(30, 52, 152, 0.15);
+  transform: translate(24px, 18px);
+  box-shadow:
+    3px 3px 0 rgba(30, 52, 152, 0.06),
+    4px 6px 16px rgba(0, 0, 0, 0.08);
+}
+/* Stack 3 */
+.report-card__stack--3 {
+  background: linear-gradient(135deg, #e0e5f2 0%, #d8ddef 100%);
+  border: 2px solid rgba(30, 52, 152, 0.13);
+  transform: translate(18px, 13.5px);
+  box-shadow:
+    3px 3px 0 rgba(30, 52, 152, 0.05),
+    4px 6px 14px rgba(0, 0, 0, 0.07);
+}
+/* Stack 2 */
 .report-card__stack--2 {
-  transform: rotate(4deg) translate(8px, 4px);
-  opacity: 0.4;
+  background: linear-gradient(135deg, #e8ecf5 0%, #e0e5f2 100%);
+  border: 2px solid rgba(30, 52, 152, 0.11);
+  transform: translate(12px, 9px);
+  box-shadow:
+    2px 2px 0 rgba(30, 52, 152, 0.04),
+    3px 5px 12px rgba(0, 0, 0, 0.06);
 }
+/* Stack 1 — closest behind main */
 .report-card__stack--1 {
-  transform: rotate(2deg) translate(4px, 2px);
-  opacity: 0.6;
+  background: linear-gradient(135deg, #f0f2f9 0%, #e8ecf5 100%);
+  border: 2px solid rgba(30, 52, 152, 0.09);
+  transform: translate(6px, 4.5px);
+  box-shadow:
+    2px 2px 0 rgba(30, 52, 152, 0.03),
+    3px 4px 10px rgba(0, 0, 0, 0.05);
 }
+/* Main document — front page */
 .report-card__main {
   position: relative;
-  z-index: 2;
-  border-radius: 12px;
+  z-index: 5;
+  border-radius: 14px;
   overflow: hidden;
+  background: #fff;
+  border: 2px solid rgba(30, 52, 152, 0.14);
   box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.25),
-    0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    0 4px 20px rgba(30, 52, 152, 0.12),
+    0 12px 40px rgba(0, 0, 0, 0.10),
+    0 1px 3px rgba(0, 0, 0, 0.06);
 }
 .report-card__img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* ── Light mode overrides ── */
-:root .report-card__stack {
-  background: rgba(30, 52, 152, 0.06);
-  border-color: rgba(30, 52, 152, 0.08);
+/* Soft shadow beneath the full stack */
+.report-card__shadow {
+  position: relative;
+  z-index: 0;
+  width: 90%;
+  height: 24px;
+  margin: 8px auto 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(30, 52, 152, 0.14) 0%, rgba(0,0,0,0.05) 50%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(10px);
 }
-:root .report-card__main {
-  border-color: rgba(0, 0, 0, 0.08);
-}
 
-/* ── Dark mode ── */
-.dark .report-card__stack {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.04);
+/* ── Dark mode stacked report ── */
+.dark .report-card__stack--4 {
+  background: linear-gradient(135deg, #0a0f22 0%, #0d1428 100%);
+  border-color: rgba(74, 122, 255, 0.18);
+  box-shadow:
+    3px 3px 0 rgba(74, 122, 255, 0.06),
+    4px 6px 16px rgba(0, 0, 0, 0.35);
+}
+.dark .report-card__stack--3 {
+  background: linear-gradient(135deg, #0d1428 0%, #10182e 100%);
+  border-color: rgba(74, 122, 255, 0.15);
+  box-shadow:
+    3px 3px 0 rgba(74, 122, 255, 0.05),
+    4px 6px 14px rgba(0, 0, 0, 0.3);
+}
+.dark .report-card__stack--2 {
+  background: linear-gradient(135deg, #10182e 0%, #141d36 100%);
+  border-color: rgba(74, 122, 255, 0.13);
+  box-shadow:
+    2px 2px 0 rgba(74, 122, 255, 0.04),
+    3px 5px 12px rgba(0, 0, 0, 0.3);
+}
+.dark .report-card__stack--1 {
+  background: linear-gradient(135deg, #141d36 0%, #18223e 100%);
+  border-color: rgba(74, 122, 255, 0.11);
+  box-shadow:
+    2px 2px 0 rgba(74, 122, 255, 0.03),
+    3px 4px 10px rgba(0, 0, 0, 0.25);
 }
 .dark .report-card__main {
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #1c2648;
+  border-color: rgba(74, 122, 255, 0.20);
   box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.5),
-    0 2px 8px rgba(0, 0, 0, 0.3);
+    0 4px 20px rgba(74, 122, 255, 0.10),
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.dark .report-card__shadow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(74, 122, 255, 0.12) 0%, rgba(0,0,0,0.08) 50%, transparent 80%);
 }
 
 /* ═══════════════════════════════════════════════════ */

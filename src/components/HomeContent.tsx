@@ -211,11 +211,14 @@ export default function HomeContent() {
                     {"docFrame" in s && s.docFrame && (
                       /* ── Simple Report Card ── */
                       <div className="report-card">
+                        <div className="report-card__stack report-card__stack--4" />
+                        <div className="report-card__stack report-card__stack--3" />
                         <div className="report-card__stack report-card__stack--2" />
                         <div className="report-card__stack report-card__stack--1" />
                         <div className="report-card__main">
                           <Image src={s.image} alt={t(s.titleKey)} width={400} height={560} className="report-card__img" />
                         </div>
+                        <div className="report-card__shadow" />
                       </div>
                     )}
                     {!s.phone && !s.qrStand && !("docFrame" in s && s.docFrame) && (
