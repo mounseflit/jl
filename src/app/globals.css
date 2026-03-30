@@ -910,21 +910,21 @@ body {
   padding-top: 1rem;
   position: relative;
   /* Tilt right in LTR — dramatic perspective */
-  transform: perspective(700px) rotateY(-22deg) rotateX(4deg) rotateZ(8deg);
+  transform: perspective(700px) rotateY(-26deg) rotateX(5deg) rotateZ(12deg);
   transition: transform 0.4s ease;
 }
 
 .hero-done__phone:hover {
-  transform: perspective(700px) rotateY(-10deg) rotateX(2deg) rotateZ(4deg);
+  transform: perspective(700px) rotateY(-14deg) rotateX(2deg) rotateZ(6deg);
 }
 
 /* RTL: tilt left */
 .hero-done__phone--rtl {
-  transform: perspective(700px) rotateY(22deg) rotateX(4deg) rotateZ(-8deg);
+  transform: perspective(700px) rotateY(26deg) rotateX(5deg) rotateZ(-12deg);
 }
 
 .hero-done__phone--rtl:hover {
-  transform: perspective(700px) rotateY(10deg) rotateX(2deg) rotateZ(-4deg);
+  transform: perspective(700px) rotateY(14deg) rotateX(2deg) rotateZ(-6deg);
 }
 
 /* Glow behind the phone */
