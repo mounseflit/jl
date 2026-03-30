@@ -61,7 +61,7 @@ function BrainIcon() {
 const services = [
   {
     icon: <SearchIcon />,
-    gradient: "linear-gradient(135deg, #1d1597 0%, #3028C0 100%)",
+    gradient: "linear-gradient(135deg, #1E3498 0%, #2A4ABF 100%)",
     title: "JABB App",
     desc: "Deploy citizen shoppers to evaluate real customer experiences across your locations. GPS-verified, unbiased, and actionable insights delivered fast.",
     cta: "Start Evaluating",
@@ -69,7 +69,7 @@ const services = [
   },
   {
     icon: <MicIcon />,
-    gradient: "linear-gradient(135deg, #1d1597 0%, #38B2AC 100%)",
+    gradient: "linear-gradient(135deg, #1E3498 0%, #38B2AC 100%)",
     title: "Voice of Customer",
     desc: "Capture authentic customer feedback through surveys, interviews, and sentiment analysis. Monitor your brand health in real time.",
     cta: "Capture Feedback",
@@ -77,7 +77,7 @@ const services = [
   },
   {
     icon: <BrainIcon />,
-    gradient: "linear-gradient(135deg, #9F7AEA 0%, #1d1597 100%)",
+    gradient: "linear-gradient(135deg, #5B8DEA 0%, #1E3498 100%)",
     title: "JABB Report",
     desc: "AI-powered reports with sentiment scoring, trend detection, and prioritized action items from every piece of customer feedback.",
     cta: "See Reports",
@@ -85,7 +85,7 @@ const services = [
   },
   {
     icon: <LayoutDashboardIcon />,
-    gradient: "linear-gradient(135deg, #38B2AC 0%, #1d1597 100%)",
+    gradient: "linear-gradient(135deg, #38B2AC 0%, #1E3498 100%)",
     title: "QR Codes",
     desc: "NFC-enabled stands, stickers, and cards for effortless review collection at your point of sale. No app download required.",
     cta: "View Products",
@@ -93,7 +93,7 @@ const services = [
   },
   {
     icon: <ClipboardCheckIcon />,
-    gradient: "linear-gradient(135deg, #3028C0 0%, #9F7AEA 100%)",
+    gradient: "linear-gradient(135deg, #2A4ABF 0%, #5B8DEA 100%)",
     title: "JABB CX",
     desc: "Deploy mystery shoppers to evaluate your locations with structured scoring, GPS verification, and detailed audit reports.",
     cta: "Launch a Mission",

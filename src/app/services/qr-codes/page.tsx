@@ -169,10 +169,10 @@ export default function QrCodesPage() {
 
       <main className="font-body">
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A0A1B] to-[#1d1597] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A0A1B] to-[#1E3498] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
           {/* Glow orbs */}
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-primary/25 blur-[140px]" />
-          <div className="absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-[#9F7AEA]/20 blur-[120px]" />
+          <div className="absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-[#5B8DEA]/20 blur-[120px]" />
 
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
             <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light backdrop-blur-sm mb-6">
@@ -181,7 +181,7 @@ export default function QrCodesPage() {
 
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Smart Review Collection,{" "}
-              <span className="bg-gradient-to-r from-primary-light via-[#9F7AEA] to-[#38B2AC] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-light via-[#5B8DEA] to-[#38B2AC] bg-clip-text text-transparent">
                 One Tap Away
               </span>
             </h1>
@@ -192,7 +192,7 @@ export default function QrCodesPage() {
 
             <a
               href="/partner"
-              className="mt-8 inline-flex items-center rounded-xl bg-gradient-to-r from-primary to-[#9F7AEA] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:opacity-90"
+              className="mt-8 inline-flex items-center rounded-xl bg-gradient-to-r from-primary to-[#5B8DEA] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:opacity-90"
             >
               Get Your QR Kit
             </a>
@@ -262,7 +262,7 @@ export default function QrCodesPage() {
                     {s.num}
                   </span>
 
-                  <div className="mx-auto mt-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-[#9F7AEA]/10 text-primary-light">
+                  <div className="mx-auto mt-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-[#5B8DEA]/10 text-primary-light">
                     {s.icon}
                   </div>
 
@@ -312,7 +312,7 @@ export default function QrCodesPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#3028C0]">
+        <section className="py-20 lg:py-24 bg-gradient-to-r from-primary to-[#2A4ABF]">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Get Your Custom JABB QR Kit

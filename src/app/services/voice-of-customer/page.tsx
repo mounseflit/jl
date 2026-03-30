@@ -17,7 +17,7 @@ const channels = [
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
     ),
-    color: "from-[#F5F5FF] to-[#EEEDFF] dark:from-[#151335] dark:to-[#111130]",
+    color: "from-[#F0F5FF] to-[#EAF0FF] dark:from-[#0F1D45] dark:to-[#0D1A3D]",
     border: "border-primary/20",
     iconBg: "bg-primary/10 text-primary",
   },

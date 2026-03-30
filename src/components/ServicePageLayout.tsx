@@ -154,7 +154,7 @@ export default function ServicePageLayout({
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   {i < steps.length - 1 && (
-                    <div className="w-0.5 flex-1 min-h-[48px] bg-[#EEEDFF]" />
+                    <div className="w-0.5 flex-1 min-h-[48px] bg-[#EAF0FF]" />
                   )}
                 </div>
                 {/* Content */}

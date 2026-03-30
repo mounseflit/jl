@@ -18,8 +18,8 @@ export default function JabbLogo({ size = 28, gradient = false }: { size?: numbe
       {gradient && (
         <defs>
           <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7B75FF" />
-            <stop offset="100%" stopColor="#1d1597" />
+            <stop offset="0%" stopColor="#6B9AFF" />
+            <stop offset="100%" stopColor="#1E3498" />
           </linearGradient>
         </defs>
       )}

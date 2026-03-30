@@ -15,7 +15,7 @@ export default function NotFound() {
           className="absolute top-[10%] left-[15%] h-[340px] w-[340px] rounded-full opacity-30 blur-[120px]"
           style={{
             background:
-              "radial-gradient(circle, #6C63FF 0%, transparent 70%)",
+              "radial-gradient(circle, #4A7AFF 0%, transparent 70%)",
             animation: "notfound-orb-1 12s ease-in-out infinite",
           }}
         />
@@ -23,7 +23,7 @@ export default function NotFound() {
           className="absolute bottom-[10%] right-[10%] h-[420px] w-[420px] rounded-full opacity-25 blur-[140px]"
           style={{
             background:
-              "radial-gradient(circle, #3028C0 0%, transparent 70%)",
+              "radial-gradient(circle, #2A4ABF 0%, transparent 70%)",
             animation: "notfound-orb-2 15s ease-in-out infinite",
           }}
         />
@@ -31,7 +31,7 @@ export default function NotFound() {
           className="absolute top-[50%] left-[60%] h-[260px] w-[260px] rounded-full opacity-20 blur-[100px]"
           style={{
             background:
-              "radial-gradient(circle, #1d1597 0%, transparent 70%)",
+              "radial-gradient(circle, #1E3498 0%, transparent 70%)",
             animation: "notfound-orb-3 10s ease-in-out infinite",
           }}
         />
@@ -53,7 +53,7 @@ export default function NotFound() {
           className="text-[8rem] sm:text-[10rem] font-extrabold leading-none tracking-tighter select-none"
           style={{
             background:
-              "linear-gradient(135deg, #6C63FF 0%, #3028C0 50%, #1d1597 100%)",
+              "linear-gradient(135deg, #4A7AFF 0%, #2A4ABF 50%, #1E3498 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -78,7 +78,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 hover:scale-[1.03]"
             style={{
               background:
-                "linear-gradient(135deg, #3028C0 0%, #1d1597 100%)",
+                "linear-gradient(135deg, #2A4ABF 0%, #1E3498 100%)",
             }}
           >
             Back to Home

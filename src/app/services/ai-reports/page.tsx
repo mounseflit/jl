@@ -68,7 +68,7 @@ export default function AiReportsPage() {
         <section className="relative overflow-hidden bg-[#0A0A1B] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
           {/* Purple glow orbs */}
           <div className="absolute top-1/4 left-1/3 h-80 w-80 rounded-full bg-primary/25 blur-[150px]" />
-          <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#9F7AEA]/20 blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#5B8DEA]/20 blur-[120px]" />
           <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-[#38B2AC]/15 blur-[80px]" />
 
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -77,7 +77,7 @@ export default function AiReportsPage() {
             </span>
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               From raw data to{" "}
-              <span className="bg-gradient-to-r from-primary-light via-[#9F7AEA] to-[#38B2AC] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-light via-[#5B8DEA] to-[#38B2AC] bg-clip-text text-transparent">
                 strategic insight
               </span>
             </h1>
@@ -88,7 +88,7 @@ export default function AiReportsPage() {
             </p>
             <a
               href="/partner"
-              className="mt-8 inline-flex items-center rounded-xl bg-gradient-to-r from-primary to-[#9F7AEA] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:opacity-90"
+              className="mt-8 inline-flex items-center rounded-xl bg-gradient-to-r from-primary to-[#5B8DEA] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:opacity-90"
             >
               Generate Your First Report
             </a>
@@ -142,7 +142,7 @@ export default function AiReportsPage() {
               </div>
 
               {/* After: AI Insight */}
-              <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-[#9F7AEA]/10 p-8">
+              <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-[#5B8DEA]/10 p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round">
@@ -178,7 +178,7 @@ export default function AiReportsPage() {
 
             {/* Arrow between cards on mobile */}
             <div className="flex justify-center my-4 lg:hidden">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3028C0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A4ABF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="12" x2="12" y1="5" y2="19" />
                 <polyline points="19 12 12 19 5 12" />
               </svg>
@@ -202,10 +202,10 @@ export default function AiReportsPage() {
               {capabilities.map((cap) => (
                 <div
                   key={cap.title}
-                  className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 via-[#9F7AEA]/30 to-transparent transition hover:from-primary hover:via-[#9F7AEA]/60 hover:to-[#38B2AC]/30"
+                  className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 via-[#5B8DEA]/30 to-transparent transition hover:from-primary hover:via-[#5B8DEA]/60 hover:to-[#38B2AC]/30"
                 >
                   <div className="rounded-2xl bg-[#0F0F22] p-8 h-full">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-[#9F7AEA]/10 text-primary-light">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-[#5B8DEA]/10 text-primary-light">
                       {cap.icon}
                     </div>
                     <h3 className="mt-6 font-display text-xl font-bold text-white">
@@ -244,7 +244,7 @@ export default function AiReportsPage() {
                 />
               </div>
               {/* Glow behind the screenshot */}
-              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/20 to-[#9F7AEA]/10 blur-2xl" />
+              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/20 to-[#5B8DEA]/10 blur-2xl" />
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-500">
@@ -254,7 +254,7 @@ export default function AiReportsPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 lg:py-24 bg-gradient-to-r from-[#9F7AEA] to-primary">
+        <section className="py-20 lg:py-24 bg-gradient-to-r from-[#5B8DEA] to-primary">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
               Let AI do the heavy lifting

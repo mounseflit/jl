@@ -150,13 +150,13 @@ const features = [
   {
     title: "Guided Checklists",
     desc: "Step-by-step evaluation forms walk you through each mission so you never miss a detail.",
-    gradient: "from-[#3028C0] to-[#9F7AEA]",
+    gradient: "from-[#2A4ABF] to-[#5B8DEA]",
     icon: <ClipboardCheckIcon className="w-7 h-7" />,
   },
   {
     title: "In-App Photo Capture",
     desc: "Take timestamped, geotagged photos directly within the app as evidence for every evaluation.",
-    gradient: "from-[#38B2AC] to-[#1d1597]",
+    gradient: "from-[#38B2AC] to-[#1E3498]",
     icon: <CameraIcon className="w-7 h-7" />,
   },
 ];
