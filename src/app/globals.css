@@ -914,22 +914,22 @@ body {
   align-self: flex-start;
   padding-top: 1rem;
   position: relative;
-  /* Tilt right in LTR — dramatic perspective */
-  transform: perspective(700px) rotateY(-26deg) rotateX(5deg) rotateZ(12deg);
+  /* Tilt right in LTR — subtle perspective facing user */
+  transform: perspective(700px) rotateY(-16deg) rotateX(4deg) rotateZ(7deg);
   transition: transform 0.4s ease;
 }
 
 .hero-done__phone:hover {
-  transform: perspective(700px) rotateY(-14deg) rotateX(2deg) rotateZ(6deg);
+  transform: perspective(700px) rotateY(-8deg) rotateX(2deg) rotateZ(3deg);
 }
 
 /* RTL: tilt left */
 .hero-done__phone--rtl {
-  transform: perspective(700px) rotateY(26deg) rotateX(5deg) rotateZ(-12deg);
+  transform: perspective(700px) rotateY(16deg) rotateX(4deg) rotateZ(-7deg);
 }
 
 .hero-done__phone--rtl:hover {
-  transform: perspective(700px) rotateY(14deg) rotateX(2deg) rotateZ(-6deg);
+  transform: perspective(700px) rotateY(8deg) rotateX(2deg) rotateZ(-3deg);
 }
 
 /* Glow behind the phone */
