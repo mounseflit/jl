@@ -1582,21 +1582,17 @@ body {
   position: relative;
   max-width: 280px;
   margin: 0 auto;
-  padding-right: 24px;
-  padding-bottom: 18px;
 }
 .report-card__stack {
   position: absolute;
-  top: 0; left: 0;
-  width: calc(100% - 24px);
-  height: calc(100% - 18px);
+  top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 14px;
 }
 /* Stack 4 — furthest back, most offset */
 .report-card__stack--4 {
   background: linear-gradient(135deg, #d8ddef 0%, #cfd5ea 100%);
   border: 2px solid rgba(30, 52, 152, 0.15);
-  transform: translate(24px, 18px);
+  transform: translate(20px, 16px);
   box-shadow:
     3px 3px 0 rgba(30, 52, 152, 0.06),
     4px 6px 16px rgba(0, 0, 0, 0.08);
@@ -1605,7 +1601,7 @@ body {
 .report-card__stack--3 {
   background: linear-gradient(135deg, #e0e5f2 0%, #d8ddef 100%);
   border: 2px solid rgba(30, 52, 152, 0.13);
-  transform: translate(18px, 13.5px);
+  transform: translate(15px, 12px);
   box-shadow:
     3px 3px 0 rgba(30, 52, 152, 0.05),
     4px 6px 14px rgba(0, 0, 0, 0.07);
@@ -1614,7 +1610,7 @@ body {
 .report-card__stack--2 {
   background: linear-gradient(135deg, #e8ecf5 0%, #e0e5f2 100%);
   border: 2px solid rgba(30, 52, 152, 0.11);
-  transform: translate(12px, 9px);
+  transform: translate(10px, 8px);
   box-shadow:
     2px 2px 0 rgba(30, 52, 152, 0.04),
     3px 5px 12px rgba(0, 0, 0, 0.06);
@@ -1623,7 +1619,7 @@ body {
 .report-card__stack--1 {
   background: linear-gradient(135deg, #f0f2f9 0%, #e8ecf5 100%);
   border: 2px solid rgba(30, 52, 152, 0.09);
-  transform: translate(6px, 4.5px);
+  transform: translate(5px, 4px);
   box-shadow:
     2px 2px 0 rgba(30, 52, 152, 0.03),
     3px 4px 10px rgba(0, 0, 0, 0.05);
@@ -1661,28 +1657,28 @@ body {
 /* ── Dark mode stacked report ── */
 .dark .report-card__stack--4 {
   background: linear-gradient(135deg, #0a0f22 0%, #0d1428 100%);
-  border-color: rgba(74, 122, 255, 0.18);
+  border-color: rgba(74, 122, 255, 0.20);
   box-shadow:
     3px 3px 0 rgba(74, 122, 255, 0.06),
     4px 6px 16px rgba(0, 0, 0, 0.35);
 }
 .dark .report-card__stack--3 {
   background: linear-gradient(135deg, #0d1428 0%, #10182e 100%);
-  border-color: rgba(74, 122, 255, 0.15);
+  border-color: rgba(74, 122, 255, 0.17);
   box-shadow:
     3px 3px 0 rgba(74, 122, 255, 0.05),
     4px 6px 14px rgba(0, 0, 0, 0.3);
 }
 .dark .report-card__stack--2 {
   background: linear-gradient(135deg, #10182e 0%, #141d36 100%);
-  border-color: rgba(74, 122, 255, 0.13);
+  border-color: rgba(74, 122, 255, 0.14);
   box-shadow:
     2px 2px 0 rgba(74, 122, 255, 0.04),
     3px 5px 12px rgba(0, 0, 0, 0.3);
 }
 .dark .report-card__stack--1 {
   background: linear-gradient(135deg, #141d36 0%, #18223e 100%);
-  border-color: rgba(74, 122, 255, 0.11);
+  border-color: rgba(74, 122, 255, 0.12);
   box-shadow:
     2px 2px 0 rgba(74, 122, 255, 0.03),
     3px 4px 10px rgba(0, 0, 0, 0.25);
