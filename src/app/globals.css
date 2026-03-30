@@ -284,6 +284,11 @@ body {
 
 .orbit-split__globe {
   flex: 0 0 460px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.orbit-split__globe:active {
+  cursor: grabbing;
 }
 
 .orbit-split__cards {

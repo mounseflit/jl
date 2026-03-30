@@ -56,6 +56,7 @@ export default function Footer() {
     { label: t("footer.howItWorks") || "How JABB Works", href: "/#section-omnichannel" },
     { label: t("footer.termsOfService"), href: "/terms" },
     { label: t("footer.privacyPolicy"), href: "/privacy" },
+    { label: "Security", href: "/security" },
   ];
 
   return (

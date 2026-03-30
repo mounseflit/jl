@@ -87,10 +87,86 @@ export default function OrbitVisual() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const rafRef = useRef<number>(0);
   const startRef = useRef<number>(0);
+  const orbitRef = useRef<HTMLDivElement>(null);
+
+  /* ── Swipe / drag state ── */
+  const dragRef = useRef({
+    active: false,
+    startX: 0,
+    lastX: 0,
+    offset: 0,        // accumulated manual angle offset (radians)
+    velocity: 0,       // momentum velocity (radians/frame)
+    lastTime: 0,
+    paused: false,     // pause auto-rotation while dragging
+    pauseBase: 0,      // elapsed time snapshot when drag started
+  });
 
   const handleClick = (key: string) => {
     setActiveKey((prev) => (prev === key ? null : key));
   };
+
+  /* ── Pointer / touch handlers for revolver swipe ── */
+  const onPointerDown = useCallback((e: React.PointerEvent) => {
+    const d = dragRef.current;
+    d.active = true;
+    d.startX = e.clientX;
+    d.lastX = e.clientX;
+    d.velocity = 0;
+    d.lastTime = performance.now();
+    d.paused = true;
+    // Snapshot current auto-rotation progress so we can freeze it
+    const elapsed = startRef.current ? (performance.now() - startRef.current) / 1000 : 0;
+    d.pauseBase = elapsed;
+    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+  }, []);
+
+  const onPointerMove = useCallback((e: React.PointerEvent) => {
+    const d = dragRef.current;
+    if (!d.active) return;
+
+    const now = performance.now();
+    const dx = e.clientX - d.lastX;
+    const dt = now - d.lastTime;
+
+    // Convert pixel delta to radians (sensitivity: ~300px = full circle)
+    const sensitivity = 0.008;
+    const deltaAngle = dx * sensitivity;
+
+    d.offset += deltaAngle;
+    d.velocity = dt > 0 ? deltaAngle / (dt / 16.67) : 0; // normalize to ~60fps frame
+    d.lastX = e.clientX;
+    d.lastTime = now;
+  }, []);
+
+  const onPointerUp = useCallback(() => {
+    const d = dragRef.current;
+    if (!d.active) return;
+    d.active = false;
+
+    // Apply momentum with friction decay
+    const applyMomentum = () => {
+      if (Math.abs(d.velocity) < 0.0005) {
+        // Momentum exhausted — resume auto-rotation from current offset
+        d.paused = false;
+        // Adjust startRef so auto-rotation continues seamlessly from current position
+        const inner = itemRefs.current[0]?.parentElement;
+        if (inner) {
+          const style = getComputedStyle(inner);
+          const speed = parseFloat(style.getPropertyValue("--orbit-speed")) || 28;
+          // offset is in radians; convert to equivalent elapsed time
+          const offsetAsTime = (d.offset / (Math.PI * 2)) * speed;
+          startRef.current = performance.now() - (d.pauseBase + offsetAsTime) * 1000;
+        }
+        d.offset = 0;
+        d.velocity = 0;
+        return;
+      }
+      d.offset += d.velocity;
+      d.velocity *= 0.92; // friction
+      requestAnimationFrame(applyMomentum);
+    };
+    requestAnimationFrame(applyMomentum);
+  }, []);
 
   /* JS-driven orbit: position each item on an elliptical path,
      dynamically setting transform, opacity, scale AND z-index.
@@ -98,7 +174,7 @@ export default function OrbitVisual() {
      Items in the top half (back) get z-index: 1 (behind globe). */
   const animate = useCallback((time: number) => {
     if (!startRef.current) startRef.current = time;
-    const elapsed = (time - startRef.current) / 1000; // seconds
+    const d = dragRef.current;
 
     const inner = itemRefs.current[0]?.parentElement;
     if (!inner) { rafRef.current = requestAnimationFrame(animate); return; }
@@ -107,13 +183,23 @@ export default function OrbitVisual() {
     const ry = parseFloat(style.getPropertyValue("--orbit-ry")) || 70;
     const speed = parseFloat(style.getPropertyValue("--orbit-speed")) || 28;
 
+    // Base rotation from auto-animation
+    let baseAngle: number;
+    if (d.paused) {
+      // While dragging, freeze auto-rotation and apply manual offset
+      baseAngle = (d.pauseBase / speed) * Math.PI * 2 + d.offset;
+    } else {
+      const elapsed = (time - startRef.current) / 1000;
+      baseAngle = (elapsed / speed) * Math.PI * 2;
+    }
+
     const count = ORBIT_ITEMS.length;
     for (let i = 0; i < count; i++) {
       const el = itemRefs.current[i];
       if (!el) continue;
 
       // Angle: each item offset by (i/count) of the full circle
-      const angle = ((elapsed / speed) + (i / count)) * Math.PI * 2;
+      const angle = baseAngle + (i / count) * Math.PI * 2;
       const x = Math.cos(angle) * rx;
       const y = Math.sin(angle) * ry;
 
@@ -148,8 +234,16 @@ export default function OrbitVisual() {
       </div>
 
       <div className="orbit-split">
-        {/* LEFT: Globe + orbit — always spinning */}
-        <div className="orbit-split__globe">
+        {/* LEFT: Globe + orbit — swipeable revolver */}
+        <div
+          className="orbit-split__globe"
+          ref={orbitRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          style={{ touchAction: "pan-y", cursor: "grab" }}
+        >
           <div className="orbit-section__inner">
             <div className="orbit-ellipse orbit-ellipse--1" />
             <div className="orbit-ellipse orbit-ellipse--2" />
