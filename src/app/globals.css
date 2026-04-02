@@ -1440,49 +1440,64 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ── QR Stand: Dark/Light mode (INVERTED) ── */
-/* Light mode: dark card (default) */
+/* ── QR Stand: Light mode — clean white card with blue accents ── */
 .qr-stand__card {
-  background: linear-gradient(170deg, #18182a 0%, #111122 40%, #0c0c1a 100%) !important;
+  background: linear-gradient(170deg, #ffffff 0%, #f4f6fd 40%, #edf0fb 100%) !important;
   box-shadow:
-    6px 8px 30px rgba(0, 0, 0, 0.5),
-    0 -1px 12px rgba(74, 122, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    0 8px 32px rgba(30, 52, 152, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 0 0 1.5px rgba(30, 52, 152, 0.10) !important;
+  border: 1.5px solid rgba(30, 52, 152, 0.12) !important;
 }
 .qr-stand__card::before {
-  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%) !important;
+  background: linear-gradient(180deg, rgba(30, 52, 152, 0.04) 0%, transparent 100%) !important;
 }
-.qr-stand__review-text { color: rgba(255, 255, 255, 0.7) !important; }
+.qr-stand__review-text { color: #4a5568 !important; }
 .qr-stand__brand-name {
-  background: linear-gradient(135deg, #6B9AFF 0%, #4A7AFF 50%, #3B62E5 100%) !important;
+  background: linear-gradient(135deg, #1E3498 0%, #2A4ABF 50%, #1E3498 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
 }
-.qr-stand__jabb-logo { color: white !important; }
+.qr-stand__jabb-logo { color: #1E3498 !important; }
+.qr-stand__stars svg { color: #F59E0B !important; fill: #F59E0B !important; }
 .qr-stand__nfc {
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(30, 52, 152, 0.18) !important;
+  background: rgba(30, 52, 152, 0.04) !important;
 }
-.qr-stand__nfc svg { stroke: white !important; }
-.qr-stand__tap-text { color: rgba(255, 255, 255, 0.5) !important; }
-.qr-stand__powered { color: rgba(255, 255, 255, 0.25) !important; }
-.qr-stand__powered strong { color: rgba(255, 255, 255, 0.45) !important; }
-.qr-stand__tri { background: linear-gradient(210deg, #0e0e20 0%, #0a0a1a 40%, #060614 100%) !important; }
-.qr-stand__tri::before { background: linear-gradient(210deg, #080818 0%, #060614 40%, #040410 100%) !important; }
-.qr-stand__tri::after { background: linear-gradient(90deg, #030310 0%, #050512 50%, #070716 100%) !important; }
-.qr-stand__shadow { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.08) 50%, transparent 75%) !important; }
+.qr-stand__nfc svg { stroke: #1E3498 !important; }
+.qr-stand__tap-text { color: #4a5568 !important; }
+.qr-stand__powered { color: #94a3b8 !important; }
+.qr-stand__powered strong { color: #1E3498 !important; }
+.qr-stand__shadow { background: radial-gradient(ellipse at 50% 50%, rgba(30, 52, 152, 0.10) 0%, rgba(0,0,0,0.04) 50%, transparent 75%) !important; }
 
-/* Dark mode: keep the dark colorful card — always looks like a real NFC stand */
+/* ── QR Stand: Dark mode — rich dark card with blue glow ── */
 .dark .qr-stand__card {
   background: linear-gradient(170deg, #1a1a35 0%, #141428 40%, #0e0e22 100%) !important;
   box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(74, 122, 255, 0.12) !important;
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(74, 122, 255, 0.12),
+    0 0 0 1.5px rgba(74, 122, 255, 0.15) !important;
   border: 1.5px solid rgba(74, 122, 255, 0.18) !important;
 }
 .dark .qr-stand__card::before {
   background: linear-gradient(180deg, rgba(74, 122, 255, 0.06) 0%, transparent 100%) !important;
 }
+.dark .qr-stand__review-text { color: rgba(255, 255, 255, 0.7) !important; }
+.dark .qr-stand__brand-name {
+  background: linear-gradient(135deg, #6B9AFF 0%, #4A7AFF 50%, #3B62E5 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.dark .qr-stand__jabb-logo { color: white !important; }
+.dark .qr-stand__nfc {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+.dark .qr-stand__nfc svg { stroke: white !important; }
+.dark .qr-stand__tap-text { color: rgba(255, 255, 255, 0.5) !important; }
+.dark .qr-stand__powered { color: rgba(255, 255, 255, 0.25) !important; }
+.dark .qr-stand__powered strong { color: rgba(255, 255, 255, 0.45) !important; }
+.dark .qr-stand__shadow { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.08) 50%, transparent 75%) !important; }
 
 /* ── JABB App Hero — blue motif background ── */
 .jabb-app-hero {
