@@ -1230,21 +1230,17 @@ body {
   align-items: center;
   max-width: 280px;
   margin: 0 auto;
-  /* 3D perspective on the whole stand */
-  perspective: 900px;
 }
 
-/* The body: card + triangle — rotated in 3D space */
+/* The body: card + triangle — flat front-facing */
 .qr-stand__body {
   position: relative;
-  transform-style: preserve-3d;
-  transform: rotateY(24deg) rotateX(6deg);
 }
 
 /* The card face — front panel of the stand */
 .qr-stand__card {
   background: linear-gradient(170deg, #18182a 0%, #111122 40%, #0c0c1a 100%);
-  border-radius: 18px 18px 2px 2px;
+  border-radius: 18px;
   padding: 24px 22px 20px;
   display: flex;
   flex-direction: column;
@@ -1252,11 +1248,10 @@ body {
   gap: 14px;
   position: relative;
   z-index: 2;
-  transform-style: preserve-3d;
-  /* Main shadow */
+  /* Centered shadow for flat view */
   box-shadow:
-    6px 8px 30px rgba(0, 0, 0, 0.5),
-    0 -1px 12px rgba(74, 122, 255, 0.06);
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 0 16px rgba(74, 122, 255, 0.08);
 }
 
 /* Subtle top highlight — light hitting the surface */
@@ -1276,16 +1271,7 @@ body {
    Tip at bottom-left corner of card, base extends up ~120px along left edge.
    This is the "prop" that holds the card up, like a real stand. */
 .qr-stand__tri {
-  position: absolute;
-  left: -42px;
-  bottom: 0;
-  width: 42px;
-  height: 80px;
-  /* Rounded top-left corner using path(), tip at bottom-left */
-  clip-path: path('M 8 0 C 2 0, 0 2, 0 8 L 42 80 L 42 0 Z');
-  background: linear-gradient(210deg, #0e0e20 0%, #0a0a1a 40%, #060614 100%);
-  z-index: 1;
-  transform-style: preserve-3d;
+  display: none;
 }
 
 /* 3D depth layer — pushed back to create thickness */
@@ -1490,8 +1476,8 @@ body {
 .dark .qr-stand__card {
   background: linear-gradient(170deg, #ffffff 0%, #f8f8fc 40%, #f0f0f8 100%) !important;
   box-shadow:
-    6px 8px 30px rgba(0, 0, 0, 0.12),
-    0 -1px 12px rgba(74, 122, 255, 0.06) !important;
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 0 16px rgba(74, 122, 255, 0.06) !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 .dark .qr-stand__card::before {
